@@ -12,10 +12,7 @@
     <!--子页顶部内容-->
     <div class="subTopBox">
         <div class="subTopLeft">
-            <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a>
-        </div>
-        <div class="subTopRight">
-            <span class="man_info">人员信息</span><span class="operate_record JS_record">操作记录</span>
+            <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a><a class="subTopBtn JS_record" href="javascript:void(0);">操作记录</a>
         </div>
     </div>
     <!--end 子页顶部内容-->
@@ -71,7 +68,7 @@
 <script>
     $(function(){
         //操作记录
-        $('.subTopRight').on('click','.JS_record',function(){
+        $('.subTopBox').on('click','.JS_record',function(){
             layer.open({
                 type: 2,
                 title: '操作记录',

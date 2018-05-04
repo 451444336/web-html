@@ -234,6 +234,9 @@ em {
 .hide {
   display: none;
 }
+.bodyBack {
+  background: #edeff4;
+}
 input[type="text"],
 input[type="password"] {
   height: 30px;
@@ -1551,12 +1554,6 @@ label.formError {
 }
 .subTopRight span.roomState {
   background: url("../images/roomState_icon.jpg") 5px center no-repeat;
-}
-.subTopRight span.man_info {
-  background: url("../images/man_info.png") 5px center no-repeat;
-}
-.subTopRight span.operate_record {
-  background: url("../images/operate_record.png") 5px center no-repeat;
 }
 .subTopRight span:hover {
   color: #1e65c5;
