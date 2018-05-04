@@ -235,8 +235,7 @@ em {
   display: none;
 }
 input[type="text"],
-input[type="password"],
-select {
+input[type="password"] {
   height: 30px;
   line-height: 30px;
   font-size: 12px;
@@ -261,6 +260,7 @@ input[type="password"]:focus {
 }
 select {
   width: 100%;
+  padding: 4px 0;
 }
 select:focus {
   border: 1px solid #92bbff;
@@ -302,6 +302,13 @@ input[type='checkbox'] {
 }
 input[type='checkbox']:checked {
   background: url("../images/checkboxBg_h.jpg") no-repeat;
+}
+textarea {
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  padding: 5px;
 }
 .fixedButton {
   position: fixed;
@@ -984,16 +991,14 @@ input[type='checkbox']:checked {
   color: #5e6d82;
   margin-right: 5px;
 }
-.searchTerm .searchTermList li input[type="text"],
-.searchTerm .searchTermList li select {
+.searchTerm .searchTermList li input[type="text"] {
   width: 56px;
   height: 28px;
   padding: 0 2px;
 }
-.searchTerm .searchTermList li select {
+.searchTerm .searchTermList li .selectBox {
   width: 56px;
-  height: 28px;
-  padding: 0;
+  height: auto;
 }
 .searchTerm .searchTermList.searchTermShow {
   height: auto;
@@ -1276,7 +1281,7 @@ input[type='checkbox']:checked {
 .popupList tr th,
 .popupList tr td {
   position: relative;
-  vertical-align: middle;
+  vertical-align: top;
   height: 40px;
 }
 .popupList tr td input[type="text"],
@@ -1464,9 +1469,9 @@ label.formError {
 }
 .subMainContent {
   display: table;
-  background: #edeff4;
   width: 100%;
   height: 100%;
+  background: #edeff4;
 }
 .rightContent {
   display: table-cell;
@@ -1481,6 +1486,9 @@ label.formError {
   padding: 10px;
   vertical-align: top;
   line-height: 1;
+}
+.subMainCon {
+  padding: 10px;
 }
 .subTopBox,
 .subConBox {
@@ -1911,4 +1919,9 @@ label.labelRed {
   float: left !important;
   width: 42%;
   margin-right: 5.5%;
+}
+.roleDepict {
+  width: 86.5%;
+  height: 90px;
+  line-height: 24px;
 }

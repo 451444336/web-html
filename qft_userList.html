@@ -15,7 +15,7 @@
             <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a>
         </div>
         <div class="subTopRight">
-            <span class="man_info">人员信息</span><span class="operate_record">操作记录</span>
+            <span class="man_info">人员信息</span><span class="operate_record JS_record">操作记录</span>
         </div>
     </div>
     <!--end 子页顶部内容-->
@@ -70,6 +70,19 @@
 <script type="text/javascript" src="js/validate/messages_zh.js"></script>
 <script>
     $(function(){
+        //操作记录
+        $('.subTopRight').on('click','.JS_record',function(){
+            layer.open({
+                type: 2,
+                title: '操作记录',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['90%','460px'],
+                //btn:['关闭'],
+                btnAlign: 'c',
+                content: 'qft_recordList.html'
+            });
+        });
         //修改密码
         $('.wareList').on('click','.modifyPass',function(){
             layer.open({
@@ -84,6 +97,22 @@
                 },
                 btnAlign: 'c',
                 content: $('#qft_modifyBox')
+            });
+        });
+        //编辑用户
+        $('.wareList').on('click','.JS_userEdit',function(){
+            layer.open({
+                type: 2,
+                title: '添加用户',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['700px','580px'],
+                //btn:['保存','关闭'],
+                yes: function(){
+                    $('#roleForm').submit();
+                },
+                btnAlign: 'c',
+                content: 'qft_adduser.html'
             });
         });
         //表单验证
@@ -155,7 +184,7 @@
                 },
                 {"sWidth": "280px", "sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
                         var text = '<a class="JS_modifypower" href="javascript:void(0);">权限修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
-                        text += '<a class="" href="javascript:void(0);">用户编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="JS_userEdit" href="javascript:void(0);">用户编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
                         text += '<a class="require JS_delete" href="javascript:void(0);">删除</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
                         text += '<a class="modifyPass" href="javascript:void(0);">修改密码</a>';
                         return text;

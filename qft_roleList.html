@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>角色列表</title>
+    <!--ztree样式表-->
+    <link rel="stylesheet" href="js/ztree/ztree.css">
+    <!--主样式表-->
+    <link rel="stylesheet" href="css/models.css">
+</head>
+<body>
+<!--角色列表-->
+<div class="subMainCon">
+    <!--添加角色-->
+    <div class="subTopBox">
+        <div class="subTopLeft">
+            <a class="subTopBtn JS_addRole" href="javascript:void(0);">添加角色</a>
+        </div>
+    </div>
+    <!--end 添加角色-->
+    <!--角色列表-->
+    <div class="subConBox">
+        <table class="wareList" id="example"></table>
+    </div>
+    <!--end 角色列表-->
+</div>
+<!--end 角色列表-->
+<!--添加角色-->
+<div class="PopupBox hide" id="qft_addRoleBox">
+    <form id="roleForm" action="" method="">
+        <table class="popupList">
+            <tr>
+                <th class="fieldName"><span class="require">*</span>角色名称：</th>
+                <td><input name="password" type="password" value="" placeholder="请输入角色名称" required></td>
+            </tr>
+            <tr>
+                <th class="fieldName">角色描述：</th>
+                <td>
+                    <textarea class="roleDepict"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--end 添加角色-->
+<!--分配权限-->
+<div class="PopupBox hide" id="qft_allotPowerBox">
+    <ul id="allotPower" class="ztree"></ul>
+</div>
+<!--end 分配权限-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<!--dataTable-->
+<script type="text/javascript" src="js/datatables/jquery.dataTables.js"></script>
+<!--layer弹出层-->
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<!--ztree树形-->
+<script type="text/javascript" src="js/ztree/ztree.min.js"></script>
+<script type="text/javascript" src="js/ztree/jquery.ztree.excheck.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<script>
+    $(function(){
+        //分配权限树形菜单配置
+        var setting = {
+            view: {
+                showIcon: false
+            },
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                beforeClick:beforeClick
+            }
+        };
+        function beforeClick(treeId, treeNode) {
+            var zTree = $.fn.zTree.getZTreeObj("allotPower");
+            zTree.checkNode(treeNode, !treeNode.checked, true);
+            return false;
+        }
+        var zNodes =[
+            { id:"Company", name:"研发测试", open:"true"},
+            { id:"Dept_1", pId:"Company", name:"测试部", open:true},
+            { id:11, pId:"Dept_1", name:"测试（2人）"},
+            { id:12, pId:"Dept_1", name:"销售经理（0人）"},
+            { id:13, pId:"Dept_1", name:"测试2（0人）"},
+            { id:"Dept_2", pId:"Company", name:"销售部门", open:true},
+            { id:21, pId:"Dept_2", name:"销售经理1（0人）"},
+            { id:22, pId:"Dept_2", name:"经纪人（0人）"},
+            { id:23, pId:"Dept_2", name:"销售一部（0人）"},
+            { id:"Dept_3", pId:"Company", name:"运营部门"},
+            { id:31, pId:"Dept_3", name:"叶子节点1"},
+            { id:32, pId:"Dept_3", name:"叶子节点2"},
+            { id:33, pId:"Dept_3", name:"叶子节点3"},
+            { id:"Dept_4", pId:"Company", name:"技术部"},
+            { id:31, pId:"Dept_4", name:"叶子节点1"},
+            { id:32, pId:"Dept_4", name:"叶子节点2"},
+            { id:33, pId:"Dept_4", name:"叶子节点3"}
+        ];
+        //分配权限树形菜单
+        $.fn.zTree.init($("#allotPower"), setting, zNodes);
+        //添加角色
+        $('.subTopLeft').on('click','.JS_addRole',function(){
+            layer.open({
+                type: 1,
+                title: '添加角色',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['460px','270px'],
+                btn:['保存','关闭'],
+                btnAlign: 'c',
+                content: $('#qft_addRoleBox')
+            });
+        });
+        //编辑角色
+        $('.wareList').on('click','.JS_editRole',function(){
+            layer.open({
+                type: 1,
+                title: '编辑角色',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['460px','270px'],
+                btn:['保存','关闭'],
+                btnAlign: 'c',
+                content: $('#qft_addRoleBox')
+            });
+        });
+        //分配权限
+        $('.wareList').on('click','.JS_allotPower',function(){
+            layer.open({
+                type: 1,
+                title: '分配权限',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['666px','440px'],
+                btn:['保存','关闭'],
+                btnAlign: 'c',
+                content: $('#qft_allotPowerBox')
+            });
+        });
+        //删除
+        $('.wareList').on('click','.JS_delete',function(){
+            layer.confirm('是否确定删除？',{
+                title: '信息确认',
+                skin: 'popup-title-bg', //样式类名
+                icon: 3,
+                btnAlign: 'c',
+                area: ['350px','170px'],
+                closeBtn : 0
+            });
+        });
+        //datatable
+        $('#example').DataTable({
+            "bServerSide": true,
+            "sPaginationType": "full_numbers",
+            //"bJQueryUI": true,
+            "sDom": '<"">t<"F"ip>',
+            "autoWidth": false,  //自适应宽度
+            //"sAjaxSource": "${ctx}/api/user/list", //ajax调用接口
+            //<div class="btn-group" style="text-align:left;"><button type="button" class="btn btn-info dropdown-toggle"data-toggle="dropdown">操作 <span class="caret"></span></button>
+            "sAjaxSource": "data/userlist.txt", //ajax调用接口
+            "aoColumnDefs": [{sDefaultContent: '', orderable: false, aTargets: ['_all']}],
+            "aoColumns": [
+                {"sTitle": "角色名称", "mData": "id"},
+                {"sTitle": "角色描述", "mData": "id1"},
+                {"sTitle": "添加时间", "mData": "id2"},
+                {"sTitle": "权限编辑", "mData": "id1", "mRender" : function ( data, type, full ) {
+                        return '<span class="redState">否</span>' //<span>是</span>  默认 '', 关闭 'redState'
+                    }
+                },
+                {"sWidth": "210px", "sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
+                        var text = '<a class="JS_allotPower" href="javascript:void(0);">分配权限</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="JS_editRole" href="javascript:void(0);">编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="require JS_delete" href="javascript:void(0);">删除</a>';
+                        return text;
+                    }
+                }
+            ],
+            "oLanguage": {
+                "sProcessing": "数据加载中······",
+                "sLengthMenu": "显示 _MENU_ 条记录",
+                "sZeroRecords": "没有您要搜索的内容！",
+                "sEmptyTable": "列表中无数据存在！",
+                "sInfo": "当前显示 _START_ 到 _END_ 条数据，共 _TOTAL_ 条数据",
+                "sInfoEmpty": "显示 0 到 0 条记录",
+                "sInfoFiltered": "数据列表中共  _MAX_ 条记录",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "上一页",
+                    "sNext": "下一页",
+                    "sLast": "末页"
+                }
+            }
+            /*"fnServerData" : function ( sSource, aoData, fnCallback, oSettings ) {
+               oSettings.jqXHR = $.ajax( {
+                   "dataType" 	: 'json',
+                   "type" 		: "GET",
+                   "async"     : 'false',
+                   "url" 		: sSource,
+                   "data" 		: {
+                       'pageNum': (aoData[3].value/aoData[4].value)+1,
+                       'pageSize' :  aoData[4].value,
+                       'telphone'  :  $("#telphone").val(),
+                       'isable' : $('#isable').val()
+                   },
+                   "success"	: fnCallback
+               } );
+           }*/
+        });
+    })
+</script>
+</body>
+</html>

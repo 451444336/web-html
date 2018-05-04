@@ -5,8 +5,8 @@
 .subMainContent{
   display: table;
   &:extend(.clearfix all);
-  background: @blue-body;
   .square(100%);
+  background: @blue-body;
 }
 .rightContent{
   display: table-cell;
@@ -21,7 +21,10 @@
   vertical-align:top;
   line-height: 1;
 }
-
+//内页全屏盒子
+.subMainCon{
+  padding: 10px;
+}
 //子页顶部样式
 .subTopBox,
 .subConBox{
@@ -420,4 +423,9 @@ label.labelRed{
   .left !important;
   width: 42%;
   margin-right: 5.5%;
+}
+//角色描述
+.roleDepict{
+  .size(86.5%; 90px);
+  line-height: 24px;
 }

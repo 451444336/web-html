@@ -5,8 +5,7 @@
 //input共用样式
 
 input[type="text"],
-input[type="password"],
-select {
+input[type="password"]{
   height: 30px;
   line-height: 30px;
   font-size: @font-size-small;
@@ -29,6 +28,7 @@ input[type="password"] {
 
 select {
   width: 100%;
+  padding: 4px 0;
   &:focus {
     .border(1px; @blue-btn);
   }
@@ -67,6 +67,11 @@ input[type='checkbox']{
 }
 input[type='checkbox']:checked{
   background: url("../images/checkboxBg_h.jpg") no-repeat;
+}
+textarea{
+  .border(1px; @input-border-col);
+  .border-radius(@border-radius-small);
+  padding: @padding-05;
 }
 //悬浮在底部
 .fixedButton{
@@ -726,14 +731,12 @@ input[type='checkbox']:checked{
         color: @search-txt;
         margin-right: @margin-05;
       }
-      input[type="text"],
-      select{
+      input[type="text"]{
         .size(56px; 28px);
         padding: 0 2px;
       }
-      select{
-        .size(56px; 28px);
-        padding: 0;
+      .selectBox{
+        .size(56px; auto);
       }
     }
     &.searchTermShow{
@@ -1005,7 +1008,7 @@ input[type='checkbox']:checked{
   tr th,
   tr td{
     .relative;
-    vertical-align: middle;
+    vertical-align: top;
     height: 40px;
   }
   tr td{
