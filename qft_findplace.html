@@ -88,9 +88,9 @@
                 {"sTitle": "职务名称", "mData": "id"},
                 {"sTitle": "创建人", "mData": "id"},
                 {"sTitle": "创建时间", "mData": "id11"},
-                {"sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
-                        var text = '<a class="JS_edit" href="javascript:void(0);">编辑职位与权限修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
-                        text += '<a class="require JS_delete" href="javascript:void(0);">删除</a>';
+                {"sWidth": "280px", "sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
+                        var text = '<a class="operateBtn JS_edit" href="javascript:void(0);">编辑职位与权限修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="operateBtn deleteCol JS_delete" href="javascript:void(0);">删除</a>';
                         return text;
                     }
                 }

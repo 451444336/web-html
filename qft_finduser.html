@@ -179,11 +179,11 @@
                         return '<select class="tab_select" name="" id=""><option value="1">开通</option><option value="0">关闭</option></select>'
                     }
                 },
-                {"sWidth": "280px", "sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
-                        var text = '<a class="JS_poweralter" href="javascript:void(0);">权限修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
-                        text += '<a class="JS_userEdit" href="javascript:void(0);">用户编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
-                        text += '<a class="require JS_delete" href="javascript:void(0);">删除</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
-                        text += '<a class="modifyPass" href="javascript:void(0);">修改密码</a>';
+                {"sWidth": "300px", "sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
+                        var text = '<a class="operateBtn JS_poweralter" href="javascript:void(0);">权限修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="operateBtn JS_userEdit" href="javascript:void(0);">用户编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="operateBtn deleteCol JS_delete" href="javascript:void(0);">删除</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="operateBtn modifyPass" href="javascript:void(0);">修改密码</a>';
                         return text;
                     }
                 }

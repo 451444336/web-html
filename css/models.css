@@ -1212,11 +1212,7 @@ textarea {
 .gray-col {
   color: #999999;
 }
-.require,
-.wareList tr th.tab_operate a.require,
-.wareList tr td.tab_operate a.require,
-.wareList tr td.tab_operate a.wareList tr th.tab_operate a.require,
-.wareList tr th.tab_operate a.wareList tr td.tab_operate a.require {
+.require {
   display: inline-block;
   color: #fc6365;
   margin-right: 5px;
@@ -1579,26 +1575,6 @@ label.formError {
 .wareList tr td.tableShow {
   overflow: inherit;
 }
-.wareList tr th.tab_operate a,
-.wareList tr td.tab_operate a {
-  color: #507bea;
-}
-.wareList tr th.tab_operate a:hover,
-.wareList tr td.tab_operate a:hover {
-  color: #194ed4;
-}
-.wareList tr th.tab_operate a.require:hover,
-.wareList tr td.tab_operate a.require:hover,
-.wareList tr th.tab_operate a.wareList tr th.tab_operate a.require:hover,
-.wareList tr td.tab_operate a.wareList tr th.tab_operate a.require:hover,
-.wareList tr th.tab_operate a.wareList tr td.tab_operate a.require:hover,
-.wareList tr td.tab_operate a.wareList tr td.tab_operate a.require:hover,
-.wareList tr th.tab_operate a.wareList tr td.tab_operate a.wareList tr th.tab_operate a.require:hover,
-.wareList tr td.tab_operate a.wareList tr td.tab_operate a.wareList tr th.tab_operate a.require:hover,
-.wareList tr th.tab_operate a.wareList tr th.tab_operate a.wareList tr td.tab_operate a.require:hover,
-.wareList tr td.tab_operate a.wareList tr th.tab_operate a.wareList tr td.tab_operate a.require:hover {
-  color: #fdaeaf;
-}
 .wareList tr th .tab_select,
 .wareList tr td .tab_select {
   font-size: 14px;
@@ -1921,4 +1897,23 @@ label.labelRed {
   width: 86.5%;
   height: 90px;
   line-height: 24px;
+}
+.operateBtn {
+  display: inline-block;
+  width: auto;
+  height: 22px;
+  line-height: 22px;
+  font-size: 13px;
+  padding: 0 5px;
+  background: #92bbff;
+  color: #fff;
+}
+.operateBtn.deleteCol {
+  background: #ffab91;
+}
+.operateBtn.deleteCol:hover {
+  background: #ff7144;
+}
+.operateBtn:hover {
+  background: #458bff;
 }

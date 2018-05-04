@@ -104,20 +104,6 @@
     &.tableShow{
       overflow: inherit;
     }
-    &.tab_operate{
-      a{
-        color: @blue-nav-bg;
-        &:hover{
-          color: @blue-nav-h;
-        }
-        &.require{
-          &:extend(.require all);
-          &:hover{
-            color: @err-color-h;
-          }
-        }
-      }
-    }
     //user状态select
     .tab_select{
       font-size: @font-size-base;
@@ -422,4 +408,23 @@ label.labelRed{
 .roleDepict{
   .size(86.5%; 90px);
   line-height: 24px;
+}
+//table操作按钮
+.operateBtn{
+  display: inline-block;
+  .size(auto; 22px);
+  line-height: 22px;
+  font-size: @font-size-soso;
+  padding: 0 @padding-05;
+  background: @blue-btn;
+  color: @txt-base;
+  &.deleteCol{
+    background: @orange-btn;
+    &:hover{
+      background: @orange-btn-h;
+    }
+  }
+  &:hover{
+    background: @blue-btn-h;
+  }
 }
