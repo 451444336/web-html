@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全房通公寓管理系统</title>
+    <!--主样式表-->
+    <link rel="stylesheet" href="css/models.css">
+</head>
+<body>
+<div class="loginConBox">
+    <!--APP下载-->
+    <div class="downloadIco">
+        <a href="#" class="download"><i class="downIco"><img src="images/ios_icon.png" width="60" alt=""></i>苹果端下载</a>
+        <a href="#" class="download margLeft"><i class="downIco"><img src="images/android_icon.png" width="60" alt=""></i>Android端下载</a>
+    </div>
+    <!--end APP下载-->
+    <!--主体内容-->
+    <div class="loginCon">
+        <!--登录logo-->
+        <div class="loginLogo"><img src="images/login_logo.png" alt=""></div>
+        <!--end 登录logo-->
+        <!--登录内容-->
+        <div class="loginTxt">
+            <div class="loginLeft"><img src="images/login_limg.jpg" width="810" alt=""></div>
+            <div class="loginRight">
+                <form id="roleForm" action="">
+                    <p class="subTit">您身边的租房管理专家</p>
+                    <p class="logincont userName"><input name="username" type="text" placeholder="请输入用户名" required></p>
+                    <p class="logincont passLogin"><input name="password" type="password" placeholder="请输入密码" required></p>
+                    <p class="logincont yzmLogin"><input class="yzmTxt" name="yzm" type="text" placeholder="请输入验证码" required><span class="yzm_imgBox"><img src="images/yzm_img.jpg" alt=""></span></p>
+                    <p class="logincont loginBtn"><input name="" type="submit" value=""></p>
+                </form>
+            </div>
+        </div>
+        <!--end 登录内容-->
+    </div>
+    <!--end 主体内容-->
+</div>
+<!--底部版权-->
+<div class="footer">
+    版权所有：重庆航畅科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;软件出售电话：023-68052290&nbsp;&nbsp;&nbsp;&nbsp;在线咨询：<a class="footqq" href="#"><img src="images/footQq.png" width="74" alt=""></a>
+</div>
+<!--end 底部版权-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<script>
+    $(function(){
+        //表单验证
+        $("#roleForm").validate({
+            errorClass: 'formError',
+            messages: {
+                username: "请输入用户名",
+                password: "请输入密码",
+                yzm: "请输入验证码",
+            }
+        });
+    })
+</script>
+</body>
+</html>

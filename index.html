@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>全房通后台管理系统</title>
+    <!--主样式表-->
+    <link rel="stylesheet" href="css/models.css">
+</head>
+<body>
+<div class="mainBox">
+    <!--headerBox-->
+    <div class="headerBox">
+        <!--logo-->
+        <div class="logoBox"><a class="logoImg" href="#"><img src="images/logo.jpg" alt=""></a></div>
+        <!--end logo-->
+        <div class="headRightMenu imgPng">
+            <ul class="headMenu">
+                <li class="subHeadMenu">
+                    <a href="javascript:void(0);"><i class="icon icon_admin"></i>管理员</a>
+                    <div class="subHeadMenuList">
+                        <i class="subHeadIco"></i>
+                        <a href="javascript:void(0);">全房通官网</a>
+                        <a class="modifyPass" href="javascript:void(0);">修改密码</a>
+                        <a class="quitBtn" href="javascript:void(0);">安全退出</a>
+                    </div>
+                </li>
+                <li><a href="#"><i class="icon icon_setup"></i>首页设置</a></li>
+                <li><a href="#"><i class="icon con_Prompt"></i>516</a></li>
+                <li class="cityHead"><a class="cityChoice" href="javascript:void (0);">重庆</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--end headerBox-->
+    <!--左边菜单栏-->
+    <div class="leftNav">
+        <p class="openBtn"></p>
+        <ul class="navMenu" id="accordion">
+            <li class="openMenu">
+                <a href="javascript:void(0);" class="link_tit">
+                    <p class="link_conTxt"><i class="icon icon_lease"></i>租凭管理 <span class="ricon"></span></p>
+                    <p class="link_subtit"><i class="subicon icon_sublease"></i>租凭</p>
+                </a>
+                <dl class="subMenu">
+                    <dd><a class="action" href="javascript:void(0);" data-url="welcome1.html">整租管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="welcome.html">合租管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="qft_focusList.html">集中整租</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="welcome.html">储备房源</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="welcome1.html">储备客源</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="welcome.html">财务管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="welcome1.html">维修保洁</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="welcome.html">业绩管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="link_tit">
+                    <p class="link_conTxt"><i class="icon icon_finance"></i>财务管理<span class="ricon"></span></p>
+                    <p class="link_subtit"><i class="subicon icon_subfinance"></i>财务</p>
+                </a>
+                <dl class="subMenu">
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">集中管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="link_tit">
+                    <p class="link_conTxt"><i class="icon icon_oa"></i>OA管理<span class="ricon"></span></p>
+                    <p class="link_subtit"><i class="subicon icon_suboa"></i>O A</p>
+                </a>
+
+                <dl class="subMenu">
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="link_tit">
+                    <p class="link_conTxt"><i class="icon icon_serve"></i>售后管理<span class="ricon"></span></p>
+                    <p class="link_subtit"><i class="subicon icon_subserve"></i>售后</p>
+                </a>
+                <dl class="subMenu">
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="link_tit">
+                    <p class="link_conTxt"><i class="icon icon_room"></i>全房服务<span class="ricon"></span></p>
+                    <p class="link_subtit"><i class="subicon icon_subroom"></i>服务</p>
+                </a>
+                <dl class="subMenu">
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="link_tit">
+                    <p class="link_conTxt"><i class="icon icon_count"></i>统计报表<span class="ricon"></span></p>
+                    <p class="link_subtit"><i class="subicon icon_subcount"></i>统计</p>
+                </a>
+                <dl class="subMenu ">
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                    <dd><a href="#">集中管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="link_tit">
+                   <p class="link_conTxt"><i class="icon icon_system"></i>系统设置<span class="ricon"></span></p>
+                    <p class="link_subtit"><i class="subicon icon_subsystem"></i>设置</p>
+                </a>
+                <dl class="subMenu">
+                    <dd><a href="javascript:void(0);" data-url="#">店面设置</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="qft_userSetting.html">用户设置</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">字典设置</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">微信设置</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">短信模块</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">合同模板</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">登录日志</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">登录限制</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="#">回收站</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <a href="#" class="helpBtn">使用帮助</a>
+    </div>
+    <!--end 左边菜单栏-->
+    <!--主体内容-->
+    <div class="mainContent">
+        <div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab">
+            <ul class="layui-tab-title">
+                <li class="layui-this">
+                    <span>管理首页</span>
+                </li>
+            </ul>
+            <div class="layui-tab-content" style="min-height: 150px;">
+                <div class="layui-tab-item layui-show">
+                    <iframe class="iframeBox" frameborder="0" src="qft_focusList.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end 主体内容-->
+    <!--footerBox-->
+    <div class="footerBox">
+        <p class="footerTxt">软件销售电话：18983720338&nbsp;&nbsp;|&nbsp;&nbsp;售后服务电话：023-68052290</p>
+        <div class="onService">
+            <span>在线客服：</span>
+            <a href="#" class="QQChat">QQ交谈</a>
+            <a href="#" class="footBtn">在线反馈</a>
+            <a href="#" class="footBtn">功能收纳</a>
+            <a href="#" class="footBtn">创建快捷方式</a>
+        </div>
+    </div>
+    <!--end footerBox-->
+</div>
+<!--修改密码弹窗-->
+<div class="PopupBox hide" id="qft_modifyBox">
+    <h2 class="PopupTitle">个人信息</h2>
+    <table class="popupList">
+        <tr>
+            <th class="fieldName">姓名：</th>
+            <td><input name="" type="text" value="管理员"></td>
+            <th class="fieldName">登录名：</th>
+            <td><input name="" type="text" value="admin"></td>
+        </tr>
+        <tr>
+            <th class="fieldName">部门：</th>
+            <td><input name="" type="text" value="管理权限"></td>
+            <th class="fieldName">职位：</th>
+            <td><input name="" type="text" value="1001套以上"></td>
+        </tr>
+        <tr>
+            <th class="fieldName">店面：</th>
+            <td><input name="" type="text" value=""></td>
+            <th class="fieldName">电话：</th>
+            <td><input name="" type="text" value="13896041111"></td>
+        </tr>
+    </table>
+    <h2 class="PopupTitle">密码修改</h2>
+    <form id="roleForm" action="" method="">
+        <table class="popupList">
+            <tr>
+                <th class="fieldName"><span class="require">*</span>新密码：</th>
+                <td><input name="password" type="password" value="" placeholder="请输入新密码" required></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/layui/layui.js"></script>
+<script type="text/javascript" src="js/modules/tabnav.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<!--layer弹出层-->
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<script>
+    $(function(){
+        //修改密码
+        $('.headerBox').on('click','.modifyPass',function(){
+            layer.open({
+                type: 1,
+                title: '修改密码',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['460px','375px'],
+                btn:['确认密码'],
+                yes: function(){
+                    $('#roleForm').submit();
+                },
+                btnAlign: 'c',
+                content: $('#qft_modifyBox')
+            });
+        });
+        //表单验证
+        $("#roleForm").validate({
+            onfocusout: function(element){
+                $(element).valid();
+            },
+            errorClass: 'formError'
+        });
+        //安全退出
+        $('.headerBox').on('click','.quitBtn',function(){
+            layer.confirm('是否确定退出系统？',{
+                title: '信息确认',
+                skin: 'popup-title-bg', //样式类名
+                icon: 3,
+                btnAlign: 'c',
+                area: ['350px','170px'],
+                closeBtn : 0
+            });
+        })
+    })
+</script>
+</body>
+</html>

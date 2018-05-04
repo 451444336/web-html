@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>用户列表</title>
+    <!--主样式表-->
+    <link rel="stylesheet" href="css/models.css">
+</head>
+<body>
+<!--子页顶部内容-->
+<div class="subTopBox">
+    <div class="subTopLeft">
+        <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a><a class="subTopBtn qft_adduser" href="javascript:void(0);">添加用户</a>
+    </div>
+    <div class="subTopRight">
+        <span class="man_info">人员信息</span>
+    </div>
+</div>
+<!--end 子页顶部内容-->
+<!--子页主体内容-->
+<div class="subConBox">
+    <table class="wareList" id="example"></table>
+</div>
+<!--end 子页主体内容-->
+<!--修改密码-->
+<div class="PopupBox hide" id="qft_modifyBox">
+    <h2 class="PopupTitle">个人信息</h2>
+    <table class="popupList">
+        <tr>
+            <th class="fieldName">姓名：</th>
+            <td><input name="" type="text" value="管理员"></td>
+            <th class="fieldName">登录名：</th>
+            <td><input name="" type="text" value="admin"></td>
+        </tr>
+        <tr>
+            <th class="fieldName">部门：</th>
+            <td><input name="" type="text" value="管理权限"></td>
+            <th class="fieldName">职位：</th>
+            <td><input name="" type="text" value="1001套以上"></td>
+        </tr>
+        <tr>
+            <th class="fieldName">店面：</th>
+            <td><input name="" type="text" value=""></td>
+            <th class="fieldName">电话：</th>
+            <td><input name="" type="text" value="13896041111"></td>
+        </tr>
+    </table>
+    <h2 class="PopupTitle">密码修改</h2>
+    <form id="roleForm" action="" method="">
+        <table class="popupList">
+            <tr>
+                <th class="fieldName"><span class="require">*</span>新密码：</th>
+                <td><input name="password" type="password" value="" placeholder="请输入新密码" required></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--end 修改密码-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<!--dataTable-->
+<script type="text/javascript" src="js/datatables/jquery.dataTables.js"></script>
+<!--layer弹出层-->
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<script>
+    $(function(){
+        //添加用户
+        $('.subTopLeft').on('click','.qft_adduser',function(){
+            layer.open({
+                type: 2,
+                title: '添加用户',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['700px','580px'],
+                //btn:['保存','关闭'],
+                yes: function(){
+                    $('#roleForm').submit();
+                },
+                btnAlign: 'c',
+                content: 'qft_adduser.html'
+            });
+        });
+        //权限修改
+        $('.wareList').on('click','.JS_poweralter',function(){
+            layer.open({
+                type: 2,
+                title: '添加职位',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['900px','660px'],
+                btnAlign: 'c',
+                content: 'modifypower.html'
+            });
+        });
+        //表单验证
+        $("#roleForm").validate({
+            onfocusout: function(element){
+                $(element).valid();
+            },
+            errorClass: 'formError'
+        });
+        //修改密码
+        $('.wareList').on('click','.modifyPass',function(){
+            layer.open({
+                type: 1,
+                title: '修改密码',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['460px','375px'],
+                btn:['确认密码'],
+                yes: function(){
+                    $('#roleForm').submit();
+                },
+                btnAlign: 'c',
+                content: $('#qft_modifyBox')
+            });
+        });
+        //删除
+        $('.wareList').on('click','.JS_delete',function(){
+            layer.confirm('是否确定删除？',{
+                title: '信息确认',
+                skin: 'popup-title-bg', //样式类名
+                icon: 3,
+                btnAlign: 'c',
+                area: ['350px','170px'],
+                closeBtn : 0
+            });
+        });
+        //开通关闭状态变色
+        $('.wareList').on('change','.tab_select',function(){
+            var valTxt = $(this).children('option:selected').val();
+            if(valTxt == '0'){
+                $(this).addClass('errorCol');
+            }else{
+                $(this).removeClass('errorCol');
+            }
+        });
+        //datatable
+        $('#example').DataTable({
+            "bServerSide": true,
+            "sPaginationType": "full_numbers",
+            //"bJQueryUI": true,
+            "sDom": '<"">t<"F"ip>',
+            "autoWidth": false,  //自适应宽度
+            //"sAjaxSource": "${ctx}/api/user/list", //ajax调用接口
+            //<div class="btn-group" style="text-align:left;"><button type="button" class="btn btn-info dropdown-toggle"data-toggle="dropdown">操作 <span class="caret"></span></button>
+            "sAjaxSource": "data/userlist.txt", //ajax调用接口
+            "aoColumnDefs": [{sDefaultContent: '', orderable: false, aTargets: ['_all']}],
+            "aoColumns": [
+                {"sTitle": "用户姓名", "mData": "id"},
+                {"sTitle": "用户账号", "mData": "id1"},
+                {"sTitle": "联系方式", "mData": "id2"},
+                {"sTitle": "可看房源城市", "mData": "id3"},
+                {"sTitle": "可看房源店面", "mData": "id4"},
+                {"sTitle": "可看房源分组", "mData": "id5"},
+                {"sTitle": "工作城市", "mData": "id6"},
+                {"sTitle": "所属部门", "mData": "id7"},
+                {"sTitle": "所属职位", "mData": "id8"},
+                {"sTitle": "创建时间", "mData": "id10"},
+                {"sTitle": "上次登录时间", "mData": "id11"},
+                {"sWidth": "90px", "sTitle": "状态", "mData": "id1", "mRender" : function ( data, type, full ) {
+                        return '<select class="tab_select" name="" id=""><option value="1">开通</option><option value="0">关闭</option></select>'
+                    }
+                },
+                {"sWidth": "280px", "sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
+                        var text = '<a class="JS_poweralter" href="javascript:void(0);">权限修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="" href="javascript:void(0);">用户编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="require JS_delete" href="javascript:void(0);">删除</a>&nbsp;&nbsp;|&nbsp;&nbsp;';
+                        text += '<a class="modifyPass" href="javascript:void(0);">修改密码</a>';
+                        return text;
+                    }
+                }
+            ],
+            "oLanguage": {
+                "sProcessing": "数据加载中······",
+                "sLengthMenu": "显示 _MENU_ 条记录",
+                "sZeroRecords": "没有您要搜索的内容！",
+                "sEmptyTable": "列表中无数据存在！",
+                "sInfo": "当前显示 _START_ 到 _END_ 条数据，共 _TOTAL_ 条数据",
+                "sInfoEmpty": "显示 0 到 0 条记录",
+                "sInfoFiltered": "数据列表中共  _MAX_ 条记录",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "上一页",
+                    "sNext": "下一页",
+                    "sLast": "末页"
+                }
+            }
+            /*"fnServerData" : function ( sSource, aoData, fnCallback, oSettings ) {
+               oSettings.jqXHR = $.ajax( {
+                   "dataType" 	: 'json',
+                   "type" 		: "GET",
+                   "async"     : 'false',
+                   "url" 		: sSource,
+                   "data" 		: {
+                       'pageNum': (aoData[3].value/aoData[4].value)+1,
+                       'pageSize' :  aoData[4].value,
+                       'telphone'  :  $("#telphone").val(),
+                       'isable' : $('#isable').val()
+                   },
+                   "success"	: fnCallback
+               } );
+           }*/
+        });
+    })
+</script>
+</body>
+</html>
