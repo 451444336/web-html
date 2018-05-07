@@ -122,8 +122,6 @@ em {
   margin-top: 40px;
 }
 .clearfix,
-.loginConBox .downloadIco,
-.loginConBox .loginCon .loginTxt,
 .headerBox,
 .headRightMenu .headMenu,
 .navMenu,
@@ -148,10 +146,6 @@ em {
 }
 .clearfix:before,
 .clearfix:after,
-.loginConBox .downloadIco:before,
-.loginConBox .downloadIco:after,
-.loginConBox .loginCon .loginTxt:before,
-.loginConBox .loginCon .loginTxt:after,
 .headerBox:before,
 .headerBox:after,
 .headRightMenu .headMenu:before,
@@ -196,8 +190,6 @@ em {
   display: table;
 }
 .clearfix:after,
-.loginConBox .downloadIco:after,
-.loginConBox .loginCon .loginTxt:after,
 .headerBox:after,
 .headRightMenu .headMenu:after,
 .navMenu:after,
@@ -317,153 +309,6 @@ textarea {
   position: fixed;
   left: 0;
   bottom: 10px;
-}
-.loginConBox {
-  position: relative;
-  width: 100%;
-  height: 846px;
-  min-width: 1400px;
-  background: url("../images/loginBg.jpg") center 0 no-repeat #2c5bd1;
-}
-.loginConBox .downloadIco {
-  position: absolute;
-  top: 40px;
-  right: 30px;
-  width: 220px;
-  height: 90px;
-}
-.loginConBox .downloadIco .download {
-  float: left;
-  display: block;
-  width: 100px;
-  height: 90px;
-  font-size: 14px;
-  color: #fff;
-  text-align: center;
-  line-height: 30px;
-}
-.loginConBox .downloadIco .download.margLeft {
-  margin-left: 20px;
-}
-.loginConBox .downloadIco .download:hover {
-  color: #92bbff;
-}
-.loginConBox .downIco {
-  display: block;
-  width: 60px;
-  height: 60px;
-  margin: 0 auto;
-}
-.loginConBox .loginCon {
-  width: 1300px;
-  height: auto;
-  margin: 0 auto;
-  padding-top: 130px;
-}
-.loginConBox .loginCon .loginLogo {
-  width: 100%;
-  height: 71px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-.loginConBox .loginCon .loginTxt {
-  width: 100%;
-  height: 460px;
-  background: #fff;
-}
-.loginConBox .loginCon .loginTxt .loginLeft {
-  float: left;
-  width: 810px;
-  height: 460px;
-}
-.loginConBox .loginCon .loginTxt .loginRight {
-  float: right;
-  width: 308px;
-  height: 460px;
-  margin-right: 104px;
-}
-.loginConBox .loginCon .loginTxt .loginRight .subTit {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  font-size: 20px;
-  color: #999999;
-  text-align: center;
-  margin: 66px 0 22px 0;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont {
-  position: relative;
-  width: 100%;
-  height: 46px;
-  margin-bottom: 16px;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont input[type="text"],
-.loginConBox .loginCon .loginTxt .loginRight .logincont input[type="password"],
-.loginConBox .loginCon .loginTxt .loginRight .logincont input[type="submit"] {
-  border: none;
-  background: none;
-  width: 240px;
-  height: 46px;
-  line-height: 46px;
-  font-size: 16px;
-  color: #777777;
-  margin: 0 10px 0 56px;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont input[type="text"].yzmTxt,
-.loginConBox .loginCon .loginTxt .loginRight .logincont input[type="password"].yzmTxt,
-.loginConBox .loginCon .loginTxt .loginRight .logincont input[type="submit"].yzmTxt {
-  width: 116px;
-  height: 46px;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont.userName {
-  background: url("../images/user_bg.png") 0 0 no-repeat;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont.passLogin {
-  background: url("../images/pass_bg.png") 0 0 no-repeat;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont.yzmLogin {
-  background: url("../images/yzm_bg.png") 0 0 no-repeat;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont.yzmLogin .yzm_imgBox {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 110px;
-  height: 46px;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont.loginBtn {
-  width: 316px;
-  height: 58px;
-  margin-left: -4px;
-  background: url("../images/loginBtn.png") 0 0 no-repeat;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont.loginBtn:hover {
-  background: url("../images/loginBtn-h.png") 0 0 no-repeat;
-}
-.loginConBox .loginCon .loginTxt .loginRight .logincont label.formError {
-  left: 56px;
-}
-.footer {
-  width: 100%;
-  height: 100px;
-  min-width: 1400px;
-  line-height: 100px;
-  font-size: 16px;
-  color: #000;
-  text-align: center;
-  vertical-align: middle;
-}
-.footer .footqq {
-  display: inline-block;
-  vertical-align: middle;
-  width: 74px;
-  height: 23px;
-}
-.footer .footqq img {
-  display: block;
-  width: 74px;
-  height: 23px;
 }
 /*整体框架样式*/
 .mainBox {
