@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>全房通公寓管理系统</title>
-    <!--banner图切换样式-->
-    <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <!--主样式表-->
     <link rel="stylesheet" href="css/models.css">
 </head>
@@ -38,16 +36,39 @@
             <!--login right-->
             <div class="loginRight">
                 <!--banner图切换-->
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="pic/ban_1.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="pic/ban_2.jpg" alt=""></div>
-                        <div class="swiper-slide"><img src="pic/ban_3.jpg" alt=""></div>
+                <div id="slideBox" class="slideBox">
+                    <div class="slideNum">
+                        <ul class="slideNumList"><li>1</li><li>2</li><li>3</li></ul>
                     </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="slide">
+                        <ul class="slideList">
+                            <li><a href="#" target="_blank"><img src="pic/ban_1.jpg" /></a></li>
+                            <li><a href="#" target="_blank"><img src="pic/ban_2.jpg" /></a></li>
+                            <li><a href="#" target="_blank"><img src="pic/ban_3.jpg" /></a></li>
+                        </ul>
+                    </div>
                 </div>
                 <!--end banner图切换-->
+                <!--下载-->
+                <div class="downloadBox downloadCh">
+                   <p class="downTxt">下载手机APP，扫描二维码下载</p>
+                    <div class="downloadCon">
+                        <div class="downloadConLeft"><img src="images/ios.jpg" alt=""></div>
+                        <div class="downloadConRight">
+                            <a class="downloadBtn dowHover dowIos" href="javascript:void(0);"><i class="icon icon_ios"></i>苹果端下载</a><a class="downloadBtn dowAnd" href="javascript:void(0);"><i class="icon icon_android"></i>Android端下载</a><a class="downloadBtn" href="#"><i class="icon icon_pc"></i>PC端下载</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="downloadBox downloadEn hide">
+                    <p class="downTxt">Download mobile APP</p>
+                    <div class="downloadCon">
+                        <div class="downloadConLeft"><img src="images/ios.jpg" alt=""></div>
+                        <div class="downloadConRight">
+                            <a class="downloadBtn downloadBtnEn dowHover dowIos" href="javascript:void(0);"><i class="icon icon_ios"></i>IOS Download</a><a class="downloadBtn downloadBtnEn dowAnd" href="javascript:void(0);"><i class="icon icon_android"></i>Android Download</a><a class="downloadBtn downloadBtnEn" href="#"><i class="icon icon_pc"></i>PC Download</a>
+                        </div>
+                    </div>
+                </div>
+                <!--end 下载-->
             </div>
             <!--end login right-->
         </div>
@@ -60,7 +81,7 @@
 <script type="text/javascript" src="js/placeholder/placeholder.js"></script>
 <![endif]-->
 <!--banner图切换-->
-<script type="text/javascript" src="js/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="js/superslide/jquery.SuperSlide.2.1.1.js"></script>
 <script type="text/javascript">
     $(function(){
         //中引文切换
@@ -70,23 +91,29 @@
             if(aTxt == "中文"){
                 $('.loginCh').removeClass('hide');
                 $('.loginEn').addClass('hide');
+                $('.downloadCh').removeClass('hide');
+                $('.downloadEn').addClass('hide');
             }else{
                 $('.loginCh').addClass('hide');
                 $('.loginEn').removeClass('hide');
+                $('.downloadCh').addClass('hide');
+                $('.downloadEn').removeClass('hide');
             }
         });
         //banner图切换
-        var swiper = new Swiper('.swiper-container', {
-            spaceBetween: 0,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            }
+        jQuery(".slideBox").slide({
+            titCell: '.slideNum li',
+            mainCell: ".slide .slideList",
+            autoPlay: true
+        });
+        //二维码切换
+        $('.dowIos').on('click',function(){
+            $(this).addClass('dowHover').siblings().removeClass('dowHover');
+            $('.downloadConLeft').find('img').attr('src','images/ios.jpg')
+        });
+        $('.dowAnd').on('click',function(){
+            $(this).addClass('dowHover').siblings().removeClass('dowHover');
+            $('.downloadConLeft').find('img').attr('src','images/android.jpg')
         });
     })
 </script>
