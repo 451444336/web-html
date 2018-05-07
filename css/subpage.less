@@ -144,7 +144,8 @@
     .align(left);
     text-indent: 6px;
     background: url("../images/operation.png") 45px center no-repeat @blue-btn;
-    .border-radius(1px);
+    .border-radius(@border-radius-small);
+    .behavior;
   }
   .operationList,
   .subOperMenu{
@@ -246,7 +247,8 @@
     color: @txt-base;
     font-size: @font-size-base;
     background: @blue-btn;
-    .border-radius(2px);
+    .border-radius(@border-radius-small);
+    .behavior;
     cursor: pointer;
     &:hover{
       background: @blue-btn-h;
@@ -282,6 +284,7 @@
     .border-radius(@border-radius-base);
     .border(1px; @power-bor-col);
     color: @layer-con-tit;
+    .behavior;
     &:hover{
       background: @blue-btn;
       color: @txt-base;
@@ -331,11 +334,13 @@
         margin-top: 4px;
         color: @txt-base;
         font-size: @font-size-soso;
+        .border-radius(@border-radius-base);
+        .behavior;
+        .behavior-relative;
         &:hover,
         &.subMeunHover{
           background: @txt-base;
           color: @power-meun-back;
-          .border-radius(@border-radius-base);
         }
       }
 

@@ -21,6 +21,7 @@ input[type="password"]{
   box-sizing: border-box;
   .border-radius(@border-radius-small);
   vertical-align: middle;
+  .behavior;
 }
 input[type="text"],
 input[type="password"] {
@@ -46,6 +47,7 @@ input[type="submit"] {
   color: @txt-base;
   border: none;
   .border-radius(@border-radius-small);
+  .behavior;
   font-size: @font-size-base;
   font-family: 'Microsoft YaHei';
   min-width: 90px;
@@ -76,6 +78,7 @@ input[type='checkbox']:checked{
 textarea{
   .border(1px; @input-border-col);
   .border-radius(@border-radius-small);
+  .behavior;
   padding: @padding-05;
 }
 //悬浮在底部
@@ -86,12 +89,127 @@ textarea{
 }
 //登录页面
 .loginBox{
+  .relative;
   .square(100%);
+  min-width: 1000px;
+  min-height: 780px;
   background: url("../images/loginBg.jpg") center center no-repeat;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  //-pie-background-size:cover;
+  .behaviorBg;
+  .loginCon{
+    .absolute;
+    .size(760px; 586px);
+    top: 50%;
+    left: 50%;
+    margin-top: -293px;
+    margin-left: -380px;
+    z-index: @zindex-base;
+  }
+  //logo
+  .loginImg{
+    .size(322px; 104px);
+    margin: 0 auto 76px auto;
+    img{
+      display: block;
+      .size(322px; 104px);
+    }
+  }
+  //登录内容
+  .loginTxt{
+    &:extend(.clearfix all);
+    .size(720px; 366px);
+    padding: @padding-20;
+    background: @txt-base;
+    .border-radius(@border-radius-base);
+    .behavior;
+    .loginLeft{
+      .left;
+      .size(338px; 366px);
+      padding: 0 28px 0 14px;
+      border-right: 1px dashed #ddd;
+    }
+    .loginRight{
+      .right;
+      .size(320px; 366px);
+    }
+    //login标题
+    .loginTit{
+      .size(100%; 40px);
+      line-height: 40px;
+      .align(center);
+      font-size: @font-size-large;
+      margin: 28px 0;
+      color: @gray-cont;
+      a{
+        display: inline-block;
+        .size(100px; 40px);
+        line-height: 40px;
+        font-size: @font-size-large;
+        color: @login-tit-col;
+        font-weight: bold;
+        .align(center);
+        margin: 0 @margin-10;
+        &.loginHover{
+          span{
+            padding-bottom: @padding-05;
+            border-bottom: 1px solid @login-tit-col;
+          }
+        }
+      }
+    }
+    //form表单
+    .formInput{
+      .relative;
+      .size(100%; 54px);
+      margin-bottom: 14px;
+      .InputTxt{
+        border: none;
+        .size(338px; 54px);
+        line-height: 40px;
+        padding: 7px 14px 7px 54px;
+        font-size: @font-size-large;
+        &.userName{
+          background: url("../images/user_bg.png") 0 0 no-repeat;
+        }
+        &.passWord{
+          background: url("../images/pass_bg.png") 0 0 no-repeat;
+        }
+        &:focus{
+          &.userName{
+            background: url("../images/user_bg_h.png") 0 0 no-repeat;
+          }
+          &.passWord{
+            background: url("../images/pass_bg_h.png") 0 0 no-repeat;
+          }
+        }
+      }
+    }
+    //login btn
+    .formBtnBox{
+      .size(338px; 60px);
+      margin-top:45px;
+      .formBtn{
+        .size(338px; 60px);
+        font-size: @font-size-h3;
+        line-height: 45px;
+        background: @login-btn-bg;
+        .border-radius(@border-radius-large);
+        -webkit-box-shadow: 0 8px 6px #e7e7e7;
+        -moz-box-shadow: 0 8px 6px  #e7e7e7;
+        box-shadow: 0 8px 6px  #e7e7e7;
+        &:hover{
+          background: @login-btn-bg-h;
+        }
+      }
+    }
+  }
 }
-
+//banner图切换
+.swiper-container{
+  .size(320px; 170px);
+}
 
 /*整体框架样式*/
 .mainBox{
@@ -102,7 +220,7 @@ textarea{
   bottom: 0;
   .size(100%; 100%);
   background: @blue-body;
-  min-width: 1300px;
+  min-width: 1200px;
 }
 .headerBox{
   &:extend(.clearfix all);
@@ -433,7 +551,8 @@ textarea{
   .size(60px; 22px);
   line-height: 22px;
   .border(1px; @txt-base);
-  .border-radius(2px);
+  .border-radius(@border-radius-small);
+  .behavior;
   color: @txt-base;
   .align(center);
   font-size: @font-size-small;
@@ -745,6 +864,7 @@ textarea{
         .border(1px; @blue-nav-bg);
         padding: 0 @padding-10;
         .border-radius(20px);
+        .behavior;
       }
     }
     .spreadRig{
@@ -871,6 +991,8 @@ textarea{
     padding: 0 @padding-10;
     margin-left: @margin-10;
     cursor: pointer;
+    .behavior;
+    .behavior-relative;
     &:hover{
       color: @txt-base;
       background: @blue-btn;
@@ -972,6 +1094,7 @@ label.formError{
   .fg-button {
     .border(1px; @border-base);
     .border-radius(@border-radius-large);
+    .behavior;
     box-sizing: border-box;
     color: @gray-dark;
     cursor: pointer;

@@ -3,14 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>全房通公寓管理系统</title>
+    <!--banner图切换样式-->
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <!--主样式表-->
     <link rel="stylesheet" href="css/models.css">
 </head>
 <body>
 <!--登录主体内容-->
 <div class="loginBox">
-    123
+    <div class="loginCon">
+        <!--logo-->
+        <div class="loginImg"><img src="images/logo.png" alt=""></div>
+        <!--end logo-->
+        <!--login-->
+        <div class="loginTxt">
+            <!--login left-->
+            <div class="loginLeft">
+                <!--标题-->
+                <div class="loginTit"><a class="loginHover" href="javascript:void(0);"><span>中文</span></a>|<a href="javascript:void(0);"><span>English</span></a></div>
+                <!--form表单 中文-->
+                <div class="loginCh">
+                    <p class="formInput"><input class="InputTxt userName" name="" type="text" placeholder="请输入手机号"></p>
+                    <p class="formInput"><input class="InputTxt passWord" name="" type="password" placeholder="请输入密码"></p>
+                    <p class="formBtnBox"><input class="formBtn" name="" type="button" value="登 录"></p>
+                </div>
+                <!--form表单 English-->
+                <div class="loginEn hide">
+                    <p class="formInput"><input class="InputTxt userName" name="" type="text" placeholder="Log-in name"></p>
+                    <p class="formInput"><input class="InputTxt passWord" name="" type="password" placeholder="Password"></p>
+                    <p class="formBtnBox"><input class="formBtn" name="" type="button" value="Login"></p>
+                </div>
+            </div>
+            <!--end login left-->
+            <!--login right-->
+            <div class="loginRight">
+                <!--banner图切换-->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="pic/ban_1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="pic/ban_2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="pic/ban_3.jpg" alt=""></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!--end banner图切换-->
+            </div>
+            <!--end login right-->
+        </div>
+        <!--end login-->
+    </div>
 </div>
 <!--end 登录主体内容-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!--[if lt IE 10]>
+<script type="text/javascript" src="js/placeholder/placeholder.js"></script>
+<![endif]-->
+<!--banner图切换-->
+<script type="text/javascript" src="js/swiper/swiper.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //中引文切换
+        $('.loginTit').on('click','a',function(){
+            var aTxt = $(this).text();
+            $(this).addClass('loginHover').siblings().removeClass('loginHover');
+            if(aTxt == "中文"){
+                $('.loginCh').removeClass('hide');
+                $('.loginEn').addClass('hide');
+            }else{
+                $('.loginCh').addClass('hide');
+                $('.loginEn').removeClass('hide');
+            }
+        });
+        //banner图切换
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 0,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            }
+        });
+    })
+</script>
 </body>
 </html>

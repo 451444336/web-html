@@ -246,3 +246,15 @@ em {
 .align(@align) {
   text-align: @align;
 }
+//支持css3属性
+.behaviorBg{
+  -ms-behavior: url("backgroundsize.min.htc");
+  behavior: url("backgroundsize.min.htc");
+}
+.behavior{
+  behavior: url("PIE.htc");
+}
+.behavior-relative{
+  .relative;
+  z-index: 1;
+}
