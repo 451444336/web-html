@@ -88,6 +88,36 @@
     }
   }
 }
+//搜索条件
+.searchTerm{
+  .size(100%; auto);
+  min-height: 40px;
+  margin-bottom: @margin-10;
+  .searchTab{
+    .size(100%; auto);
+    table-layout: fixed;
+    margin: 0 auto;
+    tr th,
+    tr td {
+      font-size: @font-size-base;
+      vertical-align: middle;
+      height: 40px;
+      .align(left);
+    }
+    tr th {
+       .size(90px; 40px);
+      .align(right);
+     }
+  }
+  .tabSearchBtn{
+    width: 110px;
+    line-height: inherit;
+    background: url("../images/tabsearchbtn-icon.png") 30px center  no-repeat @blue-btn;
+    font-size: @font-size-base;
+    text-indent: 20px;
+    .behavior-relative;
+  }
+}
 //table列表
 .wareList{
   .size(99.7%; auto);
@@ -98,8 +128,9 @@
     font-size: @font-size-base;
     vertical-align: middle;
     height: 40px;
-    text-align: center;
+    .align(center);
     .border(1px; @tabel-border);
+    color: @gray-con;
     .text-overflow;
     &.tableShow{
       overflow: inherit;
@@ -115,6 +146,7 @@
   }
   tr th {
     background: @tabel-header;
+    color: @gray-dark;
     &.operationTh{
       .size(90px; 40px);
     }
@@ -431,5 +463,6 @@ label.labelRed{
   }
   &:hover{
     background: @blue-btn-h;
+    color: @txt-base;
   }
 }
