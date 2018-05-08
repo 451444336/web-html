@@ -240,15 +240,15 @@
   .userFramework{
     .size(240px; 100%);
     background: @txt-base;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 .userRightContent{
   display: table-cell;
   padding-top: @padding-10;
   height: 98%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  .box-sizing;
   overflow: hidden;
   vertical-align:top;
   line-height: 0;
@@ -464,5 +464,92 @@ label.labelRed{
   &:hover{
     background: @blue-btn-h;
     color: @txt-base;
+  }
+}
+//房态图
+.roomStateTit{
+  .size(100%; 40px);
+  line-height: 40px;
+  .border-bottom(1px; @input-border-col);
+  color: @subtop-btn-col;
+  font-size: @font-size-base;
+  text-indent: 20px;
+}
+//房态图列表
+.roomStateList{
+  &:extend(.clearfix all);
+  .size(100%; auto);
+  padding: 0 @padding-20;
+  .box-sizing;
+  border-bottom: 1px dashed @input-border-col;
+  &:last-child{
+    border-bottom:none;
+  }
+  li{
+    .left;
+    .size(196px; 122px);
+    .border(1px; @input-border-col);
+    .border-radius(@border-radius-large);
+    margin: @margin-10;
+    .behavior;
+    .behavior-relative;
+    color: @search-txt;
+    font-size: @font-size-small;
+    overflow: hidden;
+    //标题
+    h2{
+      .size(auto; 40px);
+      line-height: 40px;
+      font-size: @font-size-large;
+      font-weight: normal;
+      padding: 0 @padding-30 0 @padding-10;
+      .text-overflow;
+      span{
+        font-size: @font-size-small;
+      }
+    }
+    //定价
+    .price{
+      padding: 0 @padding-10;
+      .size(auto; 40px);
+      line-height: 40px;
+      .text-overflow;
+    }
+    //描述
+    .idleTxt{
+      .size(auto; 34px);
+      background: @tabel-even;
+      padding: 0 @padding-10;
+      line-height: 34px;
+      margin-top: 8px;
+      border-top: 1px dashed #d4d4d4;
+      .border-bottom-radius(@border-radius-large);
+      span{
+        .left;
+        .size(28%; 34px);
+        .align(center);
+        overflow: hidden;
+        &.txtLeft{
+          .size(44%; 34px);
+          .align(left);
+        }
+      }
+    }
+    //标签
+    .labelType{
+      display: block;
+      .absolute;
+      .square(42px);
+      right: 0;
+      top: 0;
+      //未租
+      &.norentIcon{
+        background: url("../images/norent_icon.png") 0 0 no-repeat;
+      }
+      //已定
+      &.endfix{
+        background: url("../images/endfix_icon.png") 0 0 no-repeat;
+      }
+    }
   }
 }

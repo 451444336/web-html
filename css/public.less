@@ -16,9 +16,7 @@ input[type="password"]{
   font-size: @font-size-small;
   color: @gray-con;
   .border(1px; @input-border-col);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  .box-sizing;
   .border-radius(@border-radius-small);
   vertical-align: middle;
   .behavior;
@@ -53,9 +51,7 @@ input[type="submit"] {
   min-width: 90px;
   padding: 0 5px;
   background-color: @blue-btn;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  .box-sizing;
   cursor: pointer;
   &:hover {
     background-color: @blue-btn-h;
@@ -264,9 +260,7 @@ textarea{
   padding: 14px;
   margin-top: 18px;
   background: @login-dow-bg;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  .box-sizing;
   .downTxt{
     .size(100%; 30px);
     line-height: 30px;
@@ -323,6 +317,77 @@ textarea{
   }
 }
 
+/*错误页面*/
+.errorBox{
+  .relative;
+  .square(100%);
+}
+//错误返回按钮
+.errorBtn{
+  .size(100%; 40px);
+  margin-top: @margin-20;
+  .returnBtn{
+    display: block;
+    .size(180px; 38px);
+    line-height: 38px;
+    margin: 0 auto;
+    color: @error-404-btn;
+    font-size: @font-size-large;
+    .align(center);
+    .border(1px; @error-404-btn);
+    .border-radius(50px);
+    .behavior;
+    .behavior-relative;
+    &:hover{
+      background: @error-404-btn;
+      color: @txt-base;
+    }
+  }
+}
+//404错误
+.errorCon{
+  .absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -290px;
+  margin-left: -450px;
+  .size(900px; 580px);
+  //404图片
+  .errorImg{
+    .size(900px; 520px);
+    img{
+      display: block;
+      .size(900px; 514px);
+    }
+  }
+}
+//500错误
+.errorCon_one{
+  .absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -255px;
+  margin-left: -353px;
+  .size(706px; 510px);
+  //404图片
+  .errorImg{
+    .size(706px; 450px);
+    img{
+      display: block;
+      .size(706px; 450px);
+    }
+  }
+  //按钮
+  .errorBtn{
+    .size(410px; 40px);
+    margin: @margin-20 auto 0 auto;
+    .returnBtn{
+      .left;
+      &:extend(.errorBtn .returnBtn all);
+      margin: 0 @margin-10;
+    }
+  }
+}
 /*整体框架样式*/
 .mainBox{
   .absolute;
@@ -1096,9 +1161,7 @@ textarea{
   color: @layer-con-tit;
   margin: @margin-10 0;
   padding-left: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  .box-sizing;
   &:first-child{
     margin-top: 0;
   }
@@ -1217,7 +1280,7 @@ label.formError{
     .border(1px; @border-base);
     .border-radius(@border-radius-large);
     .behavior;
-    box-sizing: border-box;
+    .box-sizing;
     color: @gray-dark;
     cursor: pointer;
     margin-right: 5px;

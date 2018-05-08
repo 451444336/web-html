@@ -143,7 +143,8 @@ em {
 .powerMeunBox .mainMeun,
 .powerMeunBox .powerSubMeun,
 .subPowerTit,
-.powerOptionList {
+.powerOptionList,
+.roomStateList {
   *zoom: 1;
 }
 .clearfix:before,
@@ -191,7 +192,9 @@ em {
 .subPowerTit:before,
 .subPowerTit:after,
 .powerOptionList:before,
-.powerOptionList:after {
+.powerOptionList:after,
+.roomStateList:before,
+.roomStateList:after {
   content: " ";
   display: table;
 }
@@ -217,7 +220,8 @@ em {
 .powerMeunBox .mainMeun:after,
 .powerMeunBox .powerSubMeun:after,
 .subPowerTit:after,
-.powerOptionList:after {
+.powerOptionList:after,
+.roomStateList:after {
   clear: both;
   visibility: hidden;
   height: 0;
@@ -244,6 +248,11 @@ em {
 .behavior-relative {
   position: relative;
   z-index: 1;
+}
+.box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .bodyBack {
   background: #edeff4;
@@ -586,6 +595,85 @@ textarea {
 .downloadBox .downloadCon .downloadConRight .downloadBtn:hover .icon_pc,
 .downloadBox .downloadCon .downloadConRight .downloadBtn.dowHover .icon_pc {
   background-position: -60px -300px;
+}
+/*错误页面*/
+.errorBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.errorBtn {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+.errorBtn .returnBtn,
+.errorCon_one .errorBtn .returnBtn {
+  display: block;
+  width: 180px;
+  height: 38px;
+  line-height: 38px;
+  margin: 0 auto;
+  color: #99a8b1;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #99a8b1;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  behavior: url("PIE.htc");
+  position: relative;
+  z-index: 1;
+}
+.errorBtn .returnBtn:hover,
+.errorCon_one .errorBtn .returnBtn:hover {
+  background: #99a8b1;
+  color: #fff;
+}
+.errorCon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -290px;
+  margin-left: -450px;
+  width: 900px;
+  height: 580px;
+}
+.errorCon .errorImg {
+  width: 900px;
+  height: 520px;
+}
+.errorCon .errorImg img {
+  display: block;
+  width: 900px;
+  height: 514px;
+}
+.errorCon_one {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -255px;
+  margin-left: -353px;
+  width: 706px;
+  height: 510px;
+}
+.errorCon_one .errorImg {
+  width: 706px;
+  height: 450px;
+}
+.errorCon_one .errorImg img {
+  display: block;
+  width: 706px;
+  height: 450px;
+}
+.errorCon_one .errorBtn {
+  width: 410px;
+  height: 40px;
+  margin: 20px auto 0 auto;
+}
+.errorCon_one .errorBtn .returnBtn {
+  float: left;
+  margin: 0 10px;
 }
 /*整体框架样式*/
 .mainBox {
@@ -1509,6 +1597,8 @@ label.formError {
   -moz-border-radius: 6px;
   border-radius: 6px;
   behavior: url("PIE.htc");
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: #333333;
   cursor: pointer;
@@ -1867,6 +1957,8 @@ label.formError {
   width: 240px;
   height: 100%;
   background: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .userRightContent {
   display: table-cell;
@@ -2095,4 +2187,105 @@ label.labelRed {
 .operateBtn:hover {
   background: #458bff;
   color: #fff;
+}
+.roomStateTit {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #0d2c56;
+  font-size: 14px;
+  text-indent: 20px;
+}
+.roomStateList {
+  width: 100%;
+  height: auto;
+  padding: 0 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.roomStateList:last-child {
+  border-bottom: none;
+}
+.roomStateList li {
+  float: left;
+  width: 196px;
+  height: 122px;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  margin: 10px;
+  behavior: url("PIE.htc");
+  position: relative;
+  z-index: 1;
+  color: #5e6d82;
+  font-size: 12px;
+  overflow: hidden;
+}
+.roomStateList li h2 {
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 0 30px 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.roomStateList li h2 span {
+  font-size: 12px;
+}
+.roomStateList li .price {
+  padding: 0 10px;
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.roomStateList li .idleTxt {
+  width: auto;
+  height: 34px;
+  background: #f9f9f9;
+  padding: 0 10px;
+  line-height: 34px;
+  margin-top: 8px;
+  border-top: 1px dashed #d4d4d4;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.roomStateList li .idleTxt span {
+  float: left;
+  width: 28%;
+  height: 34px;
+  text-align: center;
+  overflow: hidden;
+}
+.roomStateList li .idleTxt span.txtLeft {
+  width: 44%;
+  height: 34px;
+  text-align: left;
+}
+.roomStateList li .labelType {
+  display: block;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  right: 0;
+  top: 0;
+}
+.roomStateList li .labelType.norentIcon {
+  background: url("../images/norent_icon.png") 0 0 no-repeat;
+}
+.roomStateList li .labelType.endfix {
+  background: url("../images/endfix_icon.png") 0 0 no-repeat;
 }
