@@ -96,14 +96,6 @@ $(function(){
     },function(){
         $('.subHeadMenuList').hide();
     });
-    //table列表操作菜单
-    $('.operationList li:first-child').find('.subOperMenu').show();
-    $('.wareList li').hover(function(){
-        $(this).parents('.operationList').find('.js_operMenu').removeClass('operHover');
-        $(this).parents('.operationList').find('.subOperMenu').hide();
-        $(this).find('.subOperMenu').show();
-        $(this).find('.js_operMenu').addClass('operHover');
-    });
     //table列表操作按钮
     $('.wareList').on('click', '.operationBtn', function(event){
         //取消事件冒泡
@@ -123,6 +115,14 @@ $(function(){
             //$('#divTop').slideUp('slow');   //滑动消失
             $('.operationList').addClass('hide');          //淡出消失
         }
+    });
+    //table列表操作菜单
+    $('.operationList li:first-child').find('.subOperMenu').show();
+    $('.wareList').on('mouseenter',' li',function(){
+        $(this).parents('.operationList').find('.js_operMenu').removeClass('operHover');
+        $(this).parents('.operationList').find('.subOperMenu').hide();
+        $(this).find('.subOperMenu').show();
+        $(this).find('.js_operMenu').addClass('operHover');
     });
     //table 隔行变色
     $(".wareList tr:nth-child(even)").addClass("trBack");

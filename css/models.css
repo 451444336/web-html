@@ -99,6 +99,10 @@ button {
 input::-ms-clear {
   display: none;
 }
+input:focus {
+  outline: none;
+  border: none;
+}
 .left {
   float: left;
 }
@@ -144,7 +148,8 @@ em {
 .powerMeunBox .powerSubMeun,
 .subPowerTit,
 .powerOptionList,
-.roomStateList {
+.roomStateList,
+.roomFlowStop {
   *zoom: 1;
 }
 .clearfix:before,
@@ -194,7 +199,9 @@ em {
 .powerOptionList:before,
 .powerOptionList:after,
 .roomStateList:before,
-.roomStateList:after {
+.roomStateList:after,
+.roomFlowStop:before,
+.roomFlowStop:after {
   content: " ";
   display: table;
 }
@@ -221,7 +228,8 @@ em {
 .powerMeunBox .powerSubMeun:after,
 .subPowerTit:after,
 .powerOptionList:after,
-.roomStateList:after {
+.roomStateList:after,
+.roomFlowStop:after {
   clear: both;
   visibility: hidden;
   height: 0;
@@ -272,6 +280,8 @@ input[type="password"] {
   border-radius: 2px;
   vertical-align: middle;
   behavior: url("PIE.htc");
+  position: relative;
+  z-index: 1;
 }
 input[type="text"],
 input[type="password"] {
@@ -322,11 +332,28 @@ input[type='checkbox'] {
   height: 14px;
   background: url("../images/checkboxBg.jpg") no-repeat;
   -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
   border-radius: 2px;
   outline: none;
 }
 input[type='checkbox']:checked {
   background: url("../images/checkboxBg_h.jpg") no-repeat;
+}
+input[type='radio'] {
+  width: 12px;
+  height: 12px;
+  background: url("../images/radioBg.png") no-repeat;
+  -webkit-appearance: none;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+input[type='radio']:checked {
+  background: url("../images/radioBg_h.png") no-repeat;
+  outline: none;
 }
 textarea {
   border: 1px solid #e5e5e5;
@@ -1227,6 +1254,7 @@ textarea {
   height: auto;
 }
 .searchTerm .searchBtnBox {
+  position: relative;
   width: 100%;
   height: 30px;
   margin-top: 10px;
@@ -1239,6 +1267,8 @@ textarea {
   text-align: center;
   font-size: 14px;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 .searchTerm .searchBtnBox .searchBtn {
   color: #fff;
@@ -1740,6 +1770,12 @@ label.formError {
   padding: 0 15px;
   font-size: 14px;
   margin-right: 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  behavior: url("PIE.htc");
+  position: relative;
+  z-index: 1;
 }
 .subTopLeft .subTopBtn.subHover,
 .subTopLeft .subTopBtn:hover {
@@ -1883,6 +1919,8 @@ label.formError {
   -moz-border-radius: 2px;
   border-radius: 2px;
   behavior: url("PIE.htc");
+  position: relative;
+  z-index: 1;
 }
 .operationBox .operationList,
 .operationBox .subOperMenu {
@@ -2040,10 +2078,14 @@ label.formError {
   color: #60666e;
   behavior: url("PIE.htc");
 }
-.powerBtnBox .powerBtn:hover {
+.powerBtnBox .powerBtn:hover,
+.powerBtnBox .powerBtn.actionBtn {
   background: #92bbff;
   color: #fff;
   border: 1px solid #92bbff;
+}
+.powerBtnBox .powerBtn.actionBtn:hover {
+  background: #458bff;
 }
 .btnCenter {
   text-align: center;
@@ -2288,4 +2330,61 @@ label.labelRed {
 }
 .roomStateList li .labelType.endfix {
   background: url("../images/endfix_icon.png") 0 0 no-repeat;
+}
+.roomFlowStop {
+  width: 690px;
+  height: 30px;
+  margin: 0 auto 10px auto;
+}
+.roomFlowStop li {
+  float: left;
+  width: 138px;
+  height: 30px;
+  line-height: 30px;
+  background: url("../images/fliw_cent.png") 0 0 no-repeat;
+  text-align: center;
+  font-size: 13px;
+  color: #999999;
+}
+.roomFlowStop li.roomFrist {
+  background: url("../images/fliw_left.png") 0 0 no-repeat;
+  color: #fff;
+}
+.roomFlowStop li.roomLast {
+  background: url("../images/fliw_right.png") 0 0 no-repeat;
+}
+.property {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.propRadio {
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  font-size: 14px;
+  color: #666666;
+  margin: 0 15px 0 5px;
+}
+.propRadio input[type="radio"] {
+  vertical-align: top;
+  margin: 9px 4px;
+}
+.textareaBox {
+  width: 100%;
+  height: 50px;
+}
+.textareaBox textarea {
+  width: 99.5%;
+  height: 40px;
+  padding: 5px 0.5%;
+}
+.pactSelect {
+  float: left !important;
+  width: 20%;
+}
+.pactTxt {
+  float: left;
+  line-height: 30px;
+  margin: 0 5px;
 }

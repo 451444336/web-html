@@ -20,6 +20,7 @@ input[type="password"]{
   .border-radius(@border-radius-small);
   vertical-align: middle;
   .behavior;
+  .behavior-relative;
 }
 input[type="text"],
 input[type="password"] {
@@ -65,11 +66,24 @@ input[type='checkbox']{
   .square(14px);
   background: url("../images/checkboxBg.jpg") no-repeat;
   -webkit-appearance:none;
-  border-radius: 2px;
+  .border-radius(@border-radius-small);
   outline: none;
 }
 input[type='checkbox']:checked{
   background: url("../images/checkboxBg_h.jpg") no-repeat;
+}
+input[type='radio']{
+  .square(12px);
+  background: url("../images/radioBg.png") no-repeat;
+  -webkit-appearance:none;
+  .border-radius(20px);
+  outline: none;
+  border: none;
+}
+input[type='radio']:checked{
+  background: url("../images/radioBg_h.png") no-repeat;
+  //border: none;
+  outline: none;
 }
 textarea{
   .border(1px; @input-border-col);
@@ -926,6 +940,7 @@ textarea{
     }
   }
   .searchBtnBox{
+    .relative;
     &:extend(.clearfix all);
     .size(100%; 30px);
     margin-top: @margin-10;
@@ -936,6 +951,7 @@ textarea{
       .align(center);
       font-size: @font-size-base;
       cursor: pointer;
+      .behavior-relative;
     }
     .searchBtn{
       color: @txt-base;

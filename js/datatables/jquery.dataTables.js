@@ -3124,7 +3124,7 @@
                 ) {
                     nTd.innerHTML = _fnGetCellData( oSettings, iRow, i, 'display' );
                     //console.log(oSettings.json.data[i]);
-                    nTd.setAttribute('title',nTd.innerText);//给td添加title属性
+                    //nTd.setAttribute('title',nTd.innerText);//给td添加title属性
                     //nTd.attr('class':'ph_tableShow').removeAttribute('title','');
                 }
 

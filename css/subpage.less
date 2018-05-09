@@ -48,6 +48,9 @@
     padding: 0 @padding-15;
     font-size: @font-size-base;
     margin-right: @margin-10;
+    .border-radius(@border-radius-small);
+    .behavior;
+    .behavior-relative;
     &.subHover,
     &:hover{
       color: @txt-base;
@@ -178,6 +181,7 @@
     background: url("../images/operation.png") 45px center no-repeat @blue-btn;
     .border-radius(@border-radius-small);
     .behavior;
+    .behavior-relative;
   }
   .operationList,
   .subOperMenu{
@@ -317,10 +321,16 @@
     .border(1px; @power-bor-col);
     color: @layer-con-tit;
     .behavior;
-    &:hover{
+    &:hover,
+    &.actionBtn{
       background: @blue-btn;
       color: @txt-base;
       .border(1px; @blue-btn);
+    }
+    &.actionBtn{
+      &:hover{
+        background: @blue-btn-h;
+      }
     }
   }
 }
@@ -552,4 +562,60 @@ label.labelRed{
       }
     }
   }
+}
+//添加房源
+.roomFlowStop{
+  &:extend(.clearfix all);
+  .size(690px; 30px);
+  margin: 0 auto @margin-10 auto;
+  li{
+    .left;
+    .size(138px; 30px);
+    line-height: 30px;
+    background: url("../images/fliw_cent.png") 0 0 no-repeat;
+    .align(center);
+    font-size: @font-size-soso;
+    color: @gray-cont;
+    &.roomFrist{
+      background: url("../images/fliw_left.png") 0 0 no-repeat;
+      color: @txt-base;
+    }
+    &.roomLast{
+      background: url("../images/fliw_right.png") 0 0 no-repeat;
+    }
+  }
+}
+.property{
+  .size(100%; 30px);
+  line-height: 30px;
+}
+//单选input
+.propRadio{
+  display: inline-block;
+  .size(auto; 30px);
+  font-size: @font-size-base;
+  color: @gray-con;
+  margin: 0 @margin-15 0 @margin-05;
+  input[type="radio"]{
+    vertical-align: top;
+    margin: 9px 4px;
+  }
+}
+//备注信息
+.textareaBox{
+  .size(100%; 50px);
+  textarea{
+    .size(99.5%; 40px);
+    padding: @padding-05 .5%
+  }
+}
+//合同期限
+.pactSelect{
+  .left !important;
+  width: 20%;
+}
+.pactTxt{
+  .left;
+  line-height: 30px;
+  margin: 0 @margin-05;
 }
