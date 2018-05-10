@@ -35,26 +35,41 @@
                 <li>数据统计</li>
                 <li>设置管理</li>
             </ul>
-            <ul class="powerSubMeun">
-                <li><a class="link_subMeun" href="javascript:void(0);">整租管理</a></li>
-                <li><a class="link_subMeun" href="javascript:void(0);">合租管理</a></li>
-                <li><a class="link_subMeun" href="javascript:void(0);">集中管理</a></li>
-                <li><a class="link_subMeun" href="javascript:void(0);">储备房源</a></li>
-                <li><a class="link_subMeun" href="javascript:void(0);">储备客源</a></li>
-                <li><a class="link_subMeun" href="javascript:void(0);">财务管理</a></li>
-                <li><a class="link_subMeun" href="javascript:void(0);">维修保洁</a></li>
-            </ul>
+            <div class="subMeunBox">
+                <!--租凭管理-->
+                <ul class="powerSubMeun" id="mainMeun_1">
+                    <li><a class="link_subMeun" href="javascript:void(0);">整租管理</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">合租管理</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">集中管理</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">储备房源</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">储备客源</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">财务管理</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">维修保洁</a></li>
+                </ul>
+                <!--end 租凭管理-->
+                <!--财务管理-->
+                <ul class="powerSubMeun" id="mainMeun_2">
+                    <li><a class="link_subMeun" href="javascript:void(0);">整租管理1</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">合租管理1</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">集中管理1</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">储备房源1</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">储备客源1</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">财务管理1</a></li>
+                    <li><a class="link_subMeun" href="javascript:void(0);">维修保洁1</a></li>
+                </ul>
+                <!--end 财务管理-->
+            </div>
         </div>
         <!--end 权限菜单-->
         <!--使用模版权限-->
         <div class="powerBtnBox">
-            <input class="powerBtn" type="button" value="全选查看权限"><input class="powerBtn" type="button" value="全选操作权限"><input class="powerBtn" type="button" value="全选删除权限">
+            <input class="powerBtn JS_lookBtn" type="button" value="全选查看权限"><input class="powerBtn" type="button" value="全选操作权限"><input class="powerBtn" type="button" value="全选删除权限">
         </div>
         <!--end 使用模版权限-->
         <!--权限管理-->
         <div class="powerAllBox">
             <!--租凭管理-->
-            <div class="powerOptionBox">
+            <div class="powerOptionBox" id="subMeun_1">
                 <!--整租管理-->
                 <div class="powerOption">
                     <h2 class="PopupTitle margin0">整租管理</h2>
@@ -220,7 +235,7 @@
             </div>
             <!--end 租凭管理-->
             <!--财务管理-->
-            <div class="powerOptionBox">
+            <div class="powerOptionBox" id="subMeun_2">
                 <!--财务管理1-->
                 <div class="powerOption">
                     <h2 class="PopupTitle margin0">财务管理1</h2>
@@ -438,6 +453,7 @@
             $(tabTit).children().click(function(){
                 $(this).addClass(on).siblings().removeClass(on);
                 var index = $(tabTit).children().index(this);
+                console.log(index);
                 $(tabCon).children().eq(index).show().siblings().hide();
                 if(state){
                     $('.powerOptionBox').children().show();
@@ -447,9 +463,20 @@
         }
         //权限主菜单
         tabs(".mainMeun","meunHover",".powerAllBox",true);
+        tabs(".mainMeun","meunHover",".subMeunBox",true);
         //子菜单权限
-        tabs(".powerSubMeun","subMeunHover",".powerOptionBox",false);
-    })
+        tabs('#mainMeun_1','subMeunHover','#subMeun_1',false);
+        tabs('#mainMeun_2','subMeunHover','#subMeun_2',false);
+
+        //查看权限
+        $('.powerBtnBox').on('click','.JS_lookBtn',function(){
+            if($('.look_power').find("input[type='checkbox']").is(':checked')){
+                $('.look_power').find("input[type='checkbox']").prop("checked",false);
+            }else{
+                $('.look_power').find("input[type='checkbox']").prop("checked",true);
+            }
+        });
+    });
 </script>
 </body>
 </html>

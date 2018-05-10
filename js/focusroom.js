@@ -32,7 +32,7 @@ $('.subTopBox').on('click','.subTopBtn',function(){
 });
 //登记房源-项目基本信息录入
 $('.subTopBox').on('click','.roomInfo',function(){
-    var index = layer.open({
+    layer.open({
         type: 2,
         title: '项目基本信息录入',
         skin: 'popup-title-bg', //样式类名
@@ -42,7 +42,6 @@ $('.subTopBox').on('click','.roomInfo',function(){
         btnAlign: 'c',
         content: 'qft_addroomInfo.html'
     });
-    parent.layer.iframeAuto(index);
 });
 //登记房东-项目基本信息录入
 $('.subTopBox').on('click','.masterInfo',function(){
