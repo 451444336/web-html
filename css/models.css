@@ -1764,7 +1764,7 @@ textarea {
 }
 .subTopLeft {
   float: left;
-  width: 70%;
+  width: auto;
   height: 30px;
 }
 .subTopLeft .subTopBtn {
@@ -1793,7 +1793,7 @@ textarea {
 }
 .subTopRight {
   float: right;
-  width: 30%;
+  width: auto;
   height: 30px;
   text-align: right;
 }
