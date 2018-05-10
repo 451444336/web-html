@@ -20,17 +20,21 @@
                 <!--标题-->
                 <div class="loginTit"><a class="loginHover" href="javascript:void(0);"><span>中文</span></a>|<a href="javascript:void(0);"><span>English</span></a></div>
                 <!--form表单 中文-->
-                <div class="loginCh">
-                    <p class="formInput"><input class="InputTxt userName" name="" type="text" placeholder="请输入手机号"></p>
-                    <p class="formInput"><input class="InputTxt passWord" name="" type="password" placeholder="请输入密码"></p>
-                    <p class="formBtnBox"><input class="formBtn" name="" type="button" value="登 录"></p>
-                </div>
+                <form id="loginCh" action="">
+                    <div class="loginCh">
+                        <p class="formInput"><input class="InputTxt userName validate[required,custom[phone]]" name="" type="text" placeholder="请输入手机号"></p>
+                        <p class="formInput"><input class="InputTxt passWord validate[required]" name="" type="password" placeholder="请输入密码"></p>
+                        <p class="formBtnBox"><input class="formBtn" name="" type="button" value="登 录"></p>
+                    </div>
+                </form>
                 <!--form表单 English-->
-                <div class="loginEn hide">
-                    <p class="formInput"><input class="InputTxt userName" name="" type="text" placeholder="Log-in name"></p>
-                    <p class="formInput"><input class="InputTxt passWord" name="" type="password" placeholder="Password"></p>
-                    <p class="formBtnBox"><input class="formBtn" name="" type="button" value="Login"></p>
-                </div>
+                <form id="loginEn" action="">
+                    <div class="loginEn hide">
+                        <p class="formInput"><input class="InputTxt userName validate[required,custom[phone]]" name="" type="text" placeholder="Log-in name"></p>
+                        <p class="formInput"><input class="InputTxt passWord validate[required]" name="" type="password" placeholder="Password"></p>
+                        <p class="formBtnBox"><input class="formBtn" name="" type="button" value="Login"></p>
+                    </div>
+                </form>
             </div>
             <!--end login left-->
             <!--login right-->
@@ -82,6 +86,9 @@
 <![endif]-->
 <!--banner图切换-->
 <script type="text/javascript" src="js/superslide/jquery.SuperSlide.2.1.1.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
 <script type="text/javascript">
     $(function(){
         //中引文切换
@@ -114,6 +121,17 @@
         $('.dowAnd').on('click',function(){
             $(this).addClass('dowHover').siblings().removeClass('dowHover');
             $('.downloadConLeft').find('img').attr('src','images/android.jpg')
+        });
+        //表单验证
+        $("#loginCh").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:54 0'
+        });
+        $("#loginEn").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:54 0'
         });
     })
 </script>

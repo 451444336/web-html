@@ -37,7 +37,7 @@ $('.subTopBox').on('click','.roomInfo',function(){
         title: '项目基本信息录入',
         skin: 'popup-title-bg', //样式类名
         closeBtn : 1,
-        area: ['740px','540px'],
+        area: ['740px','550px'],
         //btn:['关闭'],
         btnAlign: 'c',
         content: 'qft_addroomInfo.html'

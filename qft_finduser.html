@@ -84,7 +84,7 @@
         <table class="popupList">
             <tr>
                 <th class="fieldName"><span class="require">*</span>新密码：</th>
-                <td><input name="password" type="password" value="" placeholder="请输入新密码" required></td>
+                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
             </tr>
         </table>
     </form>
@@ -101,8 +101,8 @@
 <!--layer弹出层-->
 <script type="text/javascript" src="js/layer/layer.js"></script>
 <!--表单验证-->
-<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
 <script>
     $(function(){
         //添加用户
@@ -150,11 +150,10 @@
             });
         });
         //表单验证
-        $("#roleForm").validate({
-            onfocusout: function(element){
-                $(element).valid();
-            },
-            errorClass: 'formError'
+        $("#roleForm").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:5 0'
         });
         //修改密码
         $('.wareList').on('click','.modifyPass',function(){
@@ -163,7 +162,7 @@
                 title: '修改密码',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','375px'],
+                area: ['460px','395px'],
                 btn:['确认密码'],
                 yes: function(){
                     $('#roleForm').submit();

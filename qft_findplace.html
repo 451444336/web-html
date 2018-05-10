@@ -26,9 +26,6 @@
 <script type="text/javascript" src="js/datatables/jquery.dataTables.js"></script>
 <!--layer弹出层-->
 <script type="text/javascript" src="js/layer/layer.js"></script>
-<!--表单验证-->
-<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/validate/messages_zh.js"></script>
 <script>
     $(function(){
         //添加职位
@@ -54,13 +51,6 @@
                 btnAlign: 'c',
                 content: 'modifypower.html'
             });
-        });
-        //表单验证
-        $("#roleForm").validate({
-            onfocusout: function(element){
-                $(element).valid();
-            },
-            errorClass: 'formError'
         });
         //删除
         $('.wareList').on('click','.JS_delete',function(){

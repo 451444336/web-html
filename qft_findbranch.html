@@ -27,7 +27,7 @@
         <table class="popupList">
             <tr>
                 <th class="fieldName"><span class="require">*</span>部门名称：</th>
-                <td><input name="bumen1" type="text" value="" placeholder="请填写部门名称" required></td>
+                <td><input class="validate[required]" name="bumen1" type="text" value="" placeholder="请填写部门名称" required></td>
             </tr>
         </table>
     </form>
@@ -39,8 +39,8 @@
 <!--layer弹出层-->
 <script type="text/javascript" src="js/layer/layer.js"></script>
 <!--表单验证-->
-<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
 <script>
     $(function(){
         //添加部门
@@ -50,7 +50,7 @@
                 title: '添加部门',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','165px'],
+                area: ['460px','170px'],
                 btn:['保存','取消'],
                 yes: function(){
                     $('#roleForm').submit();
@@ -76,11 +76,10 @@
             });
         });
         //表单验证
-        $("#roleForm").validate({
-            onfocusout: function(element){
-                $(element).valid();
-            },
-            errorClass: 'formError'
+        $("#roleForm").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:5 0'
         });
         //删除
         $('.wareList').on('click','.JS_delete',function(){

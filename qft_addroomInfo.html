@@ -23,14 +23,47 @@
         <li class="roomLast">完成</li>
     </ul>
     <form id="addUserForm" action="" method="">
-        <div class="property"><label class="propRadio"><input name="property" type="radio" checked>租凭他人物业</label><label class="propRadio"><input name="property" type="radio">自持物业</label></div>
+        <div class="property"><label class="propRadio"><input class="JS_propRadio" name="property" type="radio" value="0" checked>租凭他人物业</label><label class="propRadio"><input class="JS_propRadio" name="property" type="radio" value="1">自持物业</label></div>
+        <!--物业地址-->
+        <div class="propertySite">
+            <table class="popupList">
+                <tr>
+                    <th class="fieldName"><span class="require">*</span>物业地址：</th>
+                    <td>
+                        <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
+                            <option value="">全部</option>
+                            <option value="2">重庆</option>
+                            <option value="3">四川</option>
+                            <option value="4">北京</option>
+                            <option value="5">重庆</option>
+                            <option value="6">四川</option>
+                        </select>
+                    </td>
+                    <th class="fieldName"><span class="require">*</span>所在区域：</th>
+                    <td>
+                        <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
+                            <option value="">全部</option>
+                            <option value="2">重庆</option>
+                            <option value="3">四川</option>
+                            <option value="4">北京</option>
+                            <option value="5">重庆</option>
+                            <option value="6">四川</option>
+                        </select>
+                    </td>
+                    <td><input name="" type="button" value="添加小区"></td>
+                    <th class="fieldName"><span class="require">*</span>座　　栋：</th>
+                    <td><input class="validate[required]" name="" type="text"></td>
+                </tr>
+            </table>
+        </div>
+        <!--end 物业地址-->
         <h2 class="PopupTitle">房源信息</h2>
         <table class="popupList">
             <tr>
                 <th class="fieldName"><span class="require">*</span>所属店面：</th>
                 <td>
-                    <select name="auditState" class="selectpicker" data-live-search="true">
-                        <option value="1">北京</option>
+                    <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
+                        <option value="">全部</option>
                         <option value="2">重庆</option>
                         <option value="3">四川</option>
                         <option value="4">北京</option>
@@ -40,8 +73,8 @@
                 </td>
                 <th class="fieldName"><span class="require">*</span>分　　组：</th>
                 <td>
-                    <select name="auditState" class="selectpicker" data-live-search="true">
-                        <option value="1">北京</option>
+                    <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
+                        <option value="">全部</option>
                         <option value="2">重庆</option>
                         <option value="3">四川</option>
                         <option value="4">北京</option>
@@ -50,33 +83,7 @@
                     </select>
                 </td>
                 <th class="fieldName"><span class="require">*</span>楼层编号：</th>
-                <td><input name="" type="text"></td>
-            </tr>
-            <tr>
-                <th class="fieldName"><span class="require">*</span>所在区域：</th>
-                <td>
-                    <select name="auditState" class="selectpicker" data-live-search="true">
-                        <option value="1">北京</option>
-                        <option value="2">重庆</option>
-                        <option value="3">四川</option>
-                        <option value="4">北京</option>
-                        <option value="5">重庆</option>
-                        <option value="6">四川</option>
-                    </select>
-                </td>
-                <th class="fieldName"><span class="require">*</span>物业地址：</th>
-                <td>
-                    <select name="auditState" class="selectpicker" data-live-search="true">
-                        <option value="1">北京</option>
-                        <option value="2">重庆</option>
-                        <option value="3">四川</option>
-                        <option value="4">北京</option>
-                        <option value="5">重庆</option>
-                        <option value="6">四川</option>
-                    </select>
-                </td>
-                <th class="fieldName"><span class="require">*</span>座　　栋：</th>
-                <td><input name="" type="text"></td>
+                <td><input class="validate[required]" name="" type="text"></td>
             </tr>
             <tr>
                 <th class="fieldName">开 发 商：</th>
@@ -94,7 +101,7 @@
                 <th class="fieldName">转款银行：</th>
                 <td>
                     <select name="auditState" class="selectpicker" data-live-search="true">
-                        <option value="1">北京</option>
+                        <option value="">全部</option>
                         <option value="2">重庆</option>
                         <option value="3">四川</option>
                         <option value="4">北京</option>
@@ -115,135 +122,137 @@
                 </td>
             </tr>
         </table>
-        <h2 class="PopupTitle">托管信息</h2>
-        <table class="popupList">
-            <tr>
-                <th class="fieldName"><span class="require">*</span>开始时间：</th>
-                <td class="dayBox"><input class="start_rise date" name="" type="text"></td>
-                <th class="fieldName"><span class="require">*</span>到期时间：</th>
-                <td class="dayBox"><input class="start_rise date" name="" type="text"></td>
-                <th class="fieldName_one"><span class="require">*</span>本幢/层价格：</th>
-                <td><input name="" type="text"></td>
-            </tr>
-            <tr>
-                <th class="fieldName_one"><span class="require">*</span>房屋押金：</th>
-                <td><input name="" type="text"></td>
+        <div class="depositInfo">
+            <h2 class="PopupTitle">托管信息</h2>
+            <table class="popupList">
+                <tr>
+                    <th class="fieldName"><span class="require">*</span>开始时间：</th>
+                    <td class="dayBox"><input class="start_rise date validate[required,custom[date]]" name="" type="text"></td>
+                    <th class="fieldName"><span class="require">*</span>到期时间：</th>
+                    <td class="dayBox"><input class="start_rise date validate[required,custom[date]]" name="" type="text"></td>
+                    <th class="fieldName_one"><span class="require">*</span>本幢/层价格：</th>
+                    <td><input class=" validate[required,custom[onlyNumberSp]]" name="" type="text"></td>
+                </tr>
+                <tr>
+                    <th class="fieldName_one"><span class="require">*</span>房屋押金：</th>
+                    <td><input class="validate[required]" name="" type="text"></td>
 
-                <th class="fieldName"><span class="require">*</span>合同期限：</th>
-                <td colspan="3">
-                    <select name="auditState" class="selectpicker pactSelect">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                    <span class="pactTxt">年</span>
-                    <select name="auditState" class="selectpicker pactSelect">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                    <span class="pactTxt">月</span>
-                    <select name="auditState" class="selectpicker pactSelect">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                    <span class="pactTxt">天</span>
-                </td>
-            </tr>
-            <tr>
-                <th class="fieldName_one"><span class="require">*</span>业务人员：</th>
-                <td><input name="" type="text"></td>
+                    <th class="fieldName"><span class="require">*</span>合同期限：</th>
+                    <td colspan="3">
+                        <select name="auditState" class="selectpicker pactSelect validate[required]">
+                            <option value="">全部</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <span class="pactTxt">年</span>
+                        <select name="auditState" class="selectpicker pactSelect validate[required]">
+                            <option value="">全部</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <span class="pactTxt">月</span>
+                        <select name="auditState" class="selectpicker pactSelect validate[required]">
+                            <option value="">全部</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <span class="pactTxt">天</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="fieldName_one"><span class="require">*</span>业务人员：</th>
+                    <td><input class="validate[required]" name="" type="text"></td>
 
-                <th class="fieldName">装修期限：</th>
-                <td colspan="3">
-                    <select name="auditState" class="selectpicker pactSelect">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                    <span class="pactTxt">年</span>
-                    <select name="auditState" class="selectpicker pactSelect">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                    <span class="pactTxt">月</span>
-                    <select name="auditState" class="selectpicker pactSelect">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                    <span class="pactTxt">天</span>
-                </td>
-            </tr>
-            <tr>
-                <th class="fieldName"><span class="require">*</span>录入时间：</th>
-                <td><input name="" type="text"></td>
-                <th class="fieldName">录入人员：</th>
-                <td><input name="" type="text"></td>
-                <th class="fieldName_one">递增约定：</th>
-                <td>
-                    <select name="auditState" class="selectpicker">
-                        <option value="1">无递增</option>
-                        <option value="2">有递增</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th class="fieldName"><span class="require">*</span>缴费方式：</th>
-                <td>
-                    <select name="auditState" class="selectpicker">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                </td>
-                <th class="fieldName">提　　前：</th>
-                <td>
-                    <select name="auditState" class="selectpicker">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                </td>
-                <th class="fieldName">延　　后：</th>
-                <td>
-                    <select name="auditState" class="selectpicker">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                </td>
-            </tr>
-        </table>
+                    <th class="fieldName">装修期限：</th>
+                    <td colspan="3">
+                        <select name="auditState" class="selectpicker pactSelect">
+                            <option value="">全部</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <span class="pactTxt">年</span>
+                        <select name="auditState" class="selectpicker pactSelect">
+                            <option value="">全部</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <span class="pactTxt">月</span>
+                        <select name="auditState" class="selectpicker pactSelect">
+                            <option value="">全部</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <span class="pactTxt">天</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="fieldName"><span class="require">*</span>录入时间：</th>
+                    <td><input class="JS_entryTime disabled" name="" type="text" value="2018-05-09" disabled="disabled"></td>
+                    <th class="fieldName">录入人员：</th>
+                    <td><input class="disabled" name="" type="text" value="管理员" disabled></td>
+                    <th class="fieldName_one">递增约定：</th>
+                    <td>
+                        <select name="auditState" class="selectpicker">
+                            <option value="1">无递增</option>
+                            <option value="2">有递增</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="fieldName"><span class="require">*</span>缴费方式：</th>
+                    <td>
+                        <select name="auditState" class="selectpicker validate[required]">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </td>
+                    <th class="fieldName">提　　前：</th>
+                    <td>
+                        <select name="auditState" class="selectpicker">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </td>
+                    <th class="fieldName">延　　后：</th>
+                    <td>
+                        <select name="auditState" class="selectpicker">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <h2 class="PopupTitle">备注信息</h2>
         <p class="textareaBox"><textarea name="" id="" placeholder="点击输入备注消息"></textarea></p>
     </form>
@@ -266,18 +275,41 @@
 <script type="text/javascript" src="js/datepicker/jquery.datepair.js"></script>
 <script type="text/javascript" src="js/datepicker/datepicker.js"></script>
 <!--表单验证-->
-<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
 <script>
     $(function(){
         //表单验证
-        $("#addUserForm").validate({
-            onfocusout: function(element){
-                $(element).valid();
-            },
-            errorClass: 'formError'
+        $("#addUserForm").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:5 0'
         });
-
+        //物业方式切换
+        $('.property').on('click','.JS_propRadio',function(){
+            var radioVal = $(this).val();
+            if(parseInt(radioVal) == 0){
+                $('.depositInfo').fadeIn();
+            }else{
+                $('.depositInfo').fadeOut();
+            }
+        });
+        //获取系统当前时间
+        $('.JS_entryTime').val(currentTime());
+        function currentTime(){
+            var myDate = new Date();
+            var year,month,date;
+            function p(s) {
+                return s < 10 ? '0' + s: s;
+            }
+            year = myDate.getFullYear(); //获取当前年
+            month = myDate.getMonth()+1; //获取当前月
+            date = myDate.getDate(); //获取当前日
+           // h = myDate.getHours();       //获取当前小时数(0-23)
+            //m = myDate.getMinutes();     //获取当前分钟数(0-59)
+            //s = myDate.getSeconds();
+            return year+'-'+p(month)+"-"+p(date);
+        }
     });
 </script>
 </body>

@@ -32,7 +32,7 @@
         <table class="popupList">
             <tr>
                 <th class="fieldName"><span class="require">*</span>角色名称：</th>
-                <td><input name="password" type="password" value="" placeholder="请输入角色名称" required></td>
+                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入角色名称"></td>
             </tr>
             <tr>
                 <th class="fieldName">角色描述：</th>
@@ -59,8 +59,8 @@
 <script type="text/javascript" src="js/ztree/ztree.min.js"></script>
 <script type="text/javascript" src="js/ztree/jquery.ztree.excheck.js"></script>
 <!--表单验证-->
-<script type="text/javascript" src="js/validate/jquery.validate.min.js"></script>
-<script type="text/javascript" src="js/validate/messages_zh.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
 <script>
     $(function(){
         //分配权限树形菜单配置
@@ -106,6 +106,12 @@
         ];
         //分配权限树形菜单
         $.fn.zTree.init($("#allotPower"), setting, zNodes);
+        //表单验证
+        $("#roleForm").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:5 0'
+        });
         //添加角色
         $('.subTopLeft').on('click','.JS_addRole',function(){
             layer.open({
@@ -113,7 +119,7 @@
                 title: '添加角色',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','270px'],
+                area: ['460px','280px'],
                 btn:['保存','关闭'],
                 btnAlign: 'c',
                 content: $('#qft_addRoleBox')
@@ -126,7 +132,7 @@
                 title: '编辑角色',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','270px'],
+                area: ['460px','280px'],
                 btn:['保存','关闭'],
                 btnAlign: 'c',
                 content: $('#qft_addRoleBox')

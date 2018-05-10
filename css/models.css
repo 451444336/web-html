@@ -1535,7 +1535,7 @@ textarea {
 .popupList tr td {
   position: relative;
   vertical-align: top;
-  height: 40px;
+  height: 45px;
 }
 .popupList tr td input[type="text"],
 .popupList tr td input[type="password"] {
@@ -1556,6 +1556,7 @@ textarea {
 }
 .PopupBtn {
   text-align: center;
+  margin-bottom: 10px;
 }
 .PopupBtn input[type="button"] {
   margin: 0 10px;
@@ -1568,20 +1569,26 @@ textarea {
 .PopupBtn input[type="button"].cancel:hover {
   background: #e9e9e9;
 }
-input.formError,
-select.formError {
-  border: 1px solid #fc6365;
-}
-label.formError {
-  display: none !important;
-  /*.absolute;
+/*表单验证提示*/
+.formError,
+.formError-text,
+.qft_errorTxt {
+  position: absolute;
   left: 0;
-  top: -16px;
-  background: @err-color;
-  color: @txt-base;
-  padding: 0 @padding-05;
-  line-height: 22px;
-  .border-radius(2px);*/
+  bottom: 0;
+  width: auto;
+  height: 18px;
+  line-height: 18px;
+  max-width: 100%;
+  font-size: 12px;
+  color: #fc6365;
+  overflow: hidden;
+  z-index: 1000;
+}
+.mainFrom .qft_errorTxt,
+.btn-group .qft_errorTxt,
+.formInput .qft_errorTxt {
+  bottom: -15px;
 }
 /*
 *模块：分页
@@ -2370,6 +2377,14 @@ label.labelRed {
   vertical-align: top;
   margin: 9px 4px;
 }
+.propertySite {
+  width: 100%;
+  height: 30px;
+  padding: 9px 0;
+  background: #fffdf5;
+  border: 1px solid #f2ecd2;
+  margin-top: 5px;
+}
 .textareaBox {
   width: 100%;
   height: 50px;
@@ -2378,6 +2393,7 @@ label.labelRed {
   width: 99.5%;
   height: 40px;
   padding: 5px 0.5%;
+  font-size: 14px;
 }
 .pactSelect {
   float: left !important;
