@@ -379,18 +379,20 @@
         .border-radius(@border-radius-base);
         .behavior;
         .behavior-relative;
-        &:hover,
-        &.subMeunHover{
+      }
+      &:hover,
+      &.subMeunHover{
+        .link_subMeun{
           background: @txt-base;
           color: @power-meun-back;
         }
       }
-
     }
   }
 }
 //权限选项
 .powerOptionBox{
+  .hide;
   .size(100%; 316px);
   margin-bottom: @margin-05;
   overflow: auto;
@@ -627,4 +629,9 @@ label.labelRed{
   .left;
   line-height: 30px;
   margin: 0 @margin-05;
+}
+//百度地图
+.villageBox{
+  .size(100%; 200px);
+  margin: @margin-05 0;
 }

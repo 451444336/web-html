@@ -36,7 +36,7 @@
                 <li>设置管理</li>
             </ul>
             <ul class="powerSubMeun">
-                <li><a class="link_subMeun subMeunHover" href="javascript:void(0);">整租管理</a></li>
+                <li><a class="link_subMeun" href="javascript:void(0);">整租管理</a></li>
                 <li><a class="link_subMeun" href="javascript:void(0);">合租管理</a></li>
                 <li><a class="link_subMeun" href="javascript:void(0);">集中管理</a></li>
                 <li><a class="link_subMeun" href="javascript:void(0);">储备房源</a></li>
@@ -51,172 +51,342 @@
             <input class="powerBtn" type="button" value="全选查看权限"><input class="powerBtn" type="button" value="全选操作权限"><input class="powerBtn" type="button" value="全选删除权限">
         </div>
         <!--end 使用模版权限-->
-        <!--权限选项-->
-        <div class="powerOptionBox">
-            <!--整租管理-->
-            <div class="powerOption">
-                <h2 class="PopupTitle margin0">整租管理</h2>
-                <!--查看权限-->
-                <div class="look_power">
-                    <p class="subPowerTit"><span>查看权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
+        <!--权限管理-->
+        <div class="powerAllBox">
+            <!--租凭管理-->
+            <div class="powerOptionBox">
+                <!--整租管理-->
+                <div class="powerOption">
+                    <h2 class="PopupTitle margin0">整租管理</h2>
+                    <!--查看权限-->
+                    <div class="look_power">
+                        <p class="subPowerTit"><span>查看权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 查看权限-->
+                    <!--操作权限-->
+                    <div class="operate_power">
+                        <p class="subPowerTit"><span>操作权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 操作权限-->
+                    <!--修改删除-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>修改删除</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 修改删除-->
+                    <!--特殊权限-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>特殊权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 特殊权限-->
                 </div>
-                <!--end 查看权限-->
-                <!--操作权限-->
-                <div class="operate_power">
-                    <p class="subPowerTit"><span>操作权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
+                <!--end 整租管理-->
+                <!--合租管理-->
+                <div class="powerOption">
+                    <h2 class="PopupTitle margin0">合租管理</h2>
+                    <!--查看权限-->
+                    <div class="look_power">
+                        <p class="subPowerTit"><span>查看权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 查看权限-->
+                    <!--操作权限-->
+                    <div class="operate_power">
+                        <p class="subPowerTit"><span>操作权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 操作权限-->
+                    <!--修改删除-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>修改删除</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 修改删除-->
+                    <!--特殊权限-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>特殊权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 特殊权限-->
                 </div>
-                <!--end 操作权限-->
-                <!--修改删除-->
-                <div class="delete_power">
-                    <p class="subPowerTit"><span>修改删除</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
-                </div>
-                <!--end 修改删除-->
-                <!--修改删除-->
-                <div class="delete_power">
-                    <p class="subPowerTit"><span>特殊权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
-                </div>
-                <!--end 修改删除-->
+                <!--end 合租管理-->
             </div>
-            <!--end 整租管理-->
-            <!--合租管理-->
-            <div class="powerOption">
-                <h2 class="PopupTitle margin0">整租管理</h2>
-                <!--查看权限-->
-                <div class="look_power">
-                    <p class="subPowerTit"><span>查看权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
+            <!--end 租凭管理-->
+            <!--财务管理-->
+            <div class="powerOptionBox">
+                <!--财务管理1-->
+                <div class="powerOption">
+                    <h2 class="PopupTitle margin0">财务管理1</h2>
+                    <!--查看权限-->
+                    <div class="look_power">
+                        <p class="subPowerTit"><span>查看权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 查看权限-->
+                    <!--操作权限-->
+                    <div class="operate_power">
+                        <p class="subPowerTit"><span>操作权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 操作权限-->
+                    <!--修改删除-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>修改删除</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 修改删除-->
+                    <!--特殊权限-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>特殊权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 特殊权限-->
                 </div>
-                <!--end 查看权限-->
-                <!--操作权限-->
-                <div class="operate_power">
-                    <p class="subPowerTit"><span>操作权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
+                <!--end 财务管理1-->
+                <!--财务管理2-->
+                <div class="powerOption">
+                    <h2 class="PopupTitle margin0">财务管理2</h2>
+                    <!--查看权限-->
+                    <div class="look_power">
+                        <p class="subPowerTit"><span>查看权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 查看权限-->
+                    <!--操作权限-->
+                    <div class="operate_power">
+                        <p class="subPowerTit"><span>操作权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 操作权限-->
+                    <!--修改删除-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>修改删除</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 修改删除-->
+                    <!--特殊权限-->
+                    <div class="delete_power">
+                        <p class="subPowerTit"><span>特殊权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
+                        <ul class="powerOptionList">
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
+                            <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
+                        </ul>
+                    </div>
+                    <!--end 特殊权限-->
                 </div>
-                <!--end 操作权限-->
-                <!--修改删除-->
-                <div class="delete_power">
-                    <p class="subPowerTit"><span>修改删除</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel labelRed"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
-                </div>
-                <!--end 修改删除-->
-                <!--修改删除-->
-                <div class="delete_power">
-                    <p class="subPowerTit"><span>特殊权限</span><label class="powerLabel"><input class="checkAll" name="" type="checkbox">全选</label></p>
-                    <ul class="powerOptionList">
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看财务记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看租客电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看房东电话等信息</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看退房、续约记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看欠费记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看物品增减</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看维修记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看修改记录</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看交割单</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看收支列表</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">整租统计</label></li>
-                        <li><label class="powerLabel"><input class="checkOdd" name="" type="checkbox">查看证件/合同图片</label></li>
-                    </ul>
-                </div>
-                <!--end 修改删除-->
+                <!--end 财务管理2-->
             </div>
-            <!--end 合租管理-->
+            <!--end 财务管理-->
         </div>
-        <!--end 权限选项-->
+        <!--end 权限管理-->
         <!--授权按钮-->
         <div class="powerBtnBox btnCenter margin0 fixedButton">
             <input class="powerBtn" type="button" value="授权给职位"><input class="powerBtn" type="button" value="授权给个人"><input class="powerBtn" type="button" value="关闭">
@@ -247,10 +417,6 @@
                 $('.JS_powerBtn').addClass('hide');
             }
         });
-        //权限主菜单
-        $('.mainMeun').on('click','li',function(){
-            $(this).addClass('meunHover').siblings('li').removeClass('meunHover');
-        });
         //全选
         $('.checkAll').on('click',function(){
             if($(this).is(':checked')){
@@ -259,6 +425,30 @@
                 $(this).parents('.subPowerTit').siblings('ul').find('.checkOdd').prop("checked",false);
             }
         });
+        /*tab标签切换*/
+        function tabs(tabTit,on,tabCon,state){
+            if(state){
+                $(tabCon).each(function(){
+                    $(this).children().eq(0).show();
+                });
+                $(tabTit).each(function(){
+                    $(this).children().eq(0).addClass(on);
+                });
+            }
+            $(tabTit).children().click(function(){
+                $(this).addClass(on).siblings().removeClass(on);
+                var index = $(tabTit).children().index(this);
+                $(tabCon).children().eq(index).show().siblings().hide();
+                if(state){
+                    $('.powerOptionBox').children().show();
+                    $('.powerSubMeun').children().removeClass('subMeunHover');
+                }
+            });
+        }
+        //权限主菜单
+        tabs(".mainMeun","meunHover",".powerAllBox",true);
+        //子菜单权限
+        tabs(".powerSubMeun","subMeunHover",".powerOptionBox",false);
     })
 </script>
 </body>

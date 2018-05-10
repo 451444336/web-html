@@ -279,6 +279,7 @@ input[type="password"] {
   -moz-border-radius: 2px;
   border-radius: 2px;
   vertical-align: middle;
+  background: #fff;
   behavior: url("PIE.htc");
   position: relative;
   z-index: 1;
@@ -2149,12 +2150,13 @@ textarea {
   position: relative;
   z-index: 1;
 }
-.powerMeunBox .powerSubMeun li .link_subMeun:hover,
-.powerMeunBox .powerSubMeun li .link_subMeun.subMeunHover {
+.powerMeunBox .powerSubMeun li:hover .link_subMeun,
+.powerMeunBox .powerSubMeun li.subMeunHover .link_subMeun {
   background: #fff;
   color: #7caafa;
 }
 .powerOptionBox {
+  display: none;
   width: 100%;
   height: 316px;
   margin-bottom: 5px;
@@ -2403,4 +2405,9 @@ label.labelRed {
   float: left;
   line-height: 30px;
   margin: 0 5px;
+}
+.villageBox {
+  width: 100%;
+  height: 200px;
+  margin: 5px 0;
 }
