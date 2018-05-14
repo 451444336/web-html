@@ -113,9 +113,9 @@
      }
   }
   .tabSearchBtn{
-    width: 110px;
+    width: 90px;
     line-height: inherit;
-    background: url("../images/tabsearchbtn-icon.png") 30px center  no-repeat @blue-btn;
+    background: url("../images/tabsearchbtn-icon.png") 20px center  no-repeat @blue-btn;
     font-size: @font-size-base;
     text-indent: 20px;
     .behavior-relative;
@@ -365,6 +365,7 @@
     }
   }
   .powerSubMeun{
+    .hide;
     background: @power-submeun-back;
     li{
       .size(80px; 30px);
@@ -392,7 +393,6 @@
 }
 //权限选项
 .powerOptionBox{
-  .hide;
   .size(100%; 316px);
   margin-bottom: @margin-05;
   overflow: auto;
@@ -443,6 +443,10 @@ label.labelRed{
       line-height: 24px;
       input[type='checkbox']{
         margin: 5px;
+      }
+      input[type='radio']{
+        vertical-align: top;
+        margin: 6px 5px;
       }
     }
   }
