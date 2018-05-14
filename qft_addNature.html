@@ -11,29 +11,30 @@
     <link rel="stylesheet" href="css/models.css">
 </head>
 <body>
-<!--子页顶部内容-->
-<div class="subTopBox">
-    <div class="subTopLeft">
-        <a class="subTopBtn subHover JS_addEegion" href="javascript:void(0);">添加入住性质</a><a class="subTopBtn" href="javascript:void(0);">还原字典</a><a class="subTopBtn JS_sortOne" href="javascript:void(0);">一级字典排序</a>
+<div class="subMainContent">
+    <!--子页顶部内容-->
+    <div class="subTopBox">
+        <div class="subTopLeft">
+            <a class="subTopBtn subHover JS_addEegion" href="javascript:void(0);">添加入住性质</a><a class="subTopBtn" href="javascript:void(0);">还原字典</a><a class="subTopBtn JS_sortOne" href="javascript:void(0);">一级字典排序</a>
+        </div>
+        <div class="subTopRight">
+            <span class="resizeBtn">刷新缓存</span>
+        </div>
     </div>
-    <div class="subTopRight">
-        <span class="resizeBtn">刷新缓存</span>
-    </div>
-</div>
-<!--end 子页顶部内容-->
-<!--子页主体内容-->
-<div class="subConBox">
-    <div class="PopupBtn PopupBtnRight">
-        <input class="PopupOrange JS_delete" name="" type="button" value="删除"><input class="amendBtn" id="JS_amend" name="" type="button" value="修改">
-    </div>
-    <table class="wareList">
-        <thead>
+    <!--end 子页顶部内容-->
+    <!--子页主体内容-->
+    <div class="subConBox">
+        <div class="PopupBtn PopupBtnRight">
+            <input class="PopupOrange JS_delete" name="" type="button" value="删除"><input class="amendBtn" id="JS_amend" name="" type="button" value="修改">
+        </div>
+        <table class="wareList">
+            <thead>
             <tr>
                 <th width="50px"><input class="check-all" type="checkbox"></th>
                 <th class="wareAlign">入住性质</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr>
                 <td><input class="ids" name="" type="checkbox"></td>
                 <td class="wareAlign">住家</td>
@@ -58,10 +59,11 @@
                 <td><input class="ids" name="" type="checkbox"></td>
                 <td class="wareAlign">库房</td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+    <!--end 子页主体内容-->
 </div>
-<!--end 子页主体内容-->
 <!--添加性质-->
 <div class="PopupBox hide" id="qft_addEegionBox">
     <form id="roleForm" action="" method="">

@@ -1571,6 +1571,8 @@ textarea {
 }
 .PopupBtn input[type="button"] {
   margin: 0 10px;
+  position: relative;
+  z-index: 1;
 }
 .PopupBtn input[type="button"].cancel {
   background: #f1f1f1;
