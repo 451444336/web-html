@@ -50,7 +50,7 @@
                             <option value="6">四川</option>
                         </select>
                     </td>
-                    <td><input name="" type="button" value="添加小区"></td>
+                    <td><input class="behavior-relative JS_addVillage" name="" type="button" value="添加小区"></td>
                     <th class="fieldName"><span class="require">*</span>座　　栋：</th>
                     <td><input class="validate[required]" name="" type="text"></td>
                 </tr>
@@ -85,7 +85,7 @@
                 <th class="fieldName"><span class="require">*</span>楼层编号：</th>
                 <td><input class="validate[required]" name="" type="text"></td>
             </tr>
-            <tr>
+            <tr class="depositInfo">
                 <th class="fieldName">开 发 商：</th>
                 <td><input name="" type="text"></td>
                 <th class="fieldName">联系电话：</th>
@@ -93,7 +93,7 @@
                 <th class="fieldName">其他电话：</th>
                 <td><input name="" type="text"></td>
             </tr>
-            <tr>
+            <tr class="depositInfo">
                 <th class="fieldName">转款帐户：</th>
                 <td><input name="" type="text"></td>
                 <th class="fieldName">转款账号：</th>
@@ -205,7 +205,7 @@
                 </tr>
                 <tr>
                     <th class="fieldName"><span class="require">*</span>录入时间：</th>
-                    <td><input class="JS_entryTime disabled" name="" type="text" value="2018-05-09" disabled="disabled"></td>
+                    <td><input class="JS_entryTime disabled" name="" type="text" value="" disabled="disabled"></td>
                     <th class="fieldName">录入人员：</th>
                     <td><input class="disabled" name="" type="text" value="管理员" disabled></td>
                     <th class="fieldName_one">递增约定：</th>
@@ -260,7 +260,7 @@
 <!--end 添加房源-->
 <!--共用按钮-->
 <div class="powerBtnBox btnCenter">
-    <input class="powerBtn" type="button" value="保存并结束"><input class="powerBtn actionBtn" type="button" value="保存并下一步">
+    <input class="powerBtn" type="button" value="保存并结束"><input class="powerBtn actionBtn JS_hold" type="button" value="保存并下一步">
 </div>
 <!--end 共用按钮-->
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
@@ -274,6 +274,8 @@
 <script type="text/javascript" src="js/datepicker/jquery.timepicker.js"></script>
 <script type="text/javascript" src="js/datepicker/jquery.datepair.js"></script>
 <script type="text/javascript" src="js/datepicker/datepicker.js"></script>
+<!--layer弹出层-->
+<script type="text/javascript" src="js/layer/layer.js"></script>
 <!--表单验证-->
 <script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
 <script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
@@ -293,6 +295,23 @@
             }else{
                 $('.depositInfo').fadeOut();
             }
+        });
+        //保存并下一步
+        $('.JS_hold').on('click',function(){
+            window.location.href = 'http://www.cqxinkai.com';
+        });
+        //添加小区
+        $('.propertySite').on('click','.JS_addVillage',function(){
+            layer.open({
+                type: 2,
+                title: '添加小区',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['700px','500px'],
+                //btn:['关闭'],
+                btnAlign: 'c',
+                content: 'qft_addVillage.html'
+            });
         });
         //获取系统当前时间
         $('.JS_entryTime').val(currentTime());

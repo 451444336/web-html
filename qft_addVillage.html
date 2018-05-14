@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>添加小区</title>
+    <!--bootstrap-select  css文件-->
+    <link rel="stylesheet" type="text/css" href="js/bootstrapselect/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="js/bootstrapselect/css/bootstrap-select.css"/>
+    <!--主样式表-->
+    <link rel="stylesheet" href="css/models.css">
+</head>
+<body>
+<!--添加房源-->
+<div class="PopupBox">
+    <form id="addUserForm" action="" method="">
+        <h2 class="PopupTitle">小区信息</h2>
+        <table class="popupList">
+            <tr>
+                <th class="fieldName"><span class="require">*</span>小区名称：</th>
+                <td><input class="validate[required]" name="" type="text"></td>
+                <td colspan="4" class="gray-col">（新录入小区需经平台审核通过后，小区内的房源才能对外展示）</td>
+            </tr>
+            <tr>
+                <th class="fieldName"><span class="require">*</span>经度：</th>
+                <td><input id="lng" class="validate[required]" name="" type="text" value="106.512992"></td>
+                <th class="fieldName"><span class="require">*</span>纬度：</th>
+                <td><input id="lat" class="validate[required]" name="" type="text" value="29.544041"></td>
+                <th class="fieldName"><span class="require">*</span>详细地址：</th>
+                <td><input id="suggestId" class="validate[required]" name="" type="text" value="重庆市渝中区大坪正街140号-3幢-附5号"></td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <div class="villageBox" id="village"></div>
+                </td>
+            </tr>
+            <tr>
+                <th class="fieldName"><span class="require">*</span>商圈：</th>
+                <td>
+                    <select name="auditState" class="selectpicker" data-live-search="true">
+                        <option value="">全部</option>
+                        <option value="2">重庆</option>
+                        <option value="3">四川</option>
+                        <option value="4">北京</option>
+                        <option value="5">重庆</option>
+                        <option value="6">四川</option>
+                    </select>
+                </td>
+                <td colspan="4" class="gray-col">（该地址符合16个商圈范围，请选择一个）</td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--end 添加房源-->
+<!--共用按钮-->
+<div class="powerBtnBox btnCenter">
+    <input class="powerBtn actionBtn" type="button" value="保存">
+</div>
+<!--end 共用按钮-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<!--bootstrap-select-->
+<script type="text/javascript" src="js/bootstrapselect/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrapselect/bootstrap-select.js"></script>
+<script type="text/javascript" src="js/bootstrapselect/select.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
+<!--百度地图API-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4wuQkvdUCa4CZBPlKAApPINtIWMnWyk6"></script>
+<script type="text/javascript" src="js/baiduMap.js"></script>
+<script>
+    $(function(){
+        //表单验证
+        $("#addUserForm").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:5 0'
+        });
+    });
+</script>
+</body>
+</html>
