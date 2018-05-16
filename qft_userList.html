@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="js/bootstrapselect/css/bootstrap-select.css"/>
     <!--主样式表-->
     <link rel="stylesheet" href="css/models.css">
+    <!--[if lt IE 9]>
+    <script src="js/support/html5shiv.min.js"></script>
+    <script src="js/support/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 <div class="subMainContent">
@@ -19,59 +23,57 @@
         </div>
     </div>
     <!--end 子页顶部内容-->
+    <!--搜索条件-->
+    <div class="searchTerm">
+        <table class="searchTab searchWidth_two">
+            <tr>
+                <th>工作城市：</th>
+                <td>
+                    <select class="selectpicker" data-live-search="true">
+                        <option value="">全部</option>
+                        <option value="">重庆</option>
+                        <option value="">四川</option>
+                    </select>
+                </td>
+                <th>工作店面：</th>
+                <td>
+                    <select class="selectpicker" data-live-search="true" >
+                        <option value="">全部</option>
+                        <option value="">重庆</option>
+                        <option value="">四川</option>
+                    </select>
+                </td>
+                <th>工作分组：</th>
+                <td>
+                    <select class="selectpicker" data-live-search="true">
+                        <option value="">全部</option>
+                        <option value="">重庆</option>
+                        <option value="">四川</option>
+                    </select>
+                </td>
+                <th>职　　务：</th>
+                <td>
+                    <select class="selectpicker" data-live-search="true">
+                        <option value="">全部</option>
+                        <option value="">重庆</option>
+                        <option value="">四川</option>
+                    </select>
+                </td>
+                <th>用户姓名：</th>
+                <td>
+                    <select class="selectpicker" data-live-search="true">
+                        <option value="">全部</option>
+                        <option value="">重庆</option>
+                        <option value="">四川</option>
+                    </select>
+                </td>
+                <td colspan="2"><input class="tabSearchBtn" name="" type="button" value="搜索"></td>
+            </tr>
+        </table>
+    </div>
+    <!--end 搜索条件-->
     <!--子页主体内容-->
     <div class="subConBox">
-        <!--搜索条件-->
-        <div class="searchTerm">
-            <table class="searchTab">
-                <tr>
-                    <th>工作城市：</th>
-                    <td>
-                        <select class="selectpicker" data-live-search="true">
-                            <option value="">全部</option>
-                            <option value="">重庆</option>
-                            <option value="">四川</option>
-                        </select>
-                    </td>
-                    <th>工作店面：</th>
-                    <td>
-                        <select class="selectpicker" data-live-search="true" >
-                            <option value="">全部</option>
-                            <option value="">重庆</option>
-                            <option value="">四川</option>
-                        </select>
-                    </td>
-                    <th>工作分组：</th>
-                    <td>
-                        <select class="selectpicker" data-live-search="true">
-                            <option value="">全部</option>
-                            <option value="">重庆</option>
-                            <option value="">四川</option>
-                        </select>
-                    </td>
-                    <th>职务：</th>
-                    <td>
-                        <select class="selectpicker" data-live-search="true">
-                            <option value="">全部</option>
-                            <option value="">重庆</option>
-                            <option value="">四川</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <th>用户姓名：</th>
-                    <td>
-                        <select class="selectpicker" data-live-search="true">
-                            <option value="">全部</option>
-                            <option value="">重庆</option>
-                            <option value="">四川</option>
-                        </select>
-                    </td>
-                    <td colspan="6"><input class="tabSearchBtn" name="" type="button" value="搜索"></td>
-                </tr>
-            </table>
-        </div>
-        <!--end 搜索条件-->
         <table class="wareList" id="example"></table>
     </div>
     <!--end 子页主体内容-->
@@ -110,6 +112,49 @@
         </table>
     </form>
 </div>
+<!--end 修改密码弹窗-->
+<!--用户信息-->
+<div class="PopupBox hide" id="qft_userInfoBox">
+    <table class="detailList">
+        <tr>
+            <th class="fieldName_one">真实姓名：</th>
+            <td>李四</td>
+            <th class="fieldName_one">联系方式：</th>
+            <td>15456565656</td>
+        </tr>
+        <tr>
+            <th class="fieldName_one">登陆账号：</th>
+            <td>hexiaomm</td>
+            <th class="fieldName_one">密码：</th>
+            <td>******</td>
+        </tr>
+        <tr>
+            <th class="fieldName_one">工作店面：</th>
+            <td>123</td>
+            <th class="fieldName_one">状态：</th>
+            <td><span class="blue-col">在职</span></td>
+        </tr>
+        <tr>
+            <th class="fieldName_one">上次登陆IP：</th>
+            <td>119.85.112.61</td>
+            <th class="fieldName_one">登陆错误次数：</th>
+            <td>0</td>
+        </tr>
+        <tr>
+            <th class="fieldName_one">创建时间：</th>
+            <td>2015-10-09 13:15:17</td>
+            <th class="fieldName_one">系统锁定：</th>
+            <td>3天未登陆</td>
+        </tr>
+        <tr>
+            <th class="fieldName_one">可看房源店面：</th>
+            <td colspan="3">
+                <textarea class="detailArea disabled" disabled="disabled">南坪店,123</textarea>
+            </td>
+        </tr>
+    </table>
+</div>
+<!--end 用户信息-->
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <!--dataTable-->
@@ -125,6 +170,19 @@
 <script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
 <script>
     $(function(){
+        //查看用户详情
+        $('.wareList').on('dblclick', 'tbody tr', function(){
+            layer.open({
+                type: 1,
+                title: '用户信息',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['700px','370px'],
+                btn:['关闭'],
+                btnAlign: 'c',
+                content: $('#qft_userInfoBox')
+            });
+        });
         //操作记录
         $('.subTopBox').on('click','.JS_record',function(){
             layer.open({
@@ -203,7 +261,7 @@
                 title: '权限修改',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['900px','660px'],
+                area: ['900px','610px'],
                 btnAlign: 'c',
                 content: 'modifypower.html'
             });

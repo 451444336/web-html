@@ -8,8 +8,9 @@ $(function(){
         this.el = el || {};
         this.multiple = multiple || false;
         // Variables privadas
-        var links = this.el.find('.link_tit');
+        var links = this.el.find('.link_conTxt');
         var submenu = this.el.find('.subMenu').find('a');
+        //默认第一个二级菜单显示
         var openMenu = this.el.find('li').hasClass('openMenu');
         if(openMenu){
             $('.openMenu .subMenu').slideToggle();
@@ -17,8 +18,6 @@ $(function(){
         // Evento
         links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown);
         submenu.on('click',function(){
-            $(this).parents('.subMenu').slideToggle();
-            $(this).parents('.navMenu li').toggleClass('openMenu');
             $(this).addClass('action').parent('dd').siblings().find('a').removeClass('action');
             $(this).addClass('action').parents('.navMenu li').siblings().find('a').removeClass('action');
         });
@@ -26,10 +25,10 @@ $(function(){
     Accordion.prototype.dropdown = function(e) {
         var $el = e.data.el;
         $this = $(this);
-        $next = $this.next();
+        $next = $this.parents('.link_tit').next('.subMenu');
         $next.slideToggle();
         if($next.length != 0){
-            $this.parent().toggleClass('openMenu');
+            $this.parents('li').toggleClass('openMenu');
         }
         if (!e.data.multiple) {
             $el.find('.subMenu').not($next).slideUp().parent().removeClass('openMenu');
@@ -41,14 +40,20 @@ $(function(){
        var width = $(this).width();
        if(width < 1920){
            $('.mainBox').addClass('main-shrink');
+           $('.navMenu').addClass('mouseMenu');
+           $('.navMenu').find('li.openMenu .subMenu').hide();
            $('.mainContent').animate({
                left: '70px'
            },100);
+           $('.mouseMenu li').eq(-1).find('.subMenu').addClass('subBottom');
        }else{
            $('.mainBox').removeClass('main-shrink');
+           $('.navMenu').removeClass('mouseMenu');
+           $('.navMenu').find('li.openMenu .subMenu').show();
            $('.mainContent').animate({
                left: '128px'
            },100);
+           $('.navMenu li').eq(-1).find('.subMenu').removeClass('subBottom');
        }
    }).resize();
    //左侧收缩展开
@@ -58,27 +63,74 @@ $(function(){
             $('.mainContent').animate({
                 left: '128px'
             },100);
+            $('.navMenu').find('li.openMenu .subMenu').show();
+            $('.navMenu').removeClass('mouseMenu');
+            $('.navMenu li').eq(-1).find('.subMenu').removeClass('subBottom');
         }else{
             $('.mainBox').addClass('main-shrink');
             $('.mainContent').animate({
                 left: '70px'
             },100);
+            $('.navMenu').find('li.openMenu .subMenu').hide();
+            $('.navMenu').addClass('mouseMenu');
+            $('.mouseMenu li').eq(-1).find('.subMenu').addClass('subBottom');
         }
     });
     //收缩展开按钮
     $('.leftNav').hover(function(){
-        $('.openBtn').show();
-    },function(){
-        $('.openBtn').hide();
+        $('.openBtn').fadeToggle();
     });
-    //项目搜索、经营数据、推广数据展开收缩
-    $('.searchBtnBox').on('click','.seniorBtn',function(){
-        if($('.searchTermList').hasClass('searchTermShow')){
-            $('.searchTermList').removeClass('searchTermShow');
-        }else{
-            $('.searchTermList').addClass('searchTermShow');
+    //窄菜单时，鼠标悬停显示
+    $('.leftNav').on('mouseover mouseout', '.mouseMenu li', function(event){
+        if(event.type == "mouseover"){
+            $(this).find('.subMenu').show();
+        }else if(event.type == "mouseout"){
+            $(this).find('.subMenu').hide();
         }
     });
+    //右侧收缩展开
+    $('.rightContent').on('click', '.shrinkBtn', function(){
+        if($('.rightContent').hasClass('spreadBg')){
+            $('.rightContent').removeClass('spreadBg');
+            $('.rightContent').animate({
+                right: '0'
+            },100);
+            $('.focusLeftCon').animate({
+                marginRight: '274px'
+            },100);
+        }else{
+            $('.rightContent').addClass('spreadBg');
+            $('.rightContent').animate({
+                right: '-260px'
+            },100);
+            $('.focusLeftCon').animate({
+                marginRight: '15px'
+            },100);
+        }
+
+    });
+    //监听浏览分辨率改变布局
+    $(window).on('resize',function(){
+        var width = $(this).width();
+        if(width < 1400){
+            $('.rightContent').addClass('spreadBg');
+            $('.rightContent').animate({
+                right: '-260px'
+            },100);
+            $('.focusLeftCon').animate({
+                marginRight: '15px'
+            },100);
+        }else{
+            $('.rightContent').removeClass('spreadBg');
+            $('.rightContent').animate({
+                right: '0'
+            },100);
+            $('.focusLeftCon').animate({
+                marginRight: '274px'
+            },100);
+        }
+    }).resize();
+    //项目搜索、经营数据、推广数据展开收缩
     $('.rightContent').on('click','.titOpenBtn',function(){
         $('.openPublicBox').hide();
         if($('.titSearchIco').hasClass('icoHide')){
@@ -94,9 +146,7 @@ $(function(){
     });
     //管理员弹出列表
     $('.subHeadMenu').hover(function(){
-        $('.subHeadMenuList').show();
-    },function(){
-        $('.subHeadMenuList').hide();
+        $('.subHeadMenuList').fadeToggle();
     });
     //table列表操作按钮
     $('.wareList').on('click', '.operationBtn', function(event){
@@ -157,6 +207,9 @@ $(function(){
         } else {
             $('.check-all').prop('checked', false);
         }
-
+    });
+    //更多搜索条件
+    $('.searchTerm').on('click', '.JS_moreBtn', function(){
+        $('.searchMore').fadeToggle();
     });
 });

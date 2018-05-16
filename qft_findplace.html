@@ -6,20 +6,27 @@
     <title>职位列表</title>
     <!--主样式表-->
     <link rel="stylesheet" href="css/models.css">
+    <!--[if lt IE 9]>
+    <script src="js/support/html5shiv.min.js"></script>
+    <script src="js/support/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-<!--子页顶部内容-->
-<div class="subTopBox">
-    <div class="subTopLeft">
-        <a class="subTopBtn qft_addPlace" href="javascript:void(0);">添加职位</a>
+<div class="subMainContent">
+    <!--子页顶部内容-->
+    <div class="subTopBox">
+        <div class="subTopLeft">
+            <a class="subTopBtn qft_addPlace" href="javascript:void(0);">添加职位</a>
+        </div>
     </div>
+    <!--end 子页顶部内容-->
+    <!--子页主体内容-->
+    <div class="subConBox">
+        <table class="wareList" id="example"></table>
+    </div>
+    <!--end 子页主体内容-->
 </div>
-<!--end 子页顶部内容-->
-<!--子页主体内容-->
-<div class="subConBox">
-    <table class="wareList" id="example"></table>
-</div>
-<!--end 子页主体内容-->
+
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <!--dataTable-->
@@ -35,7 +42,7 @@
                 title: '添加职位',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['900px','660px'],
+                area: ['900px','610px'],
                 btnAlign: 'c',
                 content: 'modifypower.html'
             });
@@ -47,7 +54,7 @@
                 title: '编辑职位',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['900px','660px'],
+                area: ['900px','610px'],
                 btnAlign: 'c',
                 content: 'modifypower.html'
             });

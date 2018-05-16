@@ -9,345 +9,342 @@
     <link rel="stylesheet" type="text/css" href="js/bootstrapselect/css/bootstrap-select.css"/>
     <!--主样式表-->
     <link rel="stylesheet" href="css/models.css">
+    <!--[if lt IE 9]>
+    <script src="js/support/html5shiv.min.js"></script>
+    <script src="js/support/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-<div class="subMainContent">
+<div class="focusContent conHidden_x">
     <!--左边内容-->
     <div class="leftContent">
-        <!--子页顶部内容-->
-        <div class="subTopBox">
-            <div class="subTopLeft">
-                <a class="subTopBtn subHover" data-info="0" href="javascript:void(0);">房间信息</a><a class="subTopBtn" data-info="1" href="javascript:void(0);">房东信息</a>
+        <div class="focusLeftCon">
+            <!--子页顶部内容-->
+            <div class="subTopBox">
+                <div class="subTopLeft">
+                    <a class="subTopBtn subHover" data-info="0" href="javascript:void(0);">房间信息</a><a class="subTopBtn" data-info="1" href="javascript:void(0);">房东信息</a>
+                </div>
+                <div class="subTopRight">
+                    <span class="roomState JS_switch" data-state="1">切换至房态图</span><span class="setUpBtn">设置</span><span class="register roomInfo">登记房源</span>
+                </div>
             </div>
-            <div class="subTopRight">
-                <span class="roomState JS_switch" data-state="1">切换至房态图</span><span class="setUpBtn">设置</span><span class="register roomInfo">登记房源</span>
-            </div>
-        </div>
-        <!--end 子页顶部内容-->
-        <!--列表信息-->
-        <div class="subConBox">
+            <!--end 子页顶部内容-->
             <!--搜索条件-->
-            <!--<div class="searchTerm">
-                <table class="searchTab">
-                    <tr>
-                        <th>店面：</th>
-                        <td>
-                            <select class="selectpicker" data-live-search="true">
-                                <option value="">全部</option>
-                                <option value="">重庆</option>
-                                <option value="">四川</option>
-                            </select>
-                        </td>
-                        <th>房间号：</th>
-                        <td>
-                            <select class="selectpicker" data-live-search="true" >
-                                <option value="">全部</option>
-                                <option value="">重庆</option>
-                                <option value="">四川</option>
-                            </select>
-                        </td>
-                        <th>状态：</th>
-                        <td>
-                            <select class="selectpicker" data-live-search="true">
-                                <option value="">全部</option>
-                                <option value="">重庆</option>
-                                <option value="">四川</option>
-                            </select>
-                        </td>
-                        <th>空置时间：</th>
-                        <td>
-                            <select class="selectpicker" data-live-search="true">
-                                <option value="">全部</option>
-                                <option value="">重庆</option>
-                                <option value="">四川</option>
-                            </select>
-                        </td>
-                        <td colspan="2"><input class="tabSearchBtn" name="" type="button" value="搜索">&nbsp;&nbsp;<input name="" type="button" value="高级"></td>
-                    </tr>
-                </table>
-            </div>-->
+            <div class="searchTerm">
+                <div class="clearfix">
+                    <table class="searchTab searchWidth_one">
+                        <tr>
+                            <th>房 间 号：</th>
+                            <td><input name="" type="text"></td>
+                            <th>租客电话：</th>
+                            <td><input name="" type="text"></td>
+                            <th>租客姓名：</th>
+                            <td><input name="" type="text"></td>
+                            <th>租赁状态：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">全部</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                            <td colspan="2"><input class="tabSearchBtn" name="" type="button" value="搜索">&nbsp;&nbsp;<input class="searchMoreBtn JS_moreBtn" name="" type="button" value="更多"></td>
+                        </tr>
+                    </table>
+                    <p class="itemList">
+                        <a class="blueBg" href="javascript:void(0);">未租</a>
+                        <a class="orangeBg" href="javascript:void(0);">已定</a>
+                        <a class="greenBg notMar" href="javascript:void(0);">导出</a>
+                    </p>
+                </div>
+                <!--更多搜索条件-->
+                <div class="searchMore">
+                    <table class="searchTab searchWidth_three">
+                        <tr>
+                            <th>店　　面：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">请选择店面</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                            <th>区　　域：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">请选择区域</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                            <th>物业地址：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">全部</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                            <th>租赁期限：</th>
+                            <td>
+                                <select class="selectpicker">
+                                    <option value="">请选择期限</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </td>
+                            <th>租客缴费：</th>
+                            <td><input name="" type="text"></td>
+                            <th>城　　市：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">请选择</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>金融机构：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">请选择</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                            <th>空置时间：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">请选择</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                            <th>即将到期：</th>
+                            <td>
+                                <select class="selectpicker">
+                                    <option value="">请选择</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </td>
+                            <th>租客租前：</th>
+                            <td>
+                                <select class="selectpicker">
+                                    <option value="">请选择</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </td>
+                            <th>租客租后：</th>
+                            <td>
+                                <select class="selectpicker" data-live-search="true">
+                                    <option value="">请选择</option>
+                                    <option value="">重庆</option>
+                                    <option value="">四川</option>
+                                </select>
+                            </td>
+                            <th>业务员：</th>
+                            <td><input name="" type="text"></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--end 更多搜索条件-->
+            </div>
             <!--end 搜索条件-->
-            <!--房间、房东信息-->
-            <div id="roomList">
-                <table class="wareList" id="example"></table>
+            <!--列表信息-->
+            <div class="subConBox">
+                <!--房间、房东信息-->
+                <div id="roomList">
+                    <table class="wareList" id="example"></table>
+                </div>
+                <!--end 房间、房东信息-->
+                <!--房态图-->
+                <div class="hide" id="roomState">
+                    <p class="roomStateTit">静安区-万科京城(上海市静安区石门一路271-279号) </p>
+                    <ul class="roomStateList">
+                        <li>
+                            <h2>101<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <span class="labelType norentIcon"></span>
+                            <h2>102<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：1年</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <span class="labelType endfix"></span>
+                            <h2>103<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">租期：1年</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>104<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>105<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>106<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>107<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>108<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>109<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>110<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                    </ul>
+                    <ul class="roomStateList">
+                        <li>
+                            <h2>201<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li class="norent">
+                            <span class="labelType norentIcon"></span>
+                            <h2>202<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <span class="labelType endfix"></span>
+                            <h2>203<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>204<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>205<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>206<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>207<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>208<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>209<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>210<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                    </ul>
+                    <ul class="roomStateList">
+                        <li>
+                            <h2>301<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li class="norent">
+                            <span class="labelType norentIcon"></span>
+                            <h2>302<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <span class="labelType endfix"></span>
+                            <h2>303<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>304<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>305<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>306<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>307<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>308<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>309<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                        <li>
+                            <h2>310<span>【一室一厅】</span></h2>
+                            <p class="price">定价：1500元/月</p>
+                            <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <!--end 房态图-->
             </div>
-            <!--end 房间、房东信息-->
-            <!--房态图-->
-            <div class="hide" id="roomState">
-                <p class="roomStateTit">静安区-万科京城(上海市静安区石门一路271-279号) </p>
-                <ul class="roomStateList">
-                    <li>
-                        <h2>101<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <span class="labelType norentIcon"></span>
-                        <h2>102<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：1年</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <span class="labelType endfix"></span>
-                        <h2>103<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">租期：1年</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>104<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>105<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>106<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>107<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>108<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>109<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>110<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                </ul>
-                <ul class="roomStateList">
-                    <li>
-                        <h2>201<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li class="norent">
-                        <span class="labelType norentIcon"></span>
-                        <h2>202<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <span class="labelType endfix"></span>
-                        <h2>203<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>204<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>205<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>206<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>207<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>208<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>209<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>210<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                </ul>
-                <ul class="roomStateList">
-                    <li>
-                        <h2>301<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li class="norent">
-                        <span class="labelType norentIcon"></span>
-                        <h2>302<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <span class="labelType endfix"></span>
-                        <h2>303<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>304<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>305<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>306<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>307<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>308<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>309<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                    <li>
-                        <h2>310<span>【一室一厅】</span></h2>
-                        <p class="price">定价：1500元/月</p>
-                        <p class="idleTxt"><span class="txtLeft">空置：22天</span><span>季付</span><span>小小明</span></p>
-                    </li>
-                </ul>
-            </div>
-            <!--end 房态图-->
+            <!--end 列表信息-->
         </div>
-        <!--end 列表信息-->
     </div>
     <!--end 左边内容-->
     <!--右边内容-->
     <div class="rightContent">
+        <p class="shrinkBtn"></p>
         <div class="rightPublic">
             <!--标题-->
             <div class="titleBox">
-                <h2>搜索房源</h2>
+                <h2>空置分析</h2>
+                <p class="vacantTxt">空置：77套</p>
             </div>
             <!--end 标题-->
-            <p class="itemList">
-                <a class="blueBg" href="javascript:void(0);">未租</a>
-                <a class="orangeBg" href="javascript:void(0);">已定</a>
-                <a class="greenBg notMar" href="javascript:void(0);">导出</a>
-            </p>
-            <!--搜索条件-->
-            <div class="searchTerm">
-                <ul class="searchTermList">
-                    <li>
-                        <label for="">店　　面</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">房&nbsp;间&nbsp;号</label>
-                        <input name="" type="text" placeholder="请填写">
-                    </li>
-                    <li>
-                        <label for="">状　　态</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">空置时间</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">区　　域</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">物业地址</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">租凭期限</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">租客缴费</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">金融机构</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">即将到期</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">租前审核</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">业&nbsp;务&nbsp;员</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">租客电话</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="">租客姓名</label>
-                        <select class="selectBox" name="" id="">
-                            <option value="">请选择</option>
-                        </select>
-                    </li>
-                </ul>
-                <div class="searchBtnBox">
-                    <input class="searchBtn" name="" type="button" value="搜索">
-                    <input class="seniorBtn" name="" type="button" value="高级">
-                </div>
-            </div>
-            <!--end 搜索条件-->
+            <!--空置分析图表-->
+            <div id="dataAnalysis" class="dataAnalysis"></div>
+            <!--end 空置分析图表-->
         </div>
         <div class="rightPublic">
             <!--标题-->
@@ -433,6 +430,9 @@
 <script type="text/javascript" src="js/bootstrapselect/select.js"></script>
 <!--集中整租-->
 <script type="text/javascript" src="js/focusroom.js"></script>
+<!--echarts统计图表-->
+<script type="text/javascript" src="js/echarts/echarts.js"></script>
+<script type="text/javascript" src="js/echartsConfig.js"></script>
 <script>
     $(function(){
         $('#example').DataTable({
@@ -458,7 +458,7 @@
                 {"sTitle": "出房价格", "mData": "id6"},
                 {"sTitle": "押金", "mData": "id"},
                 {"sTitle": "开始时间", "mData": "id1"},
-                {"sTitle": "租凭期限", "mData": "id2"},
+                {"sTitle": "租赁期限", "mData": "id2"},
                 {"sTitle": "缴费方式", "mData": "id3"},
                 {"sTitle": "合同性质", "mData": "id4"},
                 {"sTitle": "业务员", "mData": "id5"},

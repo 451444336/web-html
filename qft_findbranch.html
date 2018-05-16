@@ -6,20 +6,26 @@
     <title>部门列表</title>
     <!--主样式表-->
     <link rel="stylesheet" href="css/models.css">
+    <!--[if lt IE 9]>
+    <script src="js/support/html5shiv.min.js"></script>
+    <script src="js/support/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-<!--子页顶部内容-->
-<div class="subTopBox">
-    <div class="subTopLeft">
-        <a class="subTopBtn qft_addBranch" href="javascript:void(0);">添加部门</a>
+<div class="subMainContent">
+    <!--子页顶部内容-->
+    <div class="subTopBox">
+        <div class="subTopLeft">
+            <a class="subTopBtn qft_addBranch" href="javascript:void(0);">添加部门</a>
+        </div>
     </div>
+    <!--end 子页顶部内容-->
+    <!--子页主体内容-->
+    <div class="subConBox">
+        <table class="wareList" id="example"></table>
+    </div>
+    <!--end 子页主体内容-->
 </div>
-<!--end 子页顶部内容-->
-<!--子页主体内容-->
-<div class="subConBox">
-    <table class="wareList" id="example"></table>
-</div>
-<!--end 子页主体内容-->
 
 <!--添加部门-->
 <div class="PopupBox hide" id="qft_branchBox">
