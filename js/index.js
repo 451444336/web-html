@@ -1,8 +1,8 @@
 $(function(){
     //禁止鼠标右键
-    /*$(document).bind("contextmenu",function(e){
+    $(document).bind("contextmenu",function(e){
         return false;
-    });*/
+    });
     //左侧导航
     var Accordion = function(el, multiple) {
         this.el = el || {};
@@ -45,7 +45,7 @@ $(function(){
            $('.mainContent').animate({
                left: '70px'
            },100);
-           $('.mouseMenu li').eq(-1).find('.subMenu').addClass('subBottom');
+           //$('.mouseMenu li').eq(-1).find('.subMenu').addClass('subBottom');
        }else{
            $('.mainBox').removeClass('main-shrink');
            $('.navMenu').removeClass('mouseMenu');
@@ -53,7 +53,7 @@ $(function(){
            $('.mainContent').animate({
                left: '128px'
            },100);
-           $('.navMenu li').eq(-1).find('.subMenu').removeClass('subBottom');
+           //$('.navMenu li').eq(-1).find('.subMenu').removeClass('subBottom');
        }
    }).resize();
    //左侧收缩展开
@@ -65,7 +65,7 @@ $(function(){
             },100);
             $('.navMenu').find('li.openMenu .subMenu').show();
             $('.navMenu').removeClass('mouseMenu');
-            $('.navMenu li').eq(-1).find('.subMenu').removeClass('subBottom');
+            //$('.navMenu li').eq(-1).find('.subMenu').removeClass('subBottom');
         }else{
             $('.mainBox').addClass('main-shrink');
             $('.mainContent').animate({
@@ -73,12 +73,15 @@ $(function(){
             },100);
             $('.navMenu').find('li.openMenu .subMenu').hide();
             $('.navMenu').addClass('mouseMenu');
-            $('.mouseMenu li').eq(-1).find('.subMenu').addClass('subBottom');
+            //$('.mouseMenu li').eq(-1).find('.subMenu').addClass('subBottom');
         }
     });
     //收缩展开按钮
+    //收缩展开按钮
     $('.leftNav').hover(function(){
-        $('.openBtn').fadeToggle();
+        $('.openBtn').show();
+    },function(){
+        $('.openBtn').hide();
     });
     //窄菜单时，鼠标悬停显示
     $('.leftNav').on('mouseover mouseout', '.mouseMenu li', function(event){
@@ -131,7 +134,7 @@ $(function(){
         }
     }).resize();
     //项目搜索、经营数据、推广数据展开收缩
-    $('.rightContent').on('click','.titOpenBtn',function(){
+    /*$('.rightContent').on('click','.titOpenBtn',function(){
         $('.openPublicBox').hide();
         if($('.titSearchIco').hasClass('icoHide')){
             $('.titSearchIco').removeClass('icoHide');
@@ -143,10 +146,29 @@ $(function(){
         $(this).parents('.rightPublic').find('.titSearchIco').addClass('icoHide');
         $(this).parents('.rightPublic').find('.openPublicBox').show();
         $(this).parents('.rightPublic').find('.openRicon').addClass('upIcon').text('折叠');
+    });*/
+    //搜索图标点击事件
+    $('.rightPublic').on('click', '.titSearchIco', function(){
+        $(this).parents('.rightPublic').find('.searchInput').slideToggle();
+    });
+    //集中整租折叠按钮
+    $('.rightContent').on('click','.openRicon',function(){
+        var foldtxt = $(this).data('fold');
+        if(foldtxt == '0'){
+            $(this).data('fold','1');
+            $(this).removeClass('upIcon').text('展开');
+            $(this).parents('.rightPublic').find('.openPublicBox').hide();
+        }else{
+            $(this).data('fold','0');
+            $(this).addClass('upIcon').text('折叠');
+            $(this).parents('.rightPublic').find('.openPublicBox').show();
+        }
     });
     //管理员弹出列表
     $('.subHeadMenu').hover(function(){
-        $('.subHeadMenuList').fadeToggle();
+        $('.subHeadMenuList').show();
+    },function(){
+        $('.subHeadMenuList').hide();
     });
     //table列表操作按钮
     $('.wareList').on('click', '.operationBtn', function(event){
@@ -168,7 +190,7 @@ $(function(){
             $('.operationList').addClass('hide');          //淡出消失
         }
     });
-    //table列表操作菜单
+    //table列表操作二级菜单
     $('.operationList li:first-child').find('.subOperMenu').show();
     $('.wareList').on('mouseenter',' li',function(){
         $(this).parents('.operationList').find('.js_operMenu').removeClass('operHover');

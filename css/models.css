@@ -151,7 +151,8 @@ em {
 .powerOptionList,
 .roomStateList,
 .roomFlowStop,
-.workBookBox {
+.workBookBox,
+.addGroupBox {
   *zoom: 1;
 }
 .clearfix:before,
@@ -207,7 +208,9 @@ em {
 .roomFlowStop:before,
 .roomFlowStop:after,
 .workBookBox:before,
-.workBookBox:after {
+.workBookBox:after,
+.addGroupBox:before,
+.addGroupBox:after {
   content: " ";
   display: table;
 }
@@ -237,7 +240,8 @@ em {
 .powerOptionList:after,
 .roomStateList:after,
 .roomFlowStop:after,
-.workBookBox:after {
+.workBookBox:after,
+.addGroupBox:after {
   clear: both;
   visibility: hidden;
   height: 0;
@@ -288,9 +292,11 @@ input[type="password"] {
   border-radius: 2px;
   vertical-align: middle;
   background: #fff;
-  behavior: url("PIE.htc");
-  position: relative;
-  z-index: 1;
+}
+input[type="text"].noBorder,
+input[type="password"].noBorder {
+  border: none;
+  background: none;
 }
 input[type="text"],
 input[type="password"] {
@@ -300,6 +306,7 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
   border: 1px solid #92bbff;
+  background: #fff;
 }
 select {
   width: 100%;
@@ -935,9 +942,9 @@ textarea {
   position: absolute;
   right: 0;
   top: 50%;
-  margin-top: -44px;
-  width: 12px;
-  height: 88px;
+  margin-top: -39px;
+  width: 11px;
+  height: 78px;
   background: url("../images/open_icon.png") 0 0 no-repeat;
   cursor: pointer;
   z-index: 1040;
@@ -974,16 +981,30 @@ textarea {
 }
 .navMenu li .subMenu dd a {
   display: block;
+  position: relative;
   width: 128px;
   height: 40px;
   font-size: 13px;
   color: #98b9f9;
   text-indent: 30px;
 }
+.navMenu li .subMenu dd a .actionIcon {
+  display: none;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  margin-top: -15px;
+  width: 4px;
+  height: 30px;
+  background: url("../images/action_line.jpg") 0 0 no-repeat;
+}
 .navMenu li .subMenu dd a:hover,
 .navMenu li .subMenu dd a.action {
   color: #fff;
   background: url("../images/arrowicon-r.png") 110px center no-repeat;
+}
+.navMenu li .subMenu dd a.action .actionIcon {
+  display: block;
 }
 .navMenu li .link_subtit {
   display: none;
@@ -999,7 +1020,7 @@ textarea {
   background-position: 0 -14px;
 }
 .main-shrink .openBtn {
-  background-position: -12px 0;
+  background-position: -11px 0;
 }
 .main-shrink .logoBox {
   width: 70px;
@@ -1247,18 +1268,19 @@ textarea {
   margin-right: 0;
 }
 .dataAnalysis {
-  margin-top: 10px;
+  margin-top: 5px;
   width: 244px;
-  height: 250px;
+  height: 168px;
 }
 .itemSearch .searchInput {
+  display: none;
   position: relative;
   width: 100%;
   height: 30px;
   line-height: 30px;
   background: #f6f7fb;
   border: 1px solid #e5e5e5;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 .itemSearch .searchInput .itemIcon {
   position: absolute;
@@ -1283,6 +1305,7 @@ textarea {
 .itemSearch .itemSearchList {
   width: 100%;
   height: 210px;
+  margin-top: 10px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -1307,7 +1330,6 @@ textarea {
   text-decoration: underline;
 }
 .operateBox {
-  display: none;
   margin-top: 10px;
 }
 .operateBox .operateList {
@@ -1330,7 +1352,6 @@ textarea {
   text-indent: 10px;
 }
 .spreadBox {
-  display: none;
   margin-top: 10px;
 }
 .spreadBox .spreadTxt {
@@ -1434,7 +1455,10 @@ textarea {
   margin-right: 5px;
 }
 .disabled,
-.PopupBtn input[type="button"].disabled {
+.PopupBtn input[type="button"].disabled,
+.wareList tr td .accountName.disabled,
+.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.PopupBtn input[type="button"].wareList tr td .accountName.disabled {
   background: #f4f4f4;
 }
 .conHidden_x {
@@ -1511,6 +1535,10 @@ textarea {
   width: 90%;
   height: 30px;
 }
+.popupList tr td input[type="text"].citySelect,
+.popupList tr td input[type="password"].citySelect {
+  width: 156px;
+}
 .popupList .fieldName,
 .popupList .fieldName_one {
   width: 80px;
@@ -1528,14 +1556,19 @@ textarea {
   height: 30px;
   line-height: 30px;
 }
-.popupList .citySelect {
-  width: 156px;
-}
 .popupList input[type="button"].addCity {
   width: 66px;
   height: 30px;
   min-width: 66px;
   vertical-align: middle;
+}
+.popupList .infoTxt {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.popupList .tab_selectWidth {
+  width: 176px;
 }
 .detailList {
   width: 100%;
@@ -1586,7 +1619,8 @@ textarea {
 .PopupBtn input[type="button"].PopupOrange:hover {
   background: #ff7144;
 }
-.PopupBtn input[type="button"].disabled {
+.PopupBtn input[type="button"].disabled,
+.PopupBtn input[type="button"].wareList tr td .accountName.disabled {
   border: 1px solid #d2d2d2;
   height: 28px;
   line-height: 28px;
@@ -1756,20 +1790,62 @@ textarea {
 .dataTables_paginate .fg-button.first.PopupBtn input[type="button"].disabled,
 .dataTables_paginate .paginate_button.last.PopupBtn input[type="button"].disabled,
 .dataTables_paginate .paginate_active.last.PopupBtn input[type="button"].disabled,
-.dataTables_paginate .fg-button.last.PopupBtn input[type="button"].disabled {
+.dataTables_paginate .fg-button.last.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_button.previous.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.previous.wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.previous.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_button.next.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.next.wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.next.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_button.first.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.first.wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.first.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_button.last.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.last.wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.last.wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_button.previous.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_active.previous.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .fg-button.previous.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_button.next.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_active.next.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .fg-button.next.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_button.first.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_active.first.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .fg-button.first.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_button.last.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_active.last.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .fg-button.last.wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .paginate_button.previous.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.previous.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.previous.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_button.next.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.next.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.next.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_button.first.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.first.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.first.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_button.last.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .paginate_active.last.PopupBtn input[type="button"].wareList tr td .accountName.disabled,
+.dataTables_paginate .fg-button.last.PopupBtn input[type="button"].wareList tr td .accountName.disabled {
   border: 1px solid #d2d2d2;
   color: #999999;
 }
 .dataTables_paginate .ui-state-disabled,
 .dataTables_paginate .paginate_button_disabled,
 .dataTables_paginate .disabled,
-.dataTables_paginate .PopupBtn input[type="button"].disabled {
+.dataTables_paginate .PopupBtn input[type="button"].disabled,
+.dataTables_paginate .wareList tr td .accountName.disabled,
+.dataTables_paginate .wareList tr td .accountName.PopupBtn input[type="button"].disabled,
+.dataTables_paginate .PopupBtn input[type="button"].wareList tr td .accountName.disabled {
   cursor: default;
 }
 .dataTables_paginate .ui-state-disabled:hover,
 .dataTables_paginate .paginate_button_disabled:hover,
 .dataTables_paginate .disabled:hover,
-.dataTables_paginate .PopupBtn input[type="button"].disabled:hover {
+.dataTables_paginate .PopupBtn input[type="button"].disabled:hover,
+.dataTables_paginate .wareList tr td .accountName.disabled:hover,
+.dataTables_paginate .wareList tr td .accountName.PopupBtn input[type="button"].disabled:hover,
+.dataTables_paginate .PopupBtn input[type="button"].wareList tr td .accountName.disabled:hover {
   background: #f4f4f4;
 }
 .dataTables_wrapper {
@@ -1809,14 +1885,14 @@ textarea {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 12px;
-  height: 88px;
-  margin-top: -44px;
-  background: url("../images/open_icon.png") 0 -88px no-repeat;
+  width: 11px;
+  height: 78px;
+  margin-top: -39px;
+  background: url("../images/open_icon.png") 0 -78px no-repeat;
   cursor: pointer;
 }
 .spreadBg .shrinkBtn {
-  background-position: -12px -88px;
+  background-position: -11px -78px;
 }
 .focusLeftCon {
   margin-right: 274px;
@@ -1935,7 +2011,7 @@ textarea {
   width: 900px;
 }
 .searchTerm .searchTab.searchWidth_three {
-  width: 1000px;
+  width: 980px;
 }
 .searchTerm .tabSearchBtn {
   width: 90px;
@@ -2005,6 +2081,16 @@ input[type="button"].searchMoreBtn:hover {
   text-overflow: inherit;
   white-space: normal;
 }
+.wareList tr td .wareListClick {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: #92bbff;
+}
+.wareList tr td .accountName {
+  width: 90%;
+}
 .wareList tr th {
   background: #f3f6fd;
   color: #333333;
@@ -2029,6 +2115,10 @@ input[type="button"].searchMoreBtn:hover {
 }
 .wareList.workBookList tr td .operateBtn {
   margin: 5px 0;
+}
+.wareList.wareTrNoBg tr,
+.wareList.wareTrNoBg tr.trBack {
+  background: none;
 }
 .operationBox {
   position: relative;
@@ -2316,6 +2406,9 @@ label.powerLabel input[type='checkbox'] {
   margin: 8px 5px;
   vertical-align: top;
 }
+label.powerLabel.marRig {
+  margin-right: 10px;
+}
 label.labelRed {
   color: #fc6365;
 }
@@ -2380,27 +2473,43 @@ label.labelRed {
   font-size: 14px;
   text-indent: 20px;
 }
+.roomStateBox {
+  position: relative;
+  padding-left: 30px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #e5e5e5;
+}
+.roomStateBox .floorNum {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  margin-top: -24px;
+  width: 20px;
+  height: 48px;
+  line-height: 24px;
+  color: #333333;
+  font-size: 12px;
+  text-align: center;
+}
 .roomStateList {
   width: 100%;
   height: auto;
-  padding: 0 0 5px 20px;
+  padding: 10px 0;
+  background: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border-bottom: 1px dashed #e5e5e5;
-}
-.roomStateList:last-child {
-  border-bottom: none;
 }
 .roomStateList li {
   float: left;
-  width: 192px;
+  width: auto;
   height: 122px;
+  min-width: 192px;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  margin: 10px 5px 5px 5px;
+  margin: 10px 0 10px 20px;
   behavior: url("PIE.htc");
   position: relative;
   z-index: 1;
@@ -2604,4 +2713,85 @@ label.labelRed {
   height: 286px;
   overflow-y: auto;
   margin-bottom: 10px;
+}
+.sortBox.setAccHei {
+  height: 346px;
+}
+.addGroupBox {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+.addGroupBox .addGroupList {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+.addGroupBox .addGroupList .groupName,
+.addGroupBox .addGroupList .groupInput,
+.addGroupBox .addGroupList .groupImg {
+  float: left;
+}
+.addGroupBox .addGroupList .groupName {
+  width: 110px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+}
+.addGroupBox .addGroupList .groupInput {
+  width: 226px;
+  height: 30px;
+}
+.addGroupBox .addGroupList .groupImg {
+  width: 14px;
+  height: 14px;
+  margin: 8px;
+  cursor: pointer;
+}
+.addGroupBox .addGroupList .groupImg.deleteGroup {
+  background: url("../images/workclose_icon.png") 0 0 no-repeat;
+}
+.addGroupBox .addGroupList .groupImg.addGroup {
+  background: url("../images/add_icon.png") 0 0 no-repeat;
+}
+.keepIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  background: url("../images/keep_icon.png") 0 0 no-repeat;
+  cursor: pointer;
+}
+.keepIcon:hover {
+  background-position: 0 -16px;
+}
+@media screen and (max-width: 2560px) {
+  .roomStateList li {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 2370px) {
+  .roomStateList li {
+    width: 11.3%;
+  }
+}
+@media screen and (max-width: 2048px) {
+  .roomStateList li {
+    width: 12.8%;
+  }
+}
+@media screen and (max-width: 1920px) {
+  .roomStateList li {
+    width: 15%;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .roomStateList li {
+    width: 17.8%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .roomStateList li {
+    width: 17.8%;
+  }
 }

@@ -14,7 +14,7 @@ require(
         var myChart = ec.init(document.getElementById('dataAnalysis'),theme);
         var option = {
             grid: {  //图表填充与容器的边距
-                x : '26px', y : '30px', width : '200px', height : '180px'
+                x : '0', y : '30px', width : '236px', height : '100px'
             },
             title : {
                 text: '',
@@ -49,6 +49,7 @@ require(
             ],
             yAxis : [
                 {
+                    show : false,
                     type : 'value'
                 }
             ],

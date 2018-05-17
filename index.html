@@ -46,13 +46,13 @@
                     <p class="link_subtit"><i class="subicon icon_sublease"></i>租赁</p>
                 </a>
                 <dl class="subMenu">
-                    <dd><a class="action" href="javascript:void(0);" data-url="list.html">整租管理</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">合租管理</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="qft_focusList.html">集中整租</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">储备房源</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">储备客源</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">房源推广</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">业绩管理</a></dd>
+                    <!--<dd><a class="action" href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>整租管理</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>合租管理</a></dd>-->
+                    <dd><a href="javascript:void(0);" data-url="qft_focusList.html"><i class="actionIcon"></i>集中整租</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>储备房源</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>储备客源</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>房源推广</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>业绩管理</a></dd>
                 </dl>
             </li>
             <li>
@@ -107,10 +107,10 @@
                     <p class="link_subtit"><i class="subicon icon_subcount"></i>统计</p>
                 </a>
                 <dl class="subMenu ">
-                    <dd><a href="javascript:void(0);" data-url="list.html">业绩报表</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">财务报表</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">OA报表</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">大数据分析</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>业绩报表</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>财务报表</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>OA报表</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>大数据分析</a></dd>
                 </dl>
             </li>
             <li>
@@ -119,16 +119,16 @@
                     <p class="link_subtit"><i class="subicon icon_subsystem"></i>设置</p>
                 </a>
                 <dl class="subMenu">
-                    <dd><a href="javascript:void(0);" data-url="storefrontList.html">店面设置</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="qft_userSetting.html">用户设置</a></dd>
-                    <!--<dd><a href="javascript:void(0);" data-url="qft_roleList.html">角色设置</a></dd>-->
-                    <dd><a href="javascript:void(0);" data-url="qft_wordList.html">字典设置</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">微信设置</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">短信模块</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">合同模板</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">登录日志</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">登录限制</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html">回收站</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="qft_storefrontList.html"><i class="actionIcon"></i>店面设置</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="qft_userSetting.html"><i class="actionIcon"></i>用户设置</a></dd>
+                    <!--<dd><a href="javascript:void(0);" data-url="qft_roleList.html"><i class="actionIcon"></i>角色设置</a></dd>-->
+                    <dd><a href="javascript:void(0);" data-url="qft_wordList.html"><i class="actionIcon"></i>字典设置</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>微信设置</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>短信模块</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>合同模板</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>登录日志</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>登录限制</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>回收站</a></dd>
                 </dl>
     </li>
     </ul>
@@ -191,6 +191,10 @@
     <form id="roleForm" action="" method="">
         <table class="popupList">
             <tr>
+                <th class="fieldName"><span class="require">*</span>旧密码：</th>
+                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
+            </tr>
+            <tr>
                 <th class="fieldName"><span class="require">*</span>新密码：</th>
                 <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
             </tr>
@@ -215,7 +219,7 @@
                 title: '修改密码',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','395px'],
+                area: ['460px','438px'],
                 btn:['确认密码'],
                 yes: function(){
                     $('#roleForm').submit();

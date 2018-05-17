@@ -32,14 +32,14 @@
   .absolute;
   top: 50%;
   left: 0;
-  .size(12px; 88px);
-  margin-top: -44px;
-  background: url("../images/open_icon.png") 0 -88px no-repeat;
+  .size(11px; 78px);
+  margin-top: -39px;
+  background: url("../images/open_icon.png") 0 -78px no-repeat;
   cursor: pointer;
 }
 .spreadBg{
   .shrinkBtn{
-    background-position: -12px -88px;
+    background-position: -11px -78px;
   }
 }
 .focusLeftCon{
@@ -159,7 +159,7 @@
       width: 900px;
     }
     &.searchWidth_three{
-      width: 1000px;
+      width: 980px;
     }
   }
   .tabSearchBtn{
@@ -228,6 +228,18 @@ input[type="button"].searchMoreBtn{
       text-overflow: inherit;
       white-space: normal;
     }
+    .wareListClick{
+      display: block;
+      .size(100%; 40px);
+      line-height: 40px;
+      color: @blue-btn;
+    }
+    .accountName{
+      width: 90%;
+      &.disabled{
+        &:extend(.disabled all);
+      }
+    }
   }
   tr th {
     background: @tabel-header;
@@ -254,6 +266,13 @@ input[type="button"].searchMoreBtn{
       .operateBtn{
         margin: @margin-05 0;
       }
+    }
+  }
+  //取消隔行变色
+  &.wareTrNoBg{
+    tr,
+    tr.trBack{
+      background: none;
     }
   }
 }
@@ -521,6 +540,9 @@ label.powerLabel{
     margin: 8px 5px;
     vertical-align: top;
   }
+  &.marRig{
+    margin-right: @margin-10;
+  }
 }
 //label红色
 label.labelRed{
@@ -589,21 +611,36 @@ label.labelRed{
   text-indent: 20px;
 }
 //房态图列表
+.roomStateBox{
+  .relative;
+  padding-left: @padding-30;
+  background: @gray-cancel-back;
+  .border-bottom(1px; @input-border-col);
+  .floorNum{
+    .absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -24px;
+    .size(20px; 48px);
+    line-height: 24px;
+    color: @gray-dark;
+    font-size: @font-size-small;
+    .align(center);
+  }
+}
 .roomStateList{
   &:extend(.clearfix all);
   .size(100%; auto);
-  padding: 0 0 @padding-05 @padding-20;
+  padding: @padding-10 0;
+  background: @txt-base;
   .box-sizing;
-  border-bottom: 1px dashed @input-border-col;
-  &:last-child{
-    border-bottom:none;
-  }
   li{
     .left;
-    .size(192px; 122px);
+    .size(auto; 122px);
+    min-width:192px;
     .border(1px; @input-border-col);
     .border-radius(@border-radius-large);
-    margin: @margin-10 @margin-05 @margin-05 @margin-05;
+    margin: @margin-10 0 @margin-10 @margin-20;
     .behavior;
     .behavior-relative;
     color: @search-txt;
@@ -791,4 +828,52 @@ label.labelRed{
   .size(auto; 286px);
   overflow-y: auto;
   margin-bottom: @margin-10;
+  &.setAccHei{
+    height: 346px;
+  }
+}
+//添加门店 - 添加分组
+.addGroupBox{
+  .hide;
+  &:extend(.clearfix all);
+  .size(100%; auto);
+  .addGroupList{
+    .size(100%; 30px);
+    margin-bottom: @margin-10;
+    .groupName,
+    .groupInput,
+    .groupImg{
+      .left;
+    }
+    .groupName{
+      .size(110px; 30px);
+      line-height: 30px;
+      .align(right);
+    }
+    .groupInput{
+      .size(226px; 30px);
+    }
+    .groupImg{
+      .square(14px);
+      margin: 8px;
+      cursor: pointer;
+      &.deleteGroup{
+        background: url("../images/workclose_icon.png") 0 0 no-repeat;
+      }
+      &.addGroup{
+        background: url("../images/add_icon.png") 0 0 no-repeat;
+      }
+    }
+  }
+}
+//设置账户 - 保存图标
+.keepIcon{
+  display: block;
+  .square(16px);
+  margin: 0 auto;
+  background: url("../images/keep_icon.png") 0 0 no-repeat;
+  cursor: pointer;
+  &:hover{
+    background-position: 0 -16px;
+  }
 }
