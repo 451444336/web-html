@@ -66,25 +66,10 @@
 .subTopLeft{
   .left;
   .size(auto; 30px);
-  .subTopBtn{
+  .subTopBtn ,
+  .addbtn{
     .left;
-    .size(auto; 28px);
-    line-height: 28px;
-    .border(1px; @btn-border-col);
-    .align(center);
-    color: @subtop-btn-col;
-    padding: 0 @padding-15;
-    font-size: @font-size-small;
     margin-right: @margin-10;
-    .border-radius(@border-radius-small);
-    .behavior;
-    .behavior-relative;
-    &.subHover,
-    &:hover{
-      color: @txt-base;
-      background: @blue-btn;
-      .border(1px; @blue-btn);
-    }
   }
 }
 .subTopRight{
@@ -122,6 +107,39 @@
     &:hover{
       color: @subtop-btn-col-h;
     }
+  }
+}
+//subTopLeft按钮
+.subTopBtn{
+  .size(auto; 28px);
+  line-height: 28px;
+  .border(1px; @btn-border-col);
+  .align(center);
+  color: @subtop-btn-col;
+  padding: 0 @padding-15;
+  font-size: @font-size-small;
+  .border-radius(@border-radius-small);
+  &.subHover,
+  &:hover{
+    color: @txt-base;
+    background: @blue-btn;
+    .border(1px; @blue-btn);
+  }
+}
+//添加按钮
+.addbtn{
+  display: inline-block;
+  .size(auto; 30px);
+  line-height: 30px;
+  font-size: @font-size-small;
+  padding: 0 @padding-10 0 @padding-30;
+  cursor: pointer;
+  color: @txt-base;
+  background: url("../images/register_icon.png") 5px center no-repeat @blue-btn;
+  &:hover,
+  &:active{
+    background-color: @blue-btn-h;
+    color: @txt-base;
   }
 }
 //搜索条件
@@ -168,7 +186,6 @@
     background: url("../images/tabsearchbtn-icon.png") 20px center  no-repeat @blue-btn;
     font-size: @font-size-small;
     text-indent: 20px;
-    .behavior-relative;
   }
 }
 //更多搜索条件
@@ -179,12 +196,14 @@
 }
 //更多搜索按钮
 input[type="button"].searchMoreBtn{
-  background: url("../images/search_more.png") 55px center no-repeat @txt-base;
+  background: url("../images/search_more.png") 54px center no-repeat @txt-base;
   .border(1px; @blue-btn);
   color: @blue-btn;
-  text-indent: 20px;
+  text-indent: 22px;
+  line-height: 28px;
   .align(left);
-  .behavior-relative;
+  vertical-align: top;
+  font-size: @font-size-small;
   &:hover{
     background: url("../images/search_more_h.png") 55px center no-repeat @blue-btn;
     color: @txt-base;
@@ -294,8 +313,6 @@ input[type="button"].searchMoreBtn{
     text-indent: 10px;
     background: url("../images/operation.png") 45px center no-repeat @blue-btn;
     .border-radius(@border-radius-small);
-    .behavior;
-    .behavior-relative;
   }
   .operationList,
   .subOperMenu{
@@ -400,7 +417,6 @@ input[type="button"].searchMoreBtn{
     font-size: @font-size-base;
     background: @blue-btn;
     .border-radius(@border-radius-small);
-    .behavior;
     cursor: pointer;
     &:hover{
       background: @blue-btn-h;
@@ -436,7 +452,6 @@ input[type="button"].searchMoreBtn{
     .border-radius(@border-radius-base);
     .border(1px; @power-bor-col);
     color: @layer-con-tit;
-    .behavior;
     &:hover,
     &.actionBtn{
       background: @blue-btn;
@@ -494,8 +509,6 @@ input[type="button"].searchMoreBtn{
         color: @txt-base;
         font-size: @font-size-soso;
         .border-radius(@border-radius-base);
-        .behavior;
-        .behavior-relative;
       }
       &:hover,
       &.subMeunHover{
@@ -623,9 +636,12 @@ label.labelRed{
     margin-top: -24px;
     .size(20px; 48px);
     line-height: 24px;
-    color: @gray-dark;
     font-size: @font-size-small;
+    color: @search-txt;
     .align(center);
+  }
+  &:last-child{
+    border-bottom: none;
   }
 }
 .roomStateList{
@@ -792,7 +808,7 @@ label.labelRed{
   min-height: 40px;
   padding: @padding-10 0;
   li{
-    .behavior-relative;
+    .relative;
     .left;
     .size(140px; 24px);
     .border(1px; @btn-border-col);

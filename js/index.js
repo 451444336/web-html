@@ -1,8 +1,8 @@
 $(function(){
     //禁止鼠标右键
-    $(document).bind("contextmenu",function(e){
+   /* $(document).bind("contextmenu",function(e){
         return false;
-    });
+    });*/
     //左侧导航
     var Accordion = function(el, multiple) {
         this.el = el || {};
@@ -77,7 +77,6 @@ $(function(){
         }
     });
     //收缩展开按钮
-    //收缩展开按钮
     $('.leftNav').hover(function(){
         $('.openBtn').show();
     },function(){
@@ -101,6 +100,8 @@ $(function(){
             $('.focusLeftCon').animate({
                 marginRight: '274px'
             },100);
+            $('.subOperMenu').css({'left':'96px'});
+            console.log('a');
         }else{
             $('.rightContent').addClass('spreadBg');
             $('.rightContent').animate({
@@ -109,6 +110,8 @@ $(function(){
             $('.focusLeftCon').animate({
                 marginRight: '15px'
             },100);
+            $('.subOperMenu').css({'left':'-100px'});
+            console.log('b');
         }
 
     });
@@ -123,6 +126,7 @@ $(function(){
             $('.focusLeftCon').animate({
                 marginRight: '15px'
             },100);
+            $('.subOperMenu').css({'left':'-100px'});
         }else{
             $('.rightContent').removeClass('spreadBg');
             $('.rightContent').animate({
@@ -131,6 +135,7 @@ $(function(){
             $('.focusLeftCon').animate({
                 marginRight: '274px'
             },100);
+            $('.subOperMenu').css({'left':'96px'});
         }
     }).resize();
     //项目搜索、经营数据、推广数据展开收缩

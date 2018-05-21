@@ -19,7 +19,7 @@
     <!--子页顶部内容-->
     <div class="subTopBox">
         <div class="subTopLeft">
-            <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a><a class="subTopBtn qft_adduser" href="javascript:void(0);">添加用户</a>
+            <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a><a class="addbtn qft_adduser" href="javascript:void(0);">添加用户</a>
         </div>
     </div>
     <!--end 子页顶部内容-->
@@ -44,13 +44,7 @@
                     </select>
                 </td>
                 <th>用户姓名：</th>
-                <td>
-                    <select class="selectpicker" data-live-search="true">
-                        <option value="">全部</option>
-                        <option value="">重庆</option>
-                        <option value="">四川</option>
-                    </select>
-                </td>
+                <td><input name="" type="text"></td>
                 <td><input class="tabSearchBtn" name="" type="button" value="搜索"></td>
             </tr>
         </table>
@@ -89,12 +83,8 @@
     <form id="roleForm" action="" method="">
         <table class="popupList">
             <tr>
-                <th class="fieldName"><span class="require">*</span>旧密码：</th>
-                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
-            </tr>
-            <tr>
                 <th class="fieldName"><span class="require">*</span>新密码：</th>
-                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
+                <td><input class="validate[required,custom[ennumber]]" name="password" type="password" value="" placeholder="请输入新密码"></td>
             </tr>
         </table>
     </form>
@@ -177,7 +167,7 @@
                 title: '添加用户',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['700px','580px'],
+                area: ['700px','600px'],
                 //btn:['保存','关闭'],
                 yes: function(){
                     $('#roleForm').submit();
@@ -227,7 +217,7 @@
                 title: '修改密码',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','438px'],
+                area: ['460px','392px'],
                 btn:['确认密码'],
                 yes: function(){
                     $('#roleForm').submit();
@@ -278,7 +268,7 @@
                 {"sTitle": "所属部门", "mData": "id7"},
                 {"sTitle": "所属职位", "mData": "id8"},
                 {"sTitle": "创建时间", "mData": "id10"},
-                {"sTitle": "上次登录时间", "mData": "id11"},
+                {"sTitle": "操作记录", "mData": "id11"},
                 {"sWidth": "90px", "sTitle": "状态", "mData": "id1", "mRender" : function ( data, type, full ) {
                         return '<select class="tab_select" name="" id=""><option value="1">开通</option><option value="0">关闭</option></select>'
                     }

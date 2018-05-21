@@ -12,22 +12,24 @@
     <![endif]-->
 </head>
 <body>
-<!--店面设置列表-->
-<div class="subMainCon">
-    <!--添加店面-->
-    <div class="subTopBox">
-        <div class="subTopLeft">
-            <a class="subTopBtn JS_addStoreFront" href="javascript:void(0);">添加店面</a><a class="subTopBtn JS_addEditCompany" href="javascript:void(0);">修改公司信息</a>
+<div class="subMainContent">
+    <!--店面设置列表-->
+    <div class="subMainCon">
+        <!--添加店面-->
+        <div class="subTopBox">
+            <div class="subTopLeft">
+                <a class="addbtn JS_addStoreFront" href="javascript:void(0);">添加店面</a><a class="subTopBtn JS_addEditCompany" href="javascript:void(0);">修改公司信息</a>
+            </div>
         </div>
+        <!--end 添加店面-->
+        <!--店面列表-->
+        <div class="subConBox">
+            <table class="wareList" id="example"></table>
+        </div>
+        <!--end 店面列表-->
     </div>
-    <!--end 添加店面-->
-    <!--店面列表-->
-    <div class="subConBox">
-        <table class="wareList" id="example"></table>
-    </div>
-    <!--end 店面列表-->
+    <!--end 店面设置列表-->
 </div>
-<!--end 店面设置列表-->
 <!--添加店面-->
 <div class="PopupBox hide" id="qft_storeFrontBox">
     <form id="addStoreFront" action="" method="">
@@ -314,7 +316,7 @@
                 {"sTitle": "所在地", "mData": "id2"},
                 {"sTitle": "当前房源", "mData": "id3"},
                 {"sWidth": "110px", "sTitle": "座机号码", "mData": "id4"},
-                {"sWidth": "90px", "sTitle": "收租账号", "mData": "id5", "mRender" : function(data, type, full){
+                {"sWidth": "90px", "sTitle": "在线收租账号", "mData": "id5", "mRender" : function(data, type, full){
                         return '<a class="wareListClick JS_setAccount" href="javascript:void(0);">点击设置</a>'
                     }
                 },

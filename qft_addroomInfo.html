@@ -33,16 +33,7 @@
             <table class="popupList">
                 <tr>
                     <th class="fieldName"><span class="require">*</span>物业地址：</th>
-                    <td>
-                        <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
-                            <option value="">全部</option>
-                            <option value="2">重庆</option>
-                            <option value="3">四川</option>
-                            <option value="4">北京</option>
-                            <option value="5">重庆</option>
-                            <option value="6">四川</option>
-                        </select>
-                    </td>
+                    <td><input name="" type="text"></td>
                     <th class="fieldName"><span class="require">*</span>所在区域：</th>
                     <td>
                         <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
@@ -55,7 +46,7 @@
                         </select>
                     </td>
                     <td><input class="behavior-relative JS_addVillage" name="" type="button" value="添加小区"></td>
-                    <th class="fieldName"><span class="require">*</span>座　　栋：</th>
+                    <th class="fieldName">座　　栋：</th>
                     <td><input class="validate[required]" name="" type="text"></td>
                 </tr>
             </table>
@@ -86,23 +77,28 @@
                         <option value="6">四川</option>
                     </select>
                 </td>
-                <th class="fieldName"><span class="require">*</span>楼层编号：</th>
+                <th class="fieldName"><span class="require">*</span>房源编号：</th>
                 <td><input class="validate[required]" name="" type="text"></td>
             </tr>
             <tr class="depositInfo">
                 <th class="fieldName">开 发 商：</th>
                 <td><input name="" type="text"></td>
-                <th class="fieldName">联系电话：</th>
+                <th class="fieldName">
+                    <select name="" id="" class="selectpicker phoneTel">
+                        <option value="">手机电话</option>
+                        <option value="">座机电话</option>
+                    </select>
+                </th>
                 <td><input name="" type="text"></td>
                 <th class="fieldName">其他电话：</th>
                 <td><input name="" type="text"></td>
             </tr>
             <tr class="depositInfo">
-                <th class="fieldName">转款帐户：</th>
+                <th class="fieldName">收款名字：</th>
                 <td><input name="" type="text"></td>
-                <th class="fieldName">转款账号：</th>
+                <th class="fieldName">银行账号：</th>
                 <td><input name="" type="text"></td>
-                <th class="fieldName">转款银行：</th>
+                <th class="fieldName">银行名称：</th>
                 <td>
                     <select name="auditState" class="selectpicker" data-live-search="true">
                         <option value="">全部</option>
@@ -115,8 +111,6 @@
                 </td>
             </tr>
             <tr>
-                <th class="fieldName">楼　　层：</th>
-                <td><input name="" type="text"></td>
                 <th class="fieldName">有无电梯：</th>
                 <td>
                     <select name="auditState" class="selectpicker">
@@ -134,13 +128,12 @@
                     <td class="dayBox"><input class="start_rise date validate[required,custom[date]]" name="" type="text"></td>
                     <th class="fieldName"><span class="require">*</span>到期时间：</th>
                     <td class="dayBox"><input class="start_rise date validate[required,custom[date]]" name="" type="text"></td>
-                    <th class="fieldName_one"><span class="require">*</span>本幢/层价格：</th>
+                    <th class="fieldName_one"><span class="require">*</span>本幢/层租金：</th>
                     <td><input class=" validate[required,custom[onlyNumberSp]]" name="" type="text"></td>
                 </tr>
                 <tr>
-                    <th class="fieldName_one"><span class="require">*</span>房屋押金：</th>
+                    <th class="fieldName"><span class="require">*</span>房屋押金：</th>
                     <td><input class="validate[required]" name="" type="text"></td>
-
                     <th class="fieldName"><span class="require">*</span>合同期限：</th>
                     <td colspan="3">
                         <select name="auditState" class="selectpicker pactSelect validate[required]">
@@ -173,7 +166,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th class="fieldName_one"><span class="require">*</span>业务人员：</th>
+                    <th class="fieldName"><span class="require">*</span>业务人员：</th>
                     <td><input class="validate[required]" name="" type="text"></td>
 
                     <th class="fieldName">装修期限：</th>
@@ -212,7 +205,7 @@
                     <td><input class="JS_entryTime disabled" name="" type="text" value="" disabled="disabled"></td>
                     <th class="fieldName">录入人员：</th>
                     <td><input class="disabled" name="" type="text" value="管理员" disabled></td>
-                    <th class="fieldName_one">递增约定：</th>
+                    <th class="fieldName">递增约定：</th>
                     <td>
                         <select name="auditState" class="selectpicker">
                             <option value="1">无递增</option>
@@ -232,18 +225,12 @@
                             <option value="6">6</option>
                         </select>
                     </td>
-                    <th class="fieldName">提　　前：</th>
-                    <td>
-                        <select name="auditState" class="selectpicker">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
+                    <th class="fieldName">
+                        <select name="" id="" class="selectpicker phoneTel">
+                            <option value="">提前</option>
+                            <option value="">延后</option>
                         </select>
-                    </td>
-                    <th class="fieldName">延　　后：</th>
+                    </th>
                     <td>
                         <select name="auditState" class="selectpicker">
                             <option value="1">1</option>

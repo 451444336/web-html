@@ -6,7 +6,7 @@
 			$.validationEngineLanguage.allRules = {
                 "required": { // Add your regex rules here, you can take telephone as an example
                     "regex": "none",
-                    "alertText": " 此处不可空白",
+                    "alertText": " 这是必填项",
                     "alertTextCheckboxMultiple": " 请选择一个项目",
                     "alertTextCheckboxe": " 您必须钩选此栏",
                     "alertTextDateRange": " 日期范围不可空白"
@@ -238,6 +238,10 @@
                 "special":{
                     "regex":/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
                     "alertText":" 不能输入特殊字符！"
+                },
+                "ennumber":{
+                    "regex":/(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}/,
+                    "alertText":" 英文加数字至少8位！"
                 }
 				
 				/**

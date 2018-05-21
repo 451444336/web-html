@@ -126,7 +126,7 @@
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>微信设置</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>短信模块</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>合同模板</a></dd>
-                    <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>登录日志</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="qft_recordList.html"><i class="actionIcon"></i>登录日志</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>登录限制</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>回收站</a></dd>
                 </dl>
@@ -191,12 +191,8 @@
     <form id="roleForm" action="" method="">
         <table class="popupList">
             <tr>
-                <th class="fieldName"><span class="require">*</span>旧密码：</th>
-                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
-            </tr>
-            <tr>
                 <th class="fieldName"><span class="require">*</span>新密码：</th>
-                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
+                <td><input class="validate[required,custom[ennumber]]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
             </tr>
         </table>
     </form>
@@ -219,10 +215,11 @@
                 title: '修改密码',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','438px'],
+                area: ['460px','392px'],
                 btn:['确认密码'],
                 yes: function(){
-                    $('#roleForm').submit();
+                    var flage = $("#roleForm").validationEngine("validate");
+                    console.log(flage);
                 },
                 btnAlign: 'c',
                 content: $('#qft_modifyBox')

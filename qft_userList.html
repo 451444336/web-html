@@ -19,7 +19,7 @@
     <!--子页顶部内容-->
     <div class="subTopBox">
         <div class="subTopLeft">
-            <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a><a class="subTopBtn JS_record" href="javascript:void(0);">操作记录</a>
+            <a class="subTopBtn subHover" href="javascript:void(0);">正常用户</a><a class="subTopBtn" href="javascript:void(0);">已关闭用户</a>
         </div>
     </div>
     <!--end 子页顶部内容-->
@@ -60,13 +60,7 @@
                     </select>
                 </td>
                 <th>用户姓名：</th>
-                <td>
-                    <select class="selectpicker" data-live-search="true">
-                        <option value="">全部</option>
-                        <option value="">重庆</option>
-                        <option value="">四川</option>
-                    </select>
-                </td>
+                <td><input name="" type="text"></td>
                 <td colspan="2"><input class="tabSearchBtn" name="" type="button" value="搜索"></td>
             </tr>
         </table>
@@ -106,12 +100,8 @@
     <form id="roleForm" action="" method="">
         <table class="popupList">
             <tr>
-                <th class="fieldName"><span class="require">*</span>旧密码：</th>
-                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
-            </tr>
-            <tr>
                 <th class="fieldName"><span class="require">*</span>新密码：</th>
-                <td><input class="validate[required]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
+                <td><input class="validate[required,custom[ennumber]]" name="password" type="password" value="" placeholder="请输入新密码" required></td>
             </tr>
         </table>
     </form>
@@ -187,19 +177,6 @@
                 content: $('#qft_userInfoBox')
             });
         });
-        //操作记录
-        $('.subTopBox').on('click','.JS_record',function(){
-            layer.open({
-                type: 2,
-                title: '操作记录',
-                skin: 'popup-title-bg', //样式类名
-                closeBtn : 1,
-                area: ['860px','460px'],
-                //btn:['关闭'],
-                btnAlign: 'c',
-                content: 'qft_recordList.html'
-            });
-        });
         //修改密码
         $('.wareList').on('click','.modifyPass',function(){
             layer.open({
@@ -207,7 +184,7 @@
                 title: '修改密码',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','438px'],
+                area: ['460px','392px'],
                 btn:['确认密码'],
                 yes: function(){
                     $('#roleForm').submit();
@@ -293,9 +270,9 @@
                 {"sTitle": "所属部门", "mData": "id8"},
                 {"sTitle": "所属职位", "mData": "id9"},
                 {"sTitle": "创建时间", "mData": "id10"},
-                {"sTitle": "上次登录时间", "mData": "id11"},
+                {"sTitle": "操作记录", "mData": "id11"},
                 {"sWidth": "90px", "sTitle": "状态", "mData": "id1", "mRender" : function ( data, type, full ) {
-                        return '<select class="tab_select" name="" id=""><option value="1">开通</option><option value="0">关闭</option></select>'
+                        return '<select class="tab_select" name="" id=""><option value="1">开通</option><option value="0" selected>关闭</option></select>'
                     }
                 },
                 {"sWidth": "280px", "sTitle" : "基本操作","mData" : "id","sClass":"tab_operate", "mRender" : function ( data, type, full ) {
