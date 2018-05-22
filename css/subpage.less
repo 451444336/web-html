@@ -767,7 +767,8 @@ label.labelRed{
 }
 //备注信息
 .textareaBox{
-  .size(100%; 50px);
+  .size(100%; auto);
+  line-height: 24px;
   textarea{
     .size(100%; 50px);
     padding: @padding-05 .5%;
@@ -869,17 +870,40 @@ label.labelRed{
     .groupInput{
       .size(226px; 30px);
     }
-    .groupImg{
-      .square(14px);
-      margin: 8px;
-      cursor: pointer;
-      &.deleteGroup{
-        background: url("../images/workclose_icon.png") 0 0 no-repeat;
-      }
-      &.addGroup{
-        background: url("../images/add_icon.png") 0 0 no-repeat;
-      }
-    }
+  }
+}
+//添加门店 - 公司名称描述
+.companyDesc{
+  .size(100%; 40px);
+  line-height: 20px;
+  overflow: hidden;
+  .companyDescMore{
+    color: @ctiy-bg;
+  }
+}
+//添加门店 - 删除门店
+.existBox{
+  .align(center);
+  font-size: @font-size-small;
+  line-height: 26px;
+}
+//添加门店 - 转移门店
+.storeName{
+  display: inline-block;
+  line-height: 30px;
+  font-size: @font-size-soso;
+  vertical-align: middle;
+}
+//加减图片按钮
+.groupImg{
+  .square(14px);
+  margin: 8px;
+  cursor: pointer;
+  &.deleteGroup{
+    background: url("../images/workclose_icon.png") 0 0 no-repeat;
+  }
+  &.addGroup{
+    background: url("../images/add_icon.png") 0 0 no-repeat;
   }
 }
 //设置账户 - 保存图标

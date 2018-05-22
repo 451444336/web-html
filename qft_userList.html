@@ -200,7 +200,7 @@
                 title: '添加用户',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['700px','580px'],
+                area: ['700px','600px'],
                 //btn:['保存','关闭'],
                 yes: function(){
                     $('#roleForm').submit();
@@ -242,9 +242,22 @@
                 title: '权限修改',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['900px','610px'],
+                area: ['900px','595px'],
                 btnAlign: 'c',
                 content: 'modifypower.html'
+            });
+        });
+        //操作记录
+        $('.wareList').on('click','.JS_record',function(){
+            layer.open({
+                type: 2,
+                title: '操作记录',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['860px','460px'],
+                //btn:['关闭'],
+                btnAlign: 'c',
+                content: 'qft_recordList.html'
             });
         });
         //datatable
@@ -270,7 +283,10 @@
                 {"sTitle": "所属部门", "mData": "id8"},
                 {"sTitle": "所属职位", "mData": "id9"},
                 {"sTitle": "创建时间", "mData": "id10"},
-                {"sTitle": "操作记录", "mData": "id11"},
+                {"sTitle": "操作记录", "mData": "id11", "mRender": function(){
+                        return '<a class="wareListClick JS_record" href="javascript:void(0);">点击查看</a>';
+                    }
+                },
                 {"sWidth": "90px", "sTitle": "状态", "mData": "id1", "mRender" : function ( data, type, full ) {
                         return '<select class="tab_select" name="" id=""><option value="1">开通</option><option value="0" selected>关闭</option></select>'
                     }

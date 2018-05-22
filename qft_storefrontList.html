@@ -18,7 +18,7 @@
         <!--添加店面-->
         <div class="subTopBox">
             <div class="subTopLeft">
-                <a class="addbtn JS_addStoreFront" href="javascript:void(0);">添加店面</a><a class="subTopBtn JS_addEditCompany" href="javascript:void(0);">修改公司信息</a>
+                <a class="addbtn JS_addStoreFront" href="javascript:void(0);">添加店面</a><!--<a class="subTopBtn JS_addEditCompany" href="javascript:void(0);">修改公司信息</a>-->
             </div>
         </div>
         <!--end 添加店面-->
@@ -37,10 +37,8 @@
             <tr>
                 <th class="fieldName_one"><span class="require">*</span>所属城市：</th>
                 <td>
-                    <input class="citySelect" name="" type="text" placeholder="请输入城市">
-                    <input class="addCity" type="button" value="添加">
+                    <input name="" type="text" placeholder="请输入城市">
                 </td>
-                <td class="gray-col">点击添加按钮添加城市</td>
             </tr>
             <tr>
                 <th class="fieldName_one"><span class="require">*</span>店面名称：</th>
@@ -57,15 +55,15 @@
                 <td><input name="" type="text" placeholder="请输入店面所在地"></td>
                 <td class="gray-col">电子合同中生成店面地址</td>
             </tr>
-            <tr>
+            <!--<tr>
                 <th class="fieldName_one">地图定位地址：</th>
                 <td><input name="" type="text" value=""></td>
                 <td class="gray-col">*在地图中定位地址</td>
-            </tr>
+            </tr>-->
             <tr>
                 <th class="fieldName_one">公司名称：</th>
-                <td><input name="" type="text"></td>
-                <td class="gray-col">用于电子合同生成的公司名称</td>
+                <td><input class="disabled" name="" type="text" value="公司名称" disabled></td>
+                <td class="gray-col"><p class="companyDesc">公司名称 是用于电子合同生成的公司名称，有的公司是合伙人模式或加盟模式... <a class="companyDescMore" href="javascript:void(0);">更多&gt;&gt;</a></p></td>
             </tr>
             <tr>
                 <th class="fieldName_one">是否分组：</th>
@@ -75,7 +73,7 @@
                         <label class="propRadio"><input class="JS_groupRadio" name="group" type="radio" value="1">分组</label>
                     </div>
                 </td>
-                <td class="gray-col">公司下面进行分组</td>
+                <td class="gray-col">在店面下面再分小组，如“万达广场店”下面又分A组、B组、C组。</td>
             </tr>
         </table>
         <div class="addGroupBox">
@@ -84,8 +82,6 @@
             <p class="addGroupList"><span class="groupName">组名：</span><input class="groupInput" name="" type="text"><span class="groupImg deleteGroup"></span></p>
             <p class="addGroupList"><span class="groupName">组名：</span><input class="groupInput" name="" type="text"><span class="groupImg addGroup"></span></p>
         </div>
-        <h2 class="PopupTitle">备注</h2>
-        <p class="textareaBox">公司名称 是用于电子合同生成的公司名称，有的公司是合伙人模式或加盟模式，每个店面生成出来的合同公司名称不一样，所以需要在这里填写公司名称。如果你的所有店面生成的公司名称都一样，则可不用填写。</p>
     </form>
 </div>
 <!--end 添加店面-->
@@ -96,10 +92,8 @@
             <tr>
                 <th class="fieldName_one"><span class="require">*</span>所属城市：</th>
                 <td>
-                    <input class="citySelect" name="" type="text" placeholder="请输入城市">
-                    <input class="addCity" type="button" value="添加">
+                    <input name="" type="text" placeholder="请输入城市">
                 </td>
-                <td class="gray-col">点击添加按钮添加城市</td>
             </tr>
             <tr>
                 <th class="fieldName_one"><span class="require">*</span>店面名称：</th>
@@ -116,24 +110,38 @@
                 <td><input name="" type="text" placeholder="请输入店面所在地"></td>
                 <td class="gray-col">电子合同中生成店面地址</td>
             </tr>
-            <tr>
+            <!--<tr>
                 <th class="fieldName_one">地图定位地址：</th>
                 <td><input name="" type="text" value=""></td>
                 <td class="gray-col">*在地图中定位地址</td>
-            </tr>
+            </tr>-->
             <tr>
                 <th class="fieldName_one">公司名称：</th>
-                <td><input name="" type="text"></td>
-                <td class="gray-col">用于电子合同生成的公司名称</td>
+                <td><input class="disabled" name="" type="text" value="公司名称" disabled></td>
+                <td class="gray-col"><p class="companyDesc">公司名称 是用于电子合同生成的公司名称，有的公司是合伙人模式或加盟模式... <a class="companyDescMore" href="javascript:void(0);">更多&gt;&gt;</a></p></td>
+            </tr>
+            <tr>
+                <th class="fieldName_one">是否分组：</th>
+                <td>
+                    <div class="property">
+                        <label class="propRadio"><input class="JS_groupRadio" name="group" type="radio" value="0" checked="">不分组</label>
+                        <label class="propRadio"><input class="JS_groupRadio" name="group" type="radio" value="1">分组</label>
+                    </div>
+                </td>
+                <td class="gray-col">在店面下面再分小组，如“万达广场店”下面又分A组、B组、C组。</td>
             </tr>
         </table>
-        <h2 class="PopupTitle">备注</h2>
-        <p class="textareaBox">公司名称 是用于电子合同生成的公司名称，有的公司是合伙人模式或加盟模式，每个店面生成出来的合同公司名称不一样，所以需要在这里填写公司名称。如果你的所有店面生成的公司名称都一样，则可不用填写。</p>
+        <div class="addGroupBox">
+            <p class="addGroupList"><span class="groupName">组名：</span><input class="groupInput" name="" type="text"><span class="groupImg deleteGroup"></span></p>
+            <p class="addGroupList"><span class="groupName">组名：</span><input class="groupInput" name="" type="text"><span class="groupImg deleteGroup"></span></p>
+            <p class="addGroupList"><span class="groupName">组名：</span><input class="groupInput" name="" type="text"><span class="groupImg deleteGroup"></span></p>
+            <p class="addGroupList"><span class="groupName">组名：</span><input class="groupInput" name="" type="text"><span class="groupImg addGroup"></span></p>
+        </div>
     </form>
 </div>
 <!--end 添加店面-->
 <!--修改公司信息-->
-<div class="PopupBox hide" id="qft_companyInfoBox">
+<!--<div class="PopupBox hide" id="qft_companyInfoBox">
     <form id="companyInfo" action="" method="">
         <h2 class="PopupTitle">修改公司信息</h2>
         <table class="popupList">
@@ -155,7 +163,7 @@
             </tr>
         </table>
     </form>
-</div>
+</div>-->
 <!--end 修改公司信息-->
 <!--添加城市-->
 <div class="PopupBox hide" id="qft_cityBox">
@@ -200,7 +208,7 @@
                 title: '添加门店',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['660px','540px'],
+                area: ['660px','395px'],
                 btn:['保存','关闭'],
                 btnAlign: 'c',
                 content: $('#qft_storeFrontBox')
@@ -213,7 +221,7 @@
                 title: '编辑门店',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['660px','494px'],
+                area: ['660px','395px'],
                 btn:['保存','关闭'],
                 btnAlign: 'c',
                 content: $('#qft_editStoreFrontBox')
@@ -230,17 +238,17 @@
                 closeBtn : 0
             });
         });
-        //添加城市
-        $('.PopupBox').on('click', '.addCity', function(){
+        //查看更多公司描述
+        $('.companyDesc').on('click', '.companyDescMore', function(){
             layer.open({
                 type: 1,
-                title: '添加城市',
+                title: '信息',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['300px','260px'],
-                btn:['保存','关闭'],
+                area: ['300px','215px'],
+                btn:['关闭'],
                 btnAlign: 'c',
-                content: $('#qft_cityBox')
+                content: '<p style="padding: 10px;">公司名称 是用于电子合同生成的公司名称，有的公司是合伙人模式或加盟模式，每个店面生成出来的合同公司名称不一样，所以需要在这里填写公司名称。如果你的所有店面生成的公司名称都一样，则可不用填写。</p>'
             });
         });
         //分组与不分组
@@ -262,7 +270,7 @@
             $('.addGroupBox').find('.addGroupList').eq(-2).after(groupHtml);
         });
         //修改公司信息
-        $('.subTopBox').on('click','.JS_addEditCompany',function(){
+       /* $('.subTopBox').on('click','.JS_addEditCompany',function(){
             layer.open({
                 type: 1,
                 title: '修改公司信息',
@@ -273,7 +281,7 @@
                 btnAlign: 'c',
                 content: $('#qft_companyInfoBox')
             });
-        });
+        });*/
         //列表点击添加分组
         $('.wareList').on('click','.JS_clickAddGroup',function(){
             layer.open({
@@ -322,6 +330,10 @@
                 },
                 {"sTitle": "分组", "mData": "id5", "mRender" : function(data, type, full){
                         return '<a class="wareListClick JS_clickAddGroup" href="javascript:void(0);">点击添加</a>'
+                    }
+                },
+                {"sWidth": "90px", "sTitle": "房源转移", "mData": "id5", "mRender" : function(data, type, full){
+                        return '<a class="wareListClick JS_clickShiftGroup" href="javascript:void(0);">点击转移</a>'
                     }
                 },
                 {"sWidth": "130px", "sTitle": "创建时间", "mData": "id6"},

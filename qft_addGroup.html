@@ -14,7 +14,8 @@
 <body>
 <!--分组列表-->
 <div class="PopupBox sortBox">
-    <h2 class="PopupTitle">分组信息 <span class="modulepower JS_addGroup">添加组</span></h2>
+    <a href="javascript:void (0);" class="addbtn JS_addGroup">添加分组</a>
+    <h2 class="PopupTitle">分组信息</h2>
     <table class="wareList">
         <thead>
         <tr>
@@ -70,27 +71,40 @@
     <form id="transferForm" action="" method="">
         <table class="popupList">
             <tr>
-                <th class="fieldName_one">转移房源类型：</th>
+                <th class="fieldName_one">需转移房源类型：</th>
                 <td>
-                    <label class="powerLabel marRig"><input class="checkAll commonly_checkbox" name="" type="checkbox">整租</label>
-                    <label class="powerLabel marRig"><input class="checkAll commonly_checkbox" name="" type="checkbox">合租</label>
-                    <label class="powerLabel marRig"><input class="checkAll commonly_checkbox" name="" type="checkbox">集中</label>
+                    <label class="powerLabel marRig"><input class="checkAll commonly_checkbox" name="" type="checkbox">整租房源</label>
+                    <label class="powerLabel marRig"><input class="checkAll commonly_checkbox" name="" type="checkbox">合租房源</label>
+                    <label class="powerLabel marRig"><input class="checkAll commonly_checkbox" name="" type="checkbox">集中房源</label>
                 </td>
             </tr>
             <tr>
-                <th class="fieldName_one">转移到：</th>
+                <th class="fieldName_one">转　　移　　到：</th>
                 <td>
+                    <span class="storeName">　大坪店：</span>
                     <select class="tab_selectWidth">
                         <option value="">全部</option>
                         <option value="">重庆</option>
                         <option value="">四川</option>
                     </select>
+                    <span class="storeName">组</span>
                 </td>
             </tr>
         </table>
     </form>
+    <h2 class="PopupTitle">备注</h2>
+    <p class="textareaBox">转移房源只能本店的分组之间转移。</p>
 </div>
 <!--end 转移本组房源-->
+<!--有房源删除提示-->
+<div class="PopupBox hide" id="qft_deleteBox">
+    <div class="existBox">
+        <p>此店面名下存在126条房源，不能删除<br/>正常房源：120条&nbsp;&nbsp;&nbsp;&nbsp;回收站：20条</p>
+    </div>
+    <h2 class="PopupTitle">备注</h2>
+    <p class="textareaBox">如果确定删除此店面，请先将正常房源操作"房东退房"，房东退房后悔进入"回收站"，然后在回收站里面将该店房源彻底删除。</p>
+</div>
+<!--end 有房源删除提示-->
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <!--layer弹出层-->
@@ -98,28 +112,33 @@
 <script>
     $(function(){
         //添加组
-        $('.PopupTitle').on('click', '.JS_addGroup', function(){
+        $('.PopupBox').on('click', '.JS_addGroup', function(){
             var listHtml = '<tr>\n' +
                 '   <td><input class="accountName" name="" type="text" /> </td>\n' +
                 '   <td></td>\n' +
-                '   <td><a class="operateBtn deleteCol JS_delete" href="javascript:void(0);">删除</a>&nbsp;|&nbsp;<a class="operateBtn JS_edit" href="javascript:void(0);">修改</a>&nbsp;|&nbsp;<a class="operateBtn JS_transfer" href="javascript:void(0);">房源转移</a></td>\n' +
+                '   <td><a class="operateBtn deleteCol JS_deleteAdd" href="javascript:void(0);">删除</a>&nbsp;|&nbsp;<a class="operateBtn JS_edit" href="javascript:void(0);">修改</a>&nbsp;|&nbsp;<a class="operateBtn JS_transfer" href="javascript:void(0);">房源转移</a></td>\n' +
                 '</tr>';
             $('.wareList').append(listHtml);
         });
-        //删除
+        //删除有房源的提示
         $('.wareList').on('click','.JS_delete',function(){
-            layer.confirm('是否确定删除？',{
-                title: '信息确认',
+            layer.open({
+                type: 1,
+                title: '提示信息',
                 skin: 'popup-title-bg', //样式类名
-                icon: 3,
-                btnAlign: 'c',
-                btn: ['确定','取消'],
-                btn1: function(index){
-                    console.log($(this));
+                closeBtn : 1,
+                area: ['500px','272px'],
+                btn:['取消'],
+                yes: function(){
+                    $('#roleForm').submit();
                 },
-                area: ['350px','170px'],
-                closeBtn : 0
+                btnAlign: 'c',
+                content: $('#qft_deleteBox')
             });
+        });
+        //删除
+        $('.wareList').on('click','.JS_deleteAdd',function(){
+            $(this).parents('tr').remove();
         });
         //修改组名
         $('.wareList').on('click','.JS_edit',function(){
@@ -141,10 +160,10 @@
         $('.wareList').on('click','.JS_transfer',function(){
             layer.open({
                 type: 1,
-                title: '修改分组信息',
+                title: '转移房源',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['400px','215px'],
+                area: ['450px','285px'],
                 btn:['保存','取消'],
                 yes: function(){
                     $('#roleForm').submit();

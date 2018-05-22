@@ -1539,10 +1539,6 @@ input[type="password"].PopupBtn input[type="button"].wareList tr td .accountName
   width: 95%;
   height: 30px;
 }
-.popupList tr td input[type="text"].citySelect,
-.popupList tr td input[type="password"].citySelect {
-  width: 156px;
-}
 .popupList .fieldName,
 .popupList .fieldName_one {
   width: 80px;
@@ -1573,6 +1569,7 @@ input[type="password"].PopupBtn input[type="button"].wareList tr td .accountName
 }
 .popupList .tab_selectWidth {
   width: 176px;
+  vertical-align: middle;
 }
 .popupList .phoneTel {
   float: left !important;
@@ -2643,7 +2640,8 @@ label.labelRed {
 }
 .textareaBox {
   width: 100%;
-  height: 50px;
+  height: auto;
+  line-height: 24px;
 }
 .textareaBox textarea {
   width: 100%;
@@ -2754,16 +2752,36 @@ label.labelRed {
   width: 226px;
   height: 30px;
 }
-.addGroupBox .addGroupList .groupImg {
+.companyDesc {
+  width: 100%;
+  height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.companyDesc .companyDescMore {
+  color: #fb6464;
+}
+.existBox {
+  text-align: center;
+  font-size: 12px;
+  line-height: 26px;
+}
+.storeName {
+  display: inline-block;
+  line-height: 30px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+.groupImg {
   width: 14px;
   height: 14px;
   margin: 8px;
   cursor: pointer;
 }
-.addGroupBox .addGroupList .groupImg.deleteGroup {
+.groupImg.deleteGroup {
   background: url("../images/workclose_icon.png") 0 0 no-repeat;
 }
-.addGroupBox .addGroupList .groupImg.addGroup {
+.groupImg.addGroup {
   background: url("../images/add_icon.png") 0 0 no-repeat;
 }
 .keepIcon {

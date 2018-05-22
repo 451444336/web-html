@@ -243,7 +243,6 @@
                     "regex":/(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}/,
                     "alertText":" 英文加数字至少8位！"
                 }
-				
 				/**
 				 * 自定义公用提示信息：
 				 * 外部通过 $.validationEngineLanguage.allRules.validate2fields.alertText 可获取

@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <th class="fieldName_one"><span class="require">*</span>姓名：</th>
-                <td><input class="validate[required,custom[special]]" name="" type="text" value="" placeholder="请输入姓名"></td>
+                <td><input id="user" class="validate[required,custom[special],ajax[ajaxNameCall]]" name="user" type="text" value="" placeholder="请输入姓名"></td>
                 <td class="gray-col">请填写真实姓名</td>
             </tr>
             <tr>
@@ -148,6 +148,10 @@
             showArrow: false,
             promptPosition: 'bottomLeft:5 0'
         });
+        /*$('#addUserForm').bind('jqv.field.result', function(event, field, errorFound, prompText){
+            console.log(field);
+            console.log(errorFound);
+        });*/
     })
 </script>
 </body>
