@@ -1497,7 +1497,7 @@ input[type="password"].PopupBtn input[type="button"].wareList tr td .accountName
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.PopupTitle:first-child {
+.PopupTitle.margin_top0 {
   margin-top: 0;
 }
 .PopupTitle .modulepower {
