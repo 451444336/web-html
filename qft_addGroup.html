@@ -13,18 +13,19 @@
 </head>
 <body>
 <!--分组列表-->
-<div class="PopupBox sortBox">
+<div class="PopupBox">
     <a href="javascript:void (0);" class="addbtn JS_addGroup">添加分组</a>
-    <h2 class="PopupTitle">分组信息</h2>
-    <table class="wareList">
-        <thead>
-        <tr>
-            <th width="100">组名</th>
-            <th>当前存在房源</th>
-            <th width="170">操作</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="groupInfo">
+        <h2 class="PopupTitle">分组信息</h2>
+        <table class="wareList">
+            <thead>
+            <tr>
+                <th width="100">组名</th>
+                <th>当前存在房源</th>
+                <th width="170">操作</th>
+            </tr>
+            </thead>
+            <tbody>
             <tr>
                 <td>01</td>
                 <td>整租：11 集中：31 合租：34</td>
@@ -45,8 +46,9 @@
                 <td>整租：11 集中：31 合租：34</td>
                 <td><a class="operateBtn deleteCol JS_delete" href="javascript:void(0);">删除</a>&nbsp;|&nbsp;<a class="operateBtn JS_edit" href="javascript:void(0);">修改</a>&nbsp;|&nbsp;<a class="operateBtn JS_transfer" href="javascript:void(0);">房源转移</a></td>
             </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
 <!--end 分组列表-->
 <!--共用按钮-->

@@ -473,6 +473,11 @@ input[type="button"].searchMoreBtn{
 .margin0{
   margin: 0;
 }
+//权限设置
+.powerSetUp{
+  .size(100%; 480px);
+  overflow-y: auto;
+}
 //权限菜单
 .powerMeunBox{
   .size(100%; auto);
@@ -522,12 +527,16 @@ input[type="button"].searchMoreBtn{
 }
 //权限选项
 .powerOptionBox{
-  .size(100%; 256px);
-  margin-bottom: @margin-05;
+  .size(100%; 275px);
   overflow: auto;
   .powerOption{
     margin-bottom: @margin-10;
   }
+}
+//权限设置说明
+.powerInfo{
+  .hide;
+  line-height: 24px;
 }
 //权限子标题
 .subPowerTit{
@@ -817,7 +826,7 @@ label.labelRed{
     .align(center);
     color: @gray-con;
     font-size: @font-size-small;
-    margin: @margin-05 @margin-10;
+    margin: @margin-05 0 @margin-05 @margin-10;
     line-height: 24px;
     cursor: pointer;
     .workBookTxt{
@@ -849,7 +858,7 @@ label.labelRed{
     height: 346px;
   }
 }
-//添加门店 - 添加分组
+//添加店面 - 添加分组
 .addGroupBox{
   .hide;
   &:extend(.clearfix all);
@@ -872,7 +881,12 @@ label.labelRed{
     }
   }
 }
-//添加门店 - 公司名称描述
+.groupInfo{
+  margin-top: @margin-10;
+  .size(100%; 246px);
+  overflow-y: auto;
+}
+//添加店面 - 公司名称描述
 .companyDesc{
   .size(100%; 40px);
   line-height: 20px;
@@ -881,13 +895,13 @@ label.labelRed{
     color: @ctiy-bg;
   }
 }
-//添加门店 - 删除门店
+//添加店面 - 删除门店
 .existBox{
   .align(center);
   font-size: @font-size-small;
   line-height: 26px;
 }
-//添加门店 - 转移门店
+//添加店面 - 转移门店
 .storeName{
   display: inline-block;
   line-height: 30px;

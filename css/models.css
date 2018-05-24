@@ -376,11 +376,6 @@ textarea {
   border-radius: 2px;
   padding: 5px;
 }
-.fixedButton {
-  position: fixed;
-  left: 0;
-  bottom: 10px;
-}
 .loginBox {
   position: relative;
   width: 100%;
@@ -2329,6 +2324,11 @@ input[type="button"].searchMoreBtn:hover {
 .margin0 {
   margin: 0;
 }
+.powerSetUp {
+  width: 100%;
+  height: 480px;
+  overflow-y: auto;
+}
 .powerMeunBox {
   width: 100%;
   height: auto;
@@ -2383,12 +2383,15 @@ input[type="button"].searchMoreBtn:hover {
 }
 .powerOptionBox {
   width: 100%;
-  height: 256px;
-  margin-bottom: 5px;
+  height: 275px;
   overflow: auto;
 }
 .powerOptionBox .powerOption {
   margin-bottom: 10px;
+}
+.powerInfo {
+  display: none;
+  line-height: 24px;
 }
 .subPowerTit {
   padding: 0 10px;
@@ -2695,7 +2698,7 @@ label.labelRed {
   text-align: center;
   color: #666666;
   font-size: 12px;
-  margin: 5px 10px;
+  margin: 5px 0 5px 10px;
   line-height: 24px;
   cursor: pointer;
 }
@@ -2751,6 +2754,12 @@ label.labelRed {
 .addGroupBox .addGroupList .groupInput {
   width: 226px;
   height: 30px;
+}
+.groupInfo {
+  margin-top: 10px;
+  width: 100%;
+  height: 246px;
+  overflow-y: auto;
 }
 .companyDesc {
   width: 100%;

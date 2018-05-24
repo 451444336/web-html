@@ -166,7 +166,7 @@
 </div>-->
 <!--end 修改公司信息-->
 <!--添加城市-->
-<div class="PopupBox hide" id="qft_cityBox">
+<!--<div class="PopupBox hide" id="qft_cityBox">
     <form id="cityForm" action="" method="">
         <table class="popupList">
             <tr>
@@ -183,7 +183,17 @@
             </tr>
         </table>
     </form>
+</div>-->
+<!--end 添加城市-->
+<!--有房源删除提示-->
+<div class="PopupBox hide" id="qft_deleteBox">
+    <div class="existBox">
+        <p>此店面名下存在126条房源，不能删除<br/>正常房源：120条&nbsp;&nbsp;&nbsp;&nbsp;回收站：20条</p>
+    </div>
+    <h2 class="PopupTitle">备注</h2>
+    <p class="textareaBox">如果确定删除此店面，请先将正常房源操作"房东退房"，房东退房后悔进入"回收站"，然后在回收站里面将该店房源彻底删除。</p>
 </div>
+<!--end 有房源删除提示-->
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <!--layer弹出层-->
@@ -228,7 +238,7 @@
             });
         });
         //删除
-        $('.wareList').on('click','.JS_delete',function(){
+        /*$('.wareList').on('click','.JS_delete',function(){
             layer.confirm('是否确定删除？',{
                 title: '信息确认',
                 skin: 'popup-title-bg', //样式类名
@@ -236,6 +246,19 @@
                 btnAlign: 'c',
                 area: ['350px','170px'],
                 closeBtn : 0
+            });
+        });*/
+        //删除有房源的提示
+        $('.wareList').on('click','.JS_delete',function(){
+            layer.open({
+                type: 1,
+                title: '提示信息',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['500px','272px'],
+                btn:['取消'],
+                btnAlign: 'c',
+                content: $('#qft_deleteBox')
             });
         });
         //查看更多公司描述
