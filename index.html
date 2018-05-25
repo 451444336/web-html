@@ -29,7 +29,7 @@
                         <a class="quitBtn" href="javascript:void(0);">安全退出</a>
                     </div>
                 </li>
-                <li><a href="#"><i class="icon icon_setup"></i>首页设置</a></li>
+                <li><a href="javascript:void(0);" class="homeSetUp"><i class="icon icon_setup"></i>首页设置</a></li>
                 <li><a href="#"><i class="icon con_Prompt"></i>516</a></li>
                 <li class="cityHead"><a class="cityChoice" href="javascript:void (0);">重庆</a></li>
             </ul>
@@ -197,6 +197,14 @@
         </table>
     </form>
 </div>
+<!--end 修改密码弹窗-->
+<!--首页设置-->
+<div class="PopupBox" id="qft_setUpIndex">
+    <div class="powerBtnBox margin_top0">
+        <input class="powerBtn" type="button" value="弹窗提醒" onclick="allSelectByTpye(this,'search')"><input class="powerBtn" type="button" value="首页倒计时" onclick="allSelectByTpye(this,'hand')"><input class="powerBtn" type="button" value="代办提醒" onclick="allSelectByTpye(this,'delete')">
+    </div>
+</div>
+<!--end 首页设置-->
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/layui/layui.js"></script>
@@ -215,7 +223,8 @@
                 title: '修改密码',
                 skin: 'popup-title-bg', //样式类名
                 closeBtn : 1,
-                area: ['460px','392px'],
+                area: ['460px','auto'],
+                //area: 'auto',
                 btn:['确认密码'],
                 yes: function(){
                     var flage = $("#roleForm").validationEngine("validate");
@@ -241,7 +250,20 @@
                 area: ['350px','170px'],
                 closeBtn : 0
             });
-        })
+        });
+        //首页设置
+        $('.headerBox').on('click','.homeSetUp', function(){
+           layer.open({
+                type: 1,
+                title: '首页设置',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['800px','auto'],
+                btn:['保存','关闭'],
+                btnAlign: 'c',
+                content: $('#qft_setUpIndex')
+            });
+        });
     })
 </script>
 </body>

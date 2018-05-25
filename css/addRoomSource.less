@@ -1,0 +1,51 @@
+@import "base";
+@import "variables";
+//添加房源
+.roomFlowStop{
+  &:extend(.clearfix all);
+  .size(690px; 30px);
+  margin: 0 auto @margin-10 auto;
+  li{
+    .left;
+    .size(138px; 30px);
+    line-height: 30px;
+    background: url("../images/fliw_cent.png") 0 0 no-repeat;
+    .align(center);
+    font-size: @font-size-soso;
+    color: @gray-cont;
+    &.roomFrist{
+      background: url("../images/fliw_left.png") 0 0 no-repeat;
+      color: @txt-base;
+    }
+    &.roomLast{
+      background: url("../images/fliw_right.png") 0 0 no-repeat;
+    }
+  }
+}
+.property{
+  .size(100%; 30px);
+  line-height: 30px;
+}
+//物业地址
+.propertySite{
+  .size(100%; 30px);
+  padding: 9px 0;
+  background: @orange-back;
+  .border(1px; @orange-border);
+  margin-top: @margin-05;
+}
+//合同期限
+.pactSelect{
+  .left !important;
+  width: 20%;
+}
+.pactTxt{
+  .left;
+  line-height: 30px;
+  margin: 0 @margin-05;
+}
+//百度地图
+.villageBox{
+  .size(100%; 200px);
+  margin: @margin-05 0;
+}
