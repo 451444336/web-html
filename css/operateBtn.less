@@ -109,3 +109,22 @@
     .border(1px; @blue-btn);
   }
 }
+//首页设置 - tab选项卡按钮
+.tab_btn{
+  display: inline-block;
+  .size(110px; 28px);
+  .border(1px; @power-bor-col);
+  .border-radius(@border-radius-small);
+  .align(center);
+  line-height: 28px;
+  color: @layer-con-tit;
+  font-size: @font-size-soso;
+  margin-right: @margin-10;
+  &:hover{
+    .border(1px; @blue-btn);
+    color: @blue-btn;
+  }
+  &.action{
+    background: url("../images/action_h.png") top right no-repeat;
+  }
+}

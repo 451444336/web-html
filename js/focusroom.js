@@ -24,28 +24,28 @@ $('.subTopBox').on('click','.subTopBtn',function(){
     $(this).addClass('subHover').siblings().removeClass('subHover');
     if(parseInt(infoTxt) == 0){
         $('.roomState').fadeIn();
-        $('.register').addClass('roomInfo').text('登记房源').removeClass('masterInfo');
+        $('.addbtn').addClass('roomInfo').text('登记租客').removeClass('masterInfo');
     }else{
         $('.roomState').fadeOut();
-        $('.register').addClass('masterInfo').text('登记房东').removeClass('roomInfo');
+        $('.addbtn').addClass('masterInfo').text('登记房源').removeClass('roomInfo');
     }
 });
 //登记房源-项目基本信息录入
-$('.subTopBox').on('click','.roomInfo',function(){
+$('.subTopBox').on('click','.masterInfo',function(){
     var index = layer.open({
         type: 2,
         title: '项目基本信息录入',
         skin: 'popup-title-bg', //样式类名
         closeBtn : 1,
-        area: ['900px','550px'],
+        area: ['740px','550px'],
         //btn:['关闭'],
         btnAlign: 'c',
         content: 'qft_addroomInfo.html'
     });
     layer.iframeAuto(index)
 });
-//登记房东-项目基本信息录入
-$('.subTopBox').on('click','.masterInfo',function(){
+//登记租客-项目基本信息录入
+$('.subTopBox').on('click','.roomInfo',function(){
     layer.open({
         type: 2,
         title: '项目基本信息录入',

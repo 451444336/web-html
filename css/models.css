@@ -413,6 +413,9 @@ textarea {
 .blue-col {
   color: #92bbff;
 }
+.navyBlue-col {
+  color: #60666e;
+}
 .require {
   display: inline-block;
   color: #fc6365;
@@ -1327,6 +1330,19 @@ label.labelRed {
   margin: 4px 5px;
   background: #507bea;
 }
+.setUpTitle {
+  margin-bottom: 10px;
+}
+.setUpCon {
+  display: none;
+}
+.remindBox {
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  padding-left: 20px;
+}
 .popup-title-bg .layui-layer-title {
   background-color: #e2eaf3;
 }
@@ -2239,7 +2255,7 @@ input[type="button"].searchMoreBtn:hover {
 }
 .propertySite {
   width: 100%;
-  height: 30px;
+  height: 45px;
   padding: 9px 0;
   background: #fffdf5;
   border: 1px solid #f2ecd2;
@@ -2256,7 +2272,7 @@ input[type="button"].searchMoreBtn:hover {
 }
 .villageBox {
   width: 100%;
-  height: 200px;
+  height: 190px;
   margin: 5px 0;
 }
 .powerBtnBox {
@@ -2514,6 +2530,27 @@ input[type="button"].searchMoreBtn:hover {
   color: #fff;
   background: #92bbff;
   border: 1px solid #92bbff;
+}
+.tab_btn {
+  display: inline-block;
+  width: 110px;
+  height: 28px;
+  border: 1px solid #b4bfcf;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 28px;
+  color: #60666e;
+  font-size: 13px;
+  margin-right: 10px;
+}
+.tab_btn:hover {
+  border: 1px solid #92bbff;
+  color: #92bbff;
+}
+.tab_btn.action {
+  background: url("../images/action_h.png") top right no-repeat;
 }
 /*
 *module：系统设置
