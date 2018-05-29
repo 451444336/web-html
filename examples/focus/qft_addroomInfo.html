@@ -217,12 +217,18 @@
                     <th class="fieldName"><span class="require">*</span>缴费方式：</th>
                     <td>
                         <select name="auditState" class="selectpicker validate[required]">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
+                            <option value="1">月付</option>
+                            <option value="2">二月付</option>
+                            <option value="3">季度付</option>
+                            <option value="4">四月付</option>
+                            <option value="5">五月付</option>
+                            <option value="6">半年付</option>
+                            <option value="7">年付</option>
+                            <option value="8">二年付</option>
+                            <option value="9">三年付</option>
+                            <option value="10">四年付</option>
+                            <option value="11">全额支付</option>
+                            <option value="12">不规则支付</option>
                         </select>
                     </td>
                     <th class="fieldName">
@@ -239,6 +245,9 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
                         </select>
                     </td>
                 </tr>
@@ -289,7 +298,7 @@
         });
         //保存并下一步
         $('.JS_hold').on('click',function(){
-            window.location.href = 'http://www.cqxinkai.com';
+            window.location.href = 'qft_allotRooms.html';
         });
         //添加小区
         $('.propertySite').on('click','.JS_addVillage',function(){

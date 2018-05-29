@@ -24,17 +24,23 @@
         <div class="headRightMenu imgPng">
             <ul class="headMenu">
                 <li class="subHeadMenu">
-                    <a href="javascript:void(0);"><i class="icon icon_admin"></i>管理员</a>
+                    <a class="topHeadMenu" href="javascript:void(0);"><i class="icon icon_admin"></i>管理员</a>
                     <div class="subHeadMenuList">
                         <i class="subHeadIco"></i>
-                        <a href="javascript:void(0);">全房通官网</a>
-                        <a class="modifyPass" href="javascript:void(0);">修改密码</a>
-                        <a class="quitBtn" href="javascript:void(0);">安全退出</a>
+                        <a href="javascript:void(0);"><i class="headIco qftHome"></i>全房通官网</a>
+                        <a class="modifyPass" href="javascript:void(0);"><i class="headIco passIcon"></i>修改密码</a>
+                        <a class="quitBtn" href="javascript:void(0);"><i class="headIco quitIcon"></i>安全退出</a>
                     </div>
                 </li>
-                <li><a href="javascript:void(0);" class="homeSetUp"><i class="icon icon_setup"></i>首页设置</a></li>
-                <li><a href="#"><i class="icon con_Prompt"></i>516</a></li>
-                <li class="cityHead"><a class="cityChoice" href="javascript:void (0);">重庆</a></li>
+                <li><a href="javascript:void(0);" class="homeSetUp topHeadMenu"><i class="icon icon_setup"></i>首页设置</a></li>
+                <li><a class="topHeadMenu" href="javascript:void(0);"><i class="icon con_Prompt"></i><span id="epiclock">600</span></a></li>
+                <li class="cityHead">
+                    <a class="cityChoice topHeadMenu" href="javascript:void (0);">重庆</a>
+                    <div class="honeCityList">
+                        <i class="subHeadIco"></i>
+                        <a class="cityTxt" href="javascript:void(0);">北京</a><a class="cityTxt" href="javascript:void(0);">上海</a><a class="cityTxt" href="javascript:void(0);">广州</a><a class="cityTxt" href="javascript:void(0);">深圳</a><a class="cityTxt" href="javascript:void(0);">成都</a><a class="cityTxt" href="javascript:void(0);">重庆</a><a class="cityTxt" href="javascript:void(0);">北京</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -51,7 +57,7 @@
                 <dl class="subMenu">
                     <!--<dd><a class="action" href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>整租管理</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>合租管理</a></dd>-->
-                    <dd><a href="javascript:void(0);" data-url="examples/focus/qft_focusList.html"><i class="actionIcon"></i>集中整租</a></dd>
+                    <dd><a href="javascript:void(0);" data-url="examples/focus/qft_roomList.html"><i class="actionIcon"></i>集中整租</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>储备房源</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>储备客源</a></dd>
                     <dd><a href="javascript:void(0);" data-url="list.html"><i class="actionIcon"></i>房源推广</a></dd>
@@ -212,6 +218,25 @@
 <script type="text/javascript" src="js/layer/layer.js"></script>
 <script>
     $(function(){
+        //倒计时
+        var logintime;
+        function settimes(time){
+            logintime = setInterval(function(){
+                time--;
+                $("#epiclock").text(time);
+                if(time==0){
+                    //window.location.href=ctx+"/loginController/exit.action";
+                    time ++;
+                    clearInterval(logintime);
+                    return false;
+                }
+            },1000);
+        }
+        var clock = '600';
+        if(clock == null || clock == ""){
+            clock = 300;
+        }
+        settimes(clock);//启动计时器
         //修改密码
         $('.headerBox').on('click','.modifyPass',function(){
             layer.open({

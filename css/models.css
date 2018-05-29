@@ -130,6 +130,7 @@ em {
 .downloadBox .downloadCon,
 .headerBox,
 .headRightMenu .headMenu,
+.honeCityList,
 .navMenu,
 .layui-tab .layui-tab-title,
 .onService,
@@ -149,6 +150,7 @@ em {
 .powerOptionList,
 .mediabox,
 .workBookBox,
+.storeFrontCity .cityListBox,
 .addGroupBox,
 .subMainContent,
 .subTopBox,
@@ -165,6 +167,8 @@ em {
 .headerBox:after,
 .headRightMenu .headMenu:before,
 .headRightMenu .headMenu:after,
+.honeCityList:before,
+.honeCityList:after,
 .navMenu:before,
 .navMenu:after,
 .layui-tab .layui-tab-title:before,
@@ -203,6 +207,8 @@ em {
 .mediabox:after,
 .workBookBox:before,
 .workBookBox:after,
+.storeFrontCity .cityListBox:before,
+.storeFrontCity .cityListBox:after,
 .addGroupBox:before,
 .addGroupBox:after,
 .subMainContent:before,
@@ -219,6 +225,7 @@ em {
 .downloadBox .downloadCon:after,
 .headerBox:after,
 .headRightMenu .headMenu:after,
+.honeCityList:after,
 .navMenu:after,
 .layui-tab .layui-tab-title:after,
 .onService:after,
@@ -238,6 +245,7 @@ em {
 .powerOptionList:after,
 .mediabox:after,
 .workBookBox:after,
+.storeFrontCity .cityListBox:after,
 .addGroupBox:after,
 .subMainContent:after,
 .subTopBox:after,
@@ -274,6 +282,10 @@ em {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/*
+*module：公共样式
+*name: liangbin
+*/
 .bodyBack {
   background: #edeff4;
 }
@@ -458,6 +470,7 @@ label.labelRed {
   color: #fc6365;
 }
 .groupImg {
+  display: inline-block;
   width: 14px;
   height: 14px;
   margin: 8px;
@@ -998,7 +1011,7 @@ label.labelRed {
   height: 50px;
   padding-left: 20px;
 }
-.headRightMenu .headMenu li a {
+.headRightMenu .headMenu li a.topHeadMenu {
   display: block;
   width: auto;
   height: 50px;
@@ -1006,7 +1019,7 @@ label.labelRed {
   color: #fff;
   font-size: 14px;
 }
-.headRightMenu .headMenu li a.cityChoice {
+.headRightMenu .headMenu li a.topHeadMenu.cityChoice {
   width: auto;
   height: 40px;
   padding: 0 30px 0 10px;
@@ -1014,13 +1027,13 @@ label.labelRed {
   margin-top: 5px;
   background: url("../images/ctiy_icon.png") 45px center no-repeat #fb6464;
 }
-.headRightMenu .headMenu li a.cityChoice:hover {
+.headRightMenu .headMenu li a.topHeadMenu.cityChoice:hover {
   color: #fff;
 }
-.headRightMenu .headMenu li a:hover {
+.headRightMenu .headMenu li a.topHeadMenu:hover {
   color: #c3d7ff;
 }
-.headRightMenu .headMenu li .subHeadMenuList {
+.subHeadMenuList {
   display: none;
   position: absolute;
   left: 15px;
@@ -1034,7 +1047,27 @@ label.labelRed {
   box-shadow: 0 0 8px #999999;
   z-index: 1070;
 }
-.headRightMenu .headMenu li .subHeadMenuList .subHeadIco {
+.subHeadMenuList a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  color: #333333;
+  font-size: 12px;
+}
+.subHeadMenuList a:hover {
+  color: #507bea;
+}
+.subHeadMenuList a:hover .qftHome {
+  background-position: -14px 0;
+}
+.subHeadMenuList a:hover .passIcon {
+  background-position: -14px -14px;
+}
+.subHeadMenuList a:hover .quitIcon {
+  background-position: -14px -28px;
+}
+.subHeadIco {
   position: absolute;
   left: 50%;
   top: -16px;
@@ -1044,17 +1077,53 @@ label.labelRed {
   border: 8px solid transparent;
   border-bottom: 8px solid #fff;
 }
-.headRightMenu .headMenu li .subHeadMenuList a {
-  display: block;
-  width: 80px;
+.headIco {
+  float: left;
+  width: 14px;
+  height: 14px;
+  margin: 8px;
+  background: url("../images/admin_icon.png") 0 0 no-repeat;
+}
+.headIco.qftHome {
+  background-position: 0 0;
+}
+.headIco.passIcon {
+  background-position: 0 -14px;
+}
+.headIco.quitIcon {
+  background-position: 0 -28px;
+}
+.honeCityList {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 50px;
+  width: 280px;
+  height: auto;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  -webkit-box-shadow: 0 0 8px #999999;
+  -moz-box-shadow: 0 0 8px #999999;
+  box-shadow: 0 0 8px #999999;
+  z-index: 1070;
+}
+.honeCityList .subHeadIco {
+  left: 250px;
+  margin-left: 0;
+}
+.honeCityList .cityTxt {
+  float: left;
+  width: 56px;
   height: 30px;
-  padding: 0 10px;
   line-height: 30px;
-  color: #333333;
+  text-align: center;
+  color: #666666;
   font-size: 12px;
 }
-.headRightMenu .headMenu li .subHeadMenuList a:hover {
-  background: #eeeeee;
+.honeCityList .cityTxt:hover {
+  background: #507bea;
+  color: #fff;
 }
 .openBtn {
   display: none;
@@ -1671,7 +1740,7 @@ input[type="button"].searchMoreBtn:hover {
   width: 90%;
 }
 .wareList {
-  width: 99.7%;
+  width: 100%;
   height: auto;
   table-layout: fixed;
   margin: 0 auto;
@@ -2226,6 +2295,10 @@ input[type="button"].searchMoreBtn:hover {
 .roomStateList li .labelType.endfix {
   background: url("../images/endfix_icon.png") 0 0 no-repeat;
 }
+/*
+*module：添加房源
+*name: liangbin
+*/
 .roomFlowStop {
   width: 690px;
   height: 30px;
@@ -2247,6 +2320,10 @@ input[type="button"].searchMoreBtn:hover {
 }
 .roomFlowStop li.roomLast {
   background: url("../images/fliw_right.png") 0 0 no-repeat;
+}
+.roomFlowStop li.roomaction {
+  background: url("../images/fliw_cent_h.png") 0 0 no-repeat;
+  color: #fff;
 }
 .property {
   width: 100%;
@@ -2274,6 +2351,20 @@ input[type="button"].searchMoreBtn:hover {
   width: 100%;
   height: 190px;
   margin: 5px 0;
+}
+.floorInfoBox {
+  width: 100%;
+  height: 218px;
+  overflow-y: auto;
+}
+.floorNum {
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  line-height: 40px;
+}
+.floorNum .accountName {
+  text-align: center;
 }
 .powerBtnBox {
   width: 100%;
@@ -2701,6 +2792,51 @@ input[type="button"].searchMoreBtn:hover {
 }
 .sortBox.setAccHei {
   height: 346px;
+}
+/*
+*module：店面设置
+*name: liangbin
+*/
+.storeFrontCity {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.storeFrontCity .cityKey {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 92px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  color: #666666;
+}
+.storeFrontCity .cityListBox {
+  margin-left: 92px;
+}
+.storeFrontCity .cityValue {
+  float: left;
+  width: auto;
+  height: 28px;
+  min-width: 68px;
+  line-height: 28px;
+  color: #333333;
+  margin: 5px 10px 5px 0;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #c8c8c8;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.storeFrontCity .cityValue.cityAction {
+  color: #92bbff;
+  border: 1px solid #92bbff;
 }
 .addGroupBox {
   display: none;

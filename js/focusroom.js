@@ -18,18 +18,6 @@ $('.subTopBox').on('click','.JS_switch',function(){
         $('#roomState').addClass('hide');
     }
 });
-//房间、房东信息切换
-$('.subTopBox').on('click','.subTopBtn',function(){
-    var infoTxt = $(this).data('info');
-    $(this).addClass('subHover').siblings().removeClass('subHover');
-    if(parseInt(infoTxt) == 0){
-        $('.roomState').fadeIn();
-        $('.addbtn').addClass('roomInfo').text('登记租客').removeClass('masterInfo');
-    }else{
-        $('.roomState').fadeOut();
-        $('.addbtn').addClass('masterInfo').text('登记房源').removeClass('roomInfo');
-    }
-});
 //登记房源-项目基本信息录入
 $('.subTopBox').on('click','.masterInfo',function(){
     var index = layer.open({
@@ -37,6 +25,8 @@ $('.subTopBox').on('click','.masterInfo',function(){
         title: '项目基本信息录入',
         skin: 'popup-title-bg', //样式类名
         closeBtn : 1,
+        maxmin: true,
+        resize: false,
         area: ['740px','550px'],
         //btn:['关闭'],
         btnAlign: 'c',
@@ -54,6 +44,6 @@ $('.subTopBox').on('click','.roomInfo',function(){
         area: ['740px','560px'],
         //btn:['关闭'],
         btnAlign: 'c',
-        content: 'qft_recordList.html'
+        content: ''
     });
 });

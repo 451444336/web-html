@@ -143,6 +143,48 @@
     height: 346px;
   }
 }
+/*
+*module：店面设置
+*name: liangbin
+*/
+//店面所在城市选择
+.storeFrontCity{
+  .relative;
+  .size(100%; auto);
+  min-height: 40px;
+  line-height: 40px;
+  font-size: @font-size-soso;
+  margin-bottom: @margin-10;
+  .cityKey{
+    .absolute;
+    left: 0;
+    top: 0;
+    .size(92px; 40px);
+    line-height: 40px;
+    .left;
+    color: @gray-con;
+  }
+  .cityListBox{
+    &:extend(.clearfix all);
+    margin-left: 92px;
+  }
+  .cityValue{
+    .left;
+    .size(auto; 28px);
+    min-width: 68px;
+    line-height: 28px;
+    color: @gray-dark;
+    margin: @margin-05 @margin-10 @margin-05 0;
+    font-size: @font-size-soso;
+    .align(center);
+    .border(1px; @btn-border-col);
+    .border-radius(@border-radius-small);
+    &.cityAction{
+      color: @blue-btn;
+      .border(1px; @blue-btn);
+    }
+  }
+}
 //添加店面 - 添加分组
 .addGroupBox{
   .hide;

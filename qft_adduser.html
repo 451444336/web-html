@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <th class="fieldName_one"><span class="require">*</span>姓名：</th>
-                <td><input id="user" class="validate[required,custom[special],ajax[ajaxNameCall]]" name="user" type="text" value="" placeholder="请输入姓名"></td>
+                <td><input id="account" class="validate[required,custom[special],ajax[ajaxNameCall]]" name="user" type="text" value="" placeholder="请输入姓名"></td>
                 <td class="gray-col">请填写真实姓名</td>
             </tr>
             <tr>
@@ -125,7 +125,7 @@
         </table>
         <!--共用按钮-->
         <div class="PopupBtn">
-            <input name="" type="button" value="保存"><input class="cancel" name="" type="button" value="关闭">
+            <input id="keep" name="" type="button" value="保存"><input class="cancel" name="" type="button" value="关闭">
         </div>
         <!--end 共用按钮-->
     </form>
@@ -147,6 +147,9 @@
             addPromptClass: 'formError-text',
             showArrow: false,
             promptPosition: 'bottomLeft:5 0'
+        });
+        $('#keep').on('click',function(){
+            console.log($("#addUserForm").validationEngine("validate"));
         });
         /*$('#addUserForm').bind('jqv.field.result', function(event, field, errorFound, prompText){
             console.log(field);

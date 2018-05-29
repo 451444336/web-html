@@ -101,7 +101,6 @@ $(function(){
                 marginRight: '274px'
             },100);
             $('.subOperMenu').css({'left':'96px'});
-            console.log('a');
         }else{
             $('.rightContent').addClass('spreadBg');
             $('.rightContent').animate({
@@ -111,7 +110,6 @@ $(function(){
                 marginRight: '15px'
             },100);
             $('.subOperMenu').css({'left':'-100px'});
-            console.log('b');
         }
 
     });
@@ -174,6 +172,12 @@ $(function(){
         $('.subHeadMenuList').show();
     },function(){
         $('.subHeadMenuList').hide();
+    });
+    //地区选择列表
+    $('.cityHead').hover(function(){
+        $('.honeCityList').show();
+    },function(){
+        $('.honeCityList').hide();
     });
     //table列表操作按钮
     $('.wareList').on('click', '.operationBtn', function(event){

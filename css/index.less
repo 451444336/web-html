@@ -144,7 +144,7 @@
       .left;
       .size(auto; 50px);
       padding-left: @padding-20;
-      a{
+      a.topHeadMenu{
         display: block;
         .size(auto; 50px);
         line-height: 50px;
@@ -164,40 +164,97 @@
           color: @nav-menu-color;
         }
       }
-      //管理员弹出菜单
-      .subHeadMenuList{
-        .hide;
-        .absolute;
-        left: 15px;
-        top: 50px;
-        .size(100px; auto);
-        background: @txt-base;
-        .border(1px; @tabel-border);
-        -webkit-box-shadow: 0 0 8px @gray-cont;
-        -moz-box-shadow: 0 0 8px @gray-cont;
-        box-shadow: 0 0 8px @gray-cont;
-        z-index: @zindex-tooltip;
-        .subHeadIco{
-          .absolute;
-          left: 50%;
-          top: -16px;
-          margin-left: -4px;
-          .square(0);
-          .border(8px; transparent);
-          border-bottom: 8px solid @txt-base;
-        }
-        a{
-          display: block;
-          .size(80px; 30px);
-          padding: 0 @padding-10;
-          line-height: 30px;
-          color: @gray-dark;
-          font-size: @font-size-small;
-          &:hover{
-            background: @gray-lighter;
-          }
-        }
+    }
+  }
+}
+//管理员弹出菜单
+.subHeadMenuList{
+  .hide;
+  .absolute;
+  left: 15px;
+  top: 50px;
+  .size(100px; auto);
+  background: @txt-base;
+  .border(1px; @tabel-border);
+  -webkit-box-shadow: 0 0 8px @gray-cont;
+  -moz-box-shadow: 0 0 8px @gray-cont;
+  box-shadow: 0 0 8px @gray-cont;
+  z-index: @zindex-tooltip;
+  a{
+    display: block;
+    .size(100px; 30px);
+    line-height: 30px;
+    color: @gray-dark;
+    font-size: @font-size-small;
+    &:hover{
+      color: @blue-nav-bg;
+      .qftHome{
+        background-position: -14px 0;
       }
+      .passIcon{
+        background-position: -14px -14px;
+      }
+      .quitIcon{
+        background-position: -14px -28px;
+      }
+    }
+  }
+}
+//弹出菜单箭头
+.subHeadIco{
+  .absolute;
+  left: 50%;
+  top: -16px;
+  margin-left: -4px;
+  .square(0);
+  .border(8px; transparent);
+  border-bottom: 8px solid @txt-base;
+}
+//管理员弹出菜单图标
+.headIco{
+  .left;
+  .square(14px);
+  margin: 8px;
+  background: url("../images/admin_icon.png") 0 0 no-repeat;
+  &.qftHome{
+    background-position: 0 0;
+  }
+  &.passIcon{
+    background-position: 0 -14px;
+  }
+  &.quitIcon{
+    background-position: 0 -28px;
+  }
+}
+//城市选择
+.honeCityList{
+  .hide;
+  &:extend(.clearfix all);
+  .absolute;
+  right: 15px;
+  top: 50px;
+  .size(280px; auto);
+  padding: @margin-10;
+  background: @txt-base;
+  .border(1px; @tabel-border);
+  -webkit-box-shadow: 0 0 8px @gray-cont;
+  -moz-box-shadow: 0 0 8px @gray-cont;
+  box-shadow: 0 0 8px @gray-cont;
+  z-index: @zindex-tooltip;
+  .subHeadIco{
+    left: 250px;
+    margin-left: 0;
+  }
+  .cityTxt{
+    .left;
+    .size(56px; 30px);
+    line-height: 30px;
+    .align(center);
+    color: @gray-con;
+    font-size: @font-size-small;
+    &:hover{
+      background:@blue-nav-bg;
+      color: @txt-base;
     }
   }
 }

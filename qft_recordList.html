@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>操作记录</title>
     <!--主样式表-->
-    <link rel="stylesheet" href="../../css/models.css">
+    <link rel="stylesheet" href="css/models.css">
     <!--[if lt IE 9]>
-    <script src="../../js/support/html5shiv.min.js"></script>
-    <script src="../../js/support/respond.min.js"></script>
+    <script src="js/support/html5shiv.min.js"></script>
+    <script src="js/support/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -21,10 +21,10 @@
         <!--end 操作记录-->
     </div>
 </div>
-<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="../../js/index.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <!--dataTable-->
-<script type="text/javascript" src="../../js/datatables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/datatables/jquery.dataTables.js"></script>
 <script>
     $(function(){
         //datatable
@@ -36,7 +36,7 @@
             "autoWidth": false,  //自适应宽度
             //"sAjaxSource": "${ctx}/api/user/list", //ajax调用接口
             //<div class="btn-group" style="text-align:left;"><button type="button" class="btn btn-info dropdown-toggle"data-toggle="dropdown">操作 <span class="caret"></span></button>
-            "sAjaxSource": "../../data/userlist.txt", //ajax调用接口
+            "sAjaxSource": "data/userlist.txt", //ajax调用接口
             "aoColumnDefs": [{sDefaultContent: '', orderable: false, aTargets: ['_all']}],
             "aoColumns": [
                 {"sTitle": "编号", "mData": "id"},

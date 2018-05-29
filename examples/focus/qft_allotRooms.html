@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>分配房间</title>
+    <!--主样式表-->
+    <link rel="stylesheet" href="../../css/models.css">
+    <!--[if lt IE 9]>
+    <script src="../../js/support/html5shiv.min.js"></script>
+    <script src="../../js/support/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--添加房源-->
+<div class="PopupBox">
+    <ul class="roomFlowStop">
+        <li class="roomFrist">录入项目基本信息</li>
+        <li class="roomaction">分配房间</li>
+        <li>配置房间</li>
+        <li>上传照片</li>
+        <li class="roomLast">完成</li>
+    </ul>
+    <form id="addUserForm" action="" method="">
+        <div class="property"><label class="propRadio"><input name="property" type="radio" value="0" checked>分配房间</label><label class="propRadio"><input name="property" type="radio" value="1">暂不分配</label></div>
+        <h2 class="PopupTitle">楼层信息<span class="modulepower">添加楼层</span></h2>
+        <div class="floorInfoBox">
+            <table class="wareList wareTrNoBg">
+                <thead>
+                     <tr>
+                         <th>楼层</th>
+                         <th>间数</th>
+                         <th>操作</th>
+                     </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="floorNum gray-col">点击填写楼层号</div></td>
+                        <td><div class="floorNum gray-col">本层合计房间数</div></td>
+                        <td><span class="groupImg deleteGroup JS_delete"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="floorNum gray-col">点击填写楼层号</div></td>
+                        <td><div class="floorNum gray-col">本层合计房间数</div></td>
+                        <td><span class="groupImg deleteGroup JS_delete"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="floorNum gray-col">点击填写楼层号</div></td>
+                        <td><div class="floorNum gray-col">本层合计房间数</div></td>
+                        <td><span class="groupImg deleteGroup JS_delete"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="floorNum gray-col">点击填写楼层号</div></td>
+                        <td><div class="floorNum gray-col">本层合计房间数</div></td>
+                        <td><span class="groupImg deleteGroup JS_delete"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="floorNum gray-col">点击填写楼层号</div></td>
+                        <td><div class="floorNum gray-col">本层合计房间数</div></td>
+                        <td><span class="groupImg deleteGroup JS_delete"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2 class="PopupTitle">备注信息</h2>
+        <p class="textareaBox">楼层：每幢楼里可能有几层楼或整幢是属于你们公寓的，所以需要在这里输入楼层号，如2、3、4、5、6等间数：是指这层楼合计有多少房间，如20间，就填写20</p>
+    </form>
+</div>
+<!--end 添加房源-->
+<!--共用按钮-->
+<div class="powerBtnBox btnCenter">
+    <input class="powerBtn" type="button" value="保存并结束"><input class="powerBtn actionBtn JS_hold" type="button" value="保存并下一步">
+</div>
+<!--end 共用按钮-->
+<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../js/index.js"></script>
+<!--layer弹出层-->
+<script type="text/javascript" src="../../js/layer/layer.js"></script>
+<script>
+    $(function(){
+        //保存并下一步
+        $('.JS_hold').on('click',function(){
+            window.location.href = 'http://www.cqxinkai.com';
+        });
+        //添加楼层
+        $('.PopupTitle').on('click','.modulepower',function(){
+            var tableHtml = '<tr><td><div class="floorNum gray-col">点击填写楼层号</div></td><td><div class="floorNum gray-col">本层合计房间数</div></td><td><span class="groupImg deleteGroup JS_delete"></span></td></tr>';
+            $('.wareList').append(tableHtml);
+        });
+        //删除
+        $('.wareList').on('click','.JS_delete',function(){
+            $(this).parents('tr').remove();
+        });
+        //编辑楼层
+        $('.floorInfoBox').on('click','.floorNum',function(){
+            var num = /^\+?[1-9][0-9]*$/;
+            var inputTxt;
+            var divTxt = $(this).text();
+            if( num.test(divTxt)){
+                inputTxt = '<input class="accountName" name="" type="text" value="'+divTxt+'"/>';
+            }else{
+                inputTxt = '<input class="accountName" name="" type="text" value=""/>';
+            }
+            $(this).html(inputTxt).find('input').focus().blur(function() {
+                $(this).parents('.floorNum').removeClass('gray-col').html($(this).val());
+            });
+        });
+    });
+</script>
+</body>
+</html>
