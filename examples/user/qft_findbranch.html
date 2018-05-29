@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>部门列表</title>
     <!--主样式表-->
-    <link rel="stylesheet" href="css/models.css">
+    <link rel="stylesheet" href="../../static/css/models.css">
     <!--[if lt IE 9]>
-    <script src="js/support/html5shiv.min.js"></script>
-    <script src="js/support/respond.min.js"></script>
+    <script src="../../static/js/support/html5shiv.min.js"></script>
+    <script src="../../static/js/support/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -59,19 +59,32 @@
         </table>
     </form>
 </div>
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<!--end 添加部门-->
+<!--编辑部门-->
+<div class="PopupBox hide" id="qft_branchEditBox">
+    <form id="roleForm_one" action="" method="">
+        <table class="popupList">
+            <tr>
+                <th class="fieldName"><span class="require">*</span>部门名称：</th>
+                <td><input class="validate[required]" name="bumen1" type="text" value="" placeholder="请填写部门名称"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--end 编辑部门-->
+<script type="text/javascript" src="../../static/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../static/js/index.js"></script>
 <!--dataTable-->
-<script type="text/javascript" src="js/datatables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="../../static/js/datatables/jquery.dataTables.js"></script>
 <!--layer弹出层-->
-<script type="text/javascript" src="js/layer/layer.js"></script>
+<script type="text/javascript" src="../../static/js/layer/layer.js"></script>
 <!--表单验证-->
-<script type="text/javascript" src="js/validate/jquery.validationEngine-zh_CN.js"></script>
-<script type="text/javascript" src="js/validate/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="../../static/js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="../../static/js/validate/jquery.validationEngine.js"></script>
 <script>
     $(function(){
         //添加部门
-        $('.subTopLeft').on('click','.qft_addBranch,.JS_edit',function(){
+        $('.subTopLeft').on('click','.qft_addBranch',function(){
             layer.open({
                 type: 1,
                 title: '添加部门',
@@ -99,11 +112,11 @@
                     $('#roleForm').submit();
                 },
                 btnAlign: 'c',
-                content: $('#qft_branchBox')
+                content: $('#qft_branchEditBox')
             });
         });
         //表单验证
-        $("#roleForm").validationEngine({
+        $("#roleForm,#roleForm_one").validationEngine({
             addPromptClass: 'formError-text',
             showArrow: false,
             promptPosition: 'bottomLeft:5 0'
@@ -141,7 +154,7 @@
             "autoWidth": false,  //自适应宽度
             //"sAjaxSource": "${ctx}/api/user/list", //ajax调用接口
             //<div class="btn-group" style="text-align:left;"><button type="button" class="btn btn-info dropdown-toggle"data-toggle="dropdown">操作 <span class="caret"></span></button>
-            "sAjaxSource": "data/userlist.txt", //ajax调用接口
+            "sAjaxSource": "../../static/data/userlist.txt", //ajax调用接口
             "aoColumnDefs": [{sDefaultContent: '', orderable: false, aTargets: ['_all']}],
             "aoColumns": [
                 {"sTitle": "部门名称", "mData": "id"},
