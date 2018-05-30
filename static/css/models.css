@@ -113,18 +113,6 @@ i,
 em {
   font-style: normal;
 }
-.margTop_10 {
-  margin-top: 10px;
-}
-.margTop_20 {
-  margin-top: 20px;
-}
-.margTop_30 {
-  margin-top: 30px;
-}
-.margTop_40 {
-  margin-top: 40px;
-}
 .clearfix,
 .loginBox .loginTxt,
 .downloadBox .downloadCon,
@@ -154,7 +142,8 @@ em {
 .addGroupBox,
 .subMainContent,
 .subTopBox,
-.subConBox {
+.subConBox,
+.renterInfo .renterInfoList {
   *zoom: 1;
 }
 .clearfix:before,
@@ -216,7 +205,9 @@ em {
 .subTopBox:before,
 .subTopBox:after,
 .subConBox:before,
-.subConBox:after {
+.subConBox:after,
+.renterInfo .renterInfoList:before,
+.renterInfo .renterInfoList:after {
   content: " ";
   display: table;
 }
@@ -249,7 +240,8 @@ em {
 .addGroupBox:after,
 .subMainContent:after,
 .subTopBox:after,
-.subConBox:after {
+.subConBox:after,
+.renterInfo .renterInfoList:after {
   clear: both;
   visibility: hidden;
   height: 0;
@@ -408,6 +400,7 @@ textarea {
   display: inline-block;
   width: auto;
   height: 30px;
+  line-height: 30px;
   font-size: 14px;
   color: #666666;
   margin: 0 15px 0 5px;
@@ -415,6 +408,9 @@ textarea {
 .propRadio input[type="radio"] {
   vertical-align: top;
   margin: 9px 4px;
+}
+.propRadio.radioMarlef {
+  margin: 0 5px 0 0;
 }
 .redState {
   color: #fb6464;
@@ -525,6 +521,9 @@ label.labelRed {
 .PopupBtn.PopupMarTop {
   margin-top: 0;
   margin-bottom: 10px;
+}
+.margin-left10 {
+  margin-left: 10px;
 }
 .loginBox {
   position: relative;
@@ -936,6 +935,9 @@ label.labelRed {
 .icon.icon_system {
   background-position: 0 -240px;
 }
+.icon.icon_adminis {
+  background-position: -60px 0;
+}
 .icon.icon_ios {
   background-position: -30px -240px;
 }
@@ -972,6 +974,9 @@ label.labelRed {
 }
 .subicon.icon_subsystem {
   background-position: -30px -210px;
+}
+.subicon.icon_subadminis {
+  background-position: 0 -270px;
 }
 .ricon {
   display: block;
@@ -1262,6 +1267,9 @@ label.labelRed {
 }
 .main-shrink .navMenu li:hover .icon_subsystem {
   background-position: -60px -210px;
+}
+.main-shrink .navMenu li:hover .icon_subadminis {
+  background-position: 0 -300px;
 }
 .main-shrink .navMenu li .subBottom {
   top: auto;
@@ -1836,7 +1844,8 @@ input[type="button"].searchMoreBtn:hover {
   height: 30px;
 }
 .popupList .fieldName,
-.popupList .fieldName_one {
+.popupList .fieldName_one,
+.popupList .fieldName_three {
   width: 80px;
   height: 30px;
   line-height: 30px;
@@ -1845,6 +1854,10 @@ input[type="button"].searchMoreBtn:hover {
 }
 .popupList .fieldName_one {
   width: 110px;
+  height: 30px;
+}
+.popupList .fieldName_three {
+  width: 120px;
   height: 30px;
 }
 .popupList .fieldName_two {
@@ -2987,6 +3000,209 @@ input[type="button"].searchMoreBtn:hover {
 .btn-group .qft_errorTxt,
 .formInput .qft_errorTxt {
   bottom: -15px;
+}
+/*
+*module：房间信息
+*time: 20180529
+*name: liangbin
+*/
+.roomInfoBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.roomInfoLeft {
+  width: 100%;
+  height: 100%;
+}
+.roomInfoLeft .roomConBox {
+  width: auto;
+  height: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-right: 150px;
+}
+.roomInfoRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 130px;
+  height: auto;
+  padding: 10px;
+  background: #edf0f7;
+}
+.roomMenu {
+  margin-top: 5px;
+}
+.roomMenu li {
+  width: 100%;
+  height: 30px;
+  margin-top: 1px;
+}
+.roomMenu li a {
+  display: block;
+  line-height: 30px;
+  font-size: 13px;
+  color: #5270b4;
+}
+.roomMenu li a:hover,
+.roomMenu li a.roomaction {
+  color: #fc6365;
+}
+.roomMenu li a:hover .roomPhoto,
+.roomMenu li a.roomaction .roomPhoto {
+  background-position: -16px 0;
+}
+.roomMenu li a:hover .roomMoney,
+.roomMenu li a.roomaction .roomMoney {
+  background-position: -16px -16px;
+}
+.roomMenu li a:hover .roomPay,
+.roomMenu li a.roomaction .roomPay {
+  background-position: -16px -32px;
+}
+.roomMenu li a:hover .roomPact,
+.roomMenu li a.roomaction .roomPact {
+  background-position: -16px -48px;
+}
+.roomMenu li a:hover .roomTurn,
+.roomMenu li a.roomaction .roomTurn {
+  background-position: -16px -64px;
+}
+.roomMenu li a:hover .roomExtend,
+.roomMenu li a.roomaction .roomExtend {
+  background-position: -16px -80px;
+}
+.roomMenu li a:hover .roomFollow,
+.roomMenu li a.roomaction .roomFollow {
+  background-position: -16px -96px;
+}
+.roomMenu li a:hover .roomRepair,
+.roomMenu li a.roomaction .roomRepair {
+  background-position: -16px -112px;
+}
+.roomMenu li a:hover .roomAdorn,
+.roomMenu li a.roomaction .roomAdorn {
+  background-position: -16px -128px;
+}
+.roomMenu li a:hover .roomWater,
+.roomMenu li a.roomaction .roomWater {
+  background-position: -16px -144px;
+}
+.roomMenu li a:hover .roomRes,
+.roomMenu li a.roomaction .roomRes {
+  background-position: -16px -160px;
+}
+.roomMenu li a:hover .roomTicket,
+.roomMenu li a.roomaction .roomTicket {
+  background-position: -16px -176px;
+}
+.roomMenu li a:hover .roomOther,
+.roomMenu li a.roomaction .roomOther {
+  background-position: -16px -192px;
+}
+.roomIcon {
+  float: left;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 7px;
+  background: url("../images/roomIcon.png") no-repeat;
+}
+.roomIcon.roomPhoto {
+  background-position: 0 0;
+}
+.roomIcon.roomMoney {
+  background-position: 0 -16px;
+}
+.roomIcon.roomPay {
+  background-position: 0 -32px;
+}
+.roomIcon.roomPact {
+  background-position: 0 -48px;
+}
+.roomIcon.roomTurn {
+  background-position: 0 -64px;
+}
+.roomIcon.roomExtend {
+  background-position: 0 -80px;
+}
+.roomIcon.roomFollow {
+  background-position: 0 -96px;
+}
+.roomIcon.roomRepair {
+  background-position: 0 -112px;
+}
+.roomIcon.roomAdorn {
+  background-position: 0 -128px;
+}
+.roomIcon.roomWater {
+  background-position: 0 -144px;
+}
+.roomIcon.roomRes {
+  background-position: 0 -160px;
+}
+.roomIcon.roomTicket {
+  background-position: 0 -176px;
+}
+.roomIcon.roomOther {
+  background-position: 0 -192px;
+}
+.renterInfo {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 24px;
+  line-height: 24px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px 0 5px 70px;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.renterInfo h2 {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 70px;
+  height: 24px;
+  color: #60666e;
+  font-size: 12px;
+  text-align: left;
+}
+.renterInfo .renterInfoList li {
+  float: left;
+  width: 25%;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.renterInfo .renterInfoList li.renterWidth {
+  width: 50%;
+}
+.renterInfo.Noborder {
+  border: none;
+}
+.remarkTxt {
+  color: #666666;
+  line-height: 24px;
+}
+.btnHeight {
+  height: 30px;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.editMenuBox {
+  margin-top: 10px;
+  width: 600px;
 }
 @media screen and (max-width: 2560px) {
   .roomStateList li {

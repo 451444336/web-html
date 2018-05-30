@@ -113,12 +113,16 @@ textarea{
 .propRadio{
   display: inline-block;
   .size(auto; 30px);
+  line-height: 30px;
   font-size: @font-size-base;
   color: @gray-con;
   margin: 0 @margin-15 0 @margin-05;
   input[type="radio"]{
     vertical-align: top;
     margin: 9px 4px;
+  }
+  &.radioMarlef{
+    margin: 0 @margin-05 0 0;
   }
 }
 //状态颜色
@@ -228,4 +232,8 @@ label.labelRed{
     margin-top: 0;
     margin-bottom: @margin-10;
   }
+}
+//margin值
+.margin-left10{
+  margin-left: @margin-10;
 }

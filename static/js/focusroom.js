@@ -47,3 +47,17 @@ $('.subTopBox').on('click','.roomInfo',function(){
         content: ''
     });
 });
+//查看房间信息
+$('.wareList').on('dblclick','tbody tr',function(){
+    layer.open({
+        type: 2,
+        title: '百康年世纪门A幢3单元4-12',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['900px','500px'],
+        resize: false,
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'details/roomInfo.html'
+    });
+});
