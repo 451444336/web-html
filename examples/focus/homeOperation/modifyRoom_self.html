@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>修改房源</title>
+    <!--bootstrap-select  css文件-->
+    <link rel="stylesheet" type="text/css" href="../../../static/js/bootstrapselect/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../static/js/bootstrapselect/css/bootstrap-select.css"/>
+    <!--日期  css文件-->
+    <link rel="stylesheet" type="text/css" href="../../../static/js/datepicker/css/bootstrap-datepicker.css">
+    <!--主样式表-->
+    <link rel="stylesheet" href="../../../static/css/models.css">
+    <!--[if lt IE 9]>
+    <script src="../../../static/js/support/html5shiv.min.js"></script>
+    <script src="../../../static/js/support/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--修改房源-->
+<div class="PopupBox">
+    <form id="addUserForm" action="" method="">
+        <!--物业地址-->
+        <div class="propertySite">
+            <table class="popupList">
+                <tr>
+                    <th class="fieldName"><span class="require">*</span>物业地址：</th>
+                    <td><input name="" type="text"></td>
+                    <th class="fieldName"><span class="require">*</span>所在区域：</th>
+                    <td>
+                        <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
+                            <option value="">全部</option>
+                            <option value="2">重庆</option>
+                            <option value="3">四川</option>
+                            <option value="4">北京</option>
+                            <option value="5">重庆</option>
+                            <option value="6">四川</option>
+                        </select>
+                    </td>
+                    <td><input class="behavior-relative JS_addVillage" name="" type="button" value="添加小区"></td>
+                    <th class="fieldName">座　　栋：</th>
+                    <td><input name="" type="text"></td>
+                </tr>
+            </table>
+        </div>
+        <!--end 物业地址-->
+        <h2 class="PopupTitle">房源信息</h2>
+        <table class="popupList">
+            <tr>
+                <th class="fieldName"><span class="require">*</span>所属店面：</th>
+                <td>
+                    <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
+                        <option value="">全部</option>
+                        <option value="2">重庆</option>
+                        <option value="3">四川</option>
+                        <option value="4">北京</option>
+                        <option value="5">重庆</option>
+                        <option value="6">四川</option>
+                    </select>
+                </td>
+                <th class="fieldName"><span class="require">*</span>分　　组：</th>
+                <td>
+                    <select name="auditState" class="selectpicker validate[required]" data-live-search="true">
+                        <option value="">全部</option>
+                        <option value="2">重庆</option>
+                        <option value="3">四川</option>
+                        <option value="4">北京</option>
+                        <option value="5">重庆</option>
+                        <option value="6">四川</option>
+                    </select>
+                </td>
+                <th class="fieldName"><span class="require">*</span>房源编号：</th>
+                <td><input class="validate[required]" name="" type="text"></td>
+            </tr>
+            <tr>
+                <th class="fieldName">有无电梯：</th>
+                <td>
+                    <select name="auditState" class="selectpicker">
+                        <option value="0">无</option>
+                        <option value="1">有</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <h2 class="PopupTitle">备注信息</h2>
+        <p class="textareaBox"><textarea name="" id="" placeholder="点击输入备注消息"></textarea></p>
+    </form>
+</div>
+<!--end 修改房源-->
+<!--共用按钮-->
+<div class="powerBtnBox btnCenter">
+    <input class="powerBtn actionBtn" type="button" value="确定">
+</div>
+<!--end 共用按钮-->
+<script type="text/javascript" src="../../../static/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../static/js/index.js"></script>
+<!--bootstrap-select-->
+<script type="text/javascript" src="../../../static/js/bootstrapselect/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrapselect/bootstrap-select.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrapselect/select.js"></script>
+<!--日期控件-->
+<script type="text/javascript" src="../../../static/js/datepicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../../../static/js/datepicker/jquery.timepicker.js"></script>
+<script type="text/javascript" src="../../../static/js/datepicker/jquery.datepair.js"></script>
+<script type="text/javascript" src="../../../static/js/datepicker/datepicker.js"></script>
+<!--layer弹出层-->
+<script type="text/javascript" src="../../../static/js/layer/layer.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="../../../static/js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="../../../static/js/validate/jquery.validationEngine.js"></script>
+<script>
+    $(function(){
+        //表单验证
+        $("#addUserForm").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:5 0'
+        });
+        //添加小区
+        $('.propertySite').on('click','.JS_addVillage',function(){
+            layer.open({
+                type: 2,
+                title: '添加小区',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['700px','500px'],
+                //btn:['关闭'],
+                btnAlign: 'c',
+                content: '../qft_addVillage.html'
+            });
+        });
+    });
+</script>
+</body>
+</html>

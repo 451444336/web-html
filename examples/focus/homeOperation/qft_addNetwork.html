@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>添加宽带</title>
+    <!--bootstrap-select  css文件-->
+    <link rel="stylesheet" type="text/css" href="../../../static/js/bootstrapselect/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../static/js/bootstrapselect/css/bootstrap-select.css"/>
+    <!--日期  css文件-->
+    <link rel="stylesheet" type="text/css" href="../../../static/js/datepicker/css/bootstrap-datepicker.css">
+    <!--主样式表-->
+    <link rel="stylesheet" href="../../../static/css/models.css">
+    <!--[if lt IE 9]>
+    <script src="../../../static/js/support/html5shiv.min.js"></script>
+    <script src="../../../static/js/support/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--添加宽带-->
+<div class="PopupBox">
+    <form id="addUserForm" action="" method="">
+        <h2 class="PopupTitle margin_top0">宽带登记</h2>
+        <table class="popupList">
+            <tr>
+                <th class="fieldName"><span class="require">*</span>服务商：</th>
+                <td>
+                    <select name="auditState" class="selectpicker">
+                        <option value="">请选择</option>
+                        <option value="">电信</option>
+                        <option value="2">移动</option>
+                        <option value="3">长城</option>
+                        <option value="4">联通</option>
+                        <option value="5">艾普</option>
+                        <option value="6">有线</option>
+                    </select>
+                </td>
+                <th class="fieldName"><span class="require">*</span>类型：</th>
+                <td>
+                    <select name="auditState" class="selectpicker">
+                        <option value="">请选择</option>
+                        <option value="2">普通宽带</option>
+                        <option value="3">光钎</option>
+                    </select>
+                </td>
+                <th class="fieldName_one"><span class="require">*</span>光钎模式：</th>
+                <td>
+                    <select name="auditState" class="selectpicker">
+                        <option value="">请选择</option>
+                        <option value="2">NPON</option>
+                        <option value="3">GPON</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="depositInfo">
+                <th class="fieldName"><span class="require">*</span>安装日期：</th>
+                <td class="dayBox"><input class="start_rise date" name="" type="text" value=""></td>
+                <th class="fieldName"><span class="require">*</span>缴费方式：</th>
+                <td>
+                    <select name="auditState" class="selectpicker">
+                        <option value="1">月付</option>
+                        <option value="2">二月付</option>
+                        <option value="3">季度付</option>
+                        <option value="4">四月付</option>
+                        <option value="5">五月付</option>
+                        <option value="6">半年付</option>
+                        <option value="7">年付</option>
+                        <option value="8">二年付</option>
+                        <option value="9">三年付</option>
+                        <option value="10">四年付</option>
+                        <option value="11">全额支付</option>
+                        <option value="12">不规则支付</option>
+                    </select>
+                </td>
+                <th class="fieldName_one"><span class="require">*</span>姓名：</th>
+                <td><input name="" type="text" value=""></td>
+            </tr>
+            <tr>
+                <th class="fieldName"><span class="require">*</span>身份证：</th>
+                <td><input name="" type="text" value=""></td>
+                <th class="fieldName"><span class="require">*</span>宽带账号：</th>
+                <td><input name="" type="text" value=""></td>
+                <th class="fieldName_one"><span class="require">*</span>宽带密码：</th>
+                <td><input name="" type="text" value=""></td>
+            </tr>
+            <tr>
+                <th class="fieldName"><span class="require">*</span>每月费用：</th>
+                <td><input name="" type="text" value=""></td>
+                <th class="fieldName"><span class="require">*</span>兆数：</th>
+                <td><input name="" type="text" value=""></td>
+                <th class="fieldName_one">路由器账号：</th>
+                <td><input name="" type="text" value=""></td>
+            </tr>
+            <tr>
+                <th class="fieldName">路由器密码：</th>
+                <td><input name="" type="text" value=""></td>
+                <th class="fieldName"><span class="require">*</span>WIFI密码：</th>
+                <td><input name="" type="text" value=""></td>
+                <th class="fieldName_one"><span class="require">*</span>维修人员电话：</th>
+                <td><input name="" type="text" value=""></td>
+            </tr>
+        </table>
+        <h2 class="PopupTitle">备注信息</h2>
+        <p class="textareaBox"><textarea name="" id="" placeholder="点击输入备注消息"></textarea></p>
+    </form>
+</div>
+<!--end 添加宽带-->
+<!--共用按钮-->
+<div class="powerBtnBox btnCenter">
+    <input class="powerBtn actionBtn" type="button" value="保存">
+</div>
+<!--end 共用按钮-->
+<script type="text/javascript" src="../../../static/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../static/js/index.js"></script>
+<!--bootstrap-select-->
+<script type="text/javascript" src="../../../static/js/bootstrapselect/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrapselect/bootstrap-select.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrapselect/select.js"></script>
+<!--日期控件-->
+<script type="text/javascript" src="../../../static/js/datepicker/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="../../../static/js/datepicker/jquery.timepicker.js"></script>
+<script type="text/javascript" src="../../../static/js/datepicker/jquery.datepair.js"></script>
+<script type="text/javascript" src="../../../static/js/datepicker/datepicker.js"></script>
+<!--layer弹出层-->
+<script type="text/javascript" src="../../../static/js/layer/layer.js"></script>
+<!--表单验证-->
+<script type="text/javascript" src="../../../static/js/validate/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript" src="../../../static/js/validate/jquery.validationEngine.js"></script>
+<script>
+    $(function(){
+        //表单验证
+        $("#addUserForm").validationEngine({
+            addPromptClass: 'formError-text',
+            showArrow: false,
+            promptPosition: 'bottomLeft:5 0'
+        });
+        //添加小区
+        $('.propertySite').on('click','.JS_addVillage',function(){
+            layer.open({
+                type: 2,
+                title: '添加小区',
+                skin: 'popup-title-bg', //样式类名
+                closeBtn : 1,
+                area: ['700px','500px'],
+                //btn:['关闭'],
+                btnAlign: 'c',
+                content: '../qft_addVillage.html'
+            });
+        });
+        //获取系统当前时间
+        $('.JS_entryTime').val(currentTime());
+        function currentTime(){
+            var myDate = new Date();
+            var year,month,date;
+            function p(s) {
+                return s < 10 ? '0' + s: s;
+            }
+            year = myDate.getFullYear(); //获取当前年
+            month = myDate.getMonth()+1; //获取当前月
+            date = myDate.getDate(); //获取当前日
+            // h = myDate.getHours();       //获取当前小时数(0-23)
+            //m = myDate.getMinutes();     //获取当前分钟数(0-59)
+            //s = myDate.getSeconds();
+            return year+'-'+p(month)+"-"+p(date);
+        }
+    });
+</script>
+</body>
+</html>

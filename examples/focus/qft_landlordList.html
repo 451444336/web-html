@@ -305,9 +305,10 @@
                         var text = '<div class="operationBox">\n' +
                             '<input class="operationBtn" name="" type="button" value="操作">\n' +
                             '   <ul class="operationList hide">\n' +
-                            '       <li><a class="operMenu" href="javascript:void (0);">修改房源</a></li>\n' +
-                            '       <li><a class="operMenu" href="javascript:void (0);">添加欠费</a></li>\n' +
-                            '       <li><a class="operMenu" href="javascript:void (0);">房源退房</a></li>\n' +
+                            '       <li><a class="operMenu JS_modifyRoom" href="javascript:void (0);">修改房源</a></li>\n' +    //租赁他人物业
+                            '       <li><a class="operMenu JS_modifyRoom_self" href="javascript:void (0);">修改房源</a></li>\n' +  //自持物业
+                            '       <li><a class="operMenu JS_addArrears" href="javascript:void (0);">添加欠费</a></li>\n' +
+                            '       <li><a class="operMenu JS_CheckOut" href="javascript:void (0);">房源退房</a></li>\n' +
                             '       <li>\n' +
                             '           <a class="operMenu js_operMenu" href="javascript:void (0);">智能设备<i class="oper_triangle"></i></a>\n' +
                             '               <dl class="subOperMenu">\n' +
@@ -324,8 +325,8 @@
                             '       </dl>\n' +
                             '               </li>\n' +
                             '               <li><a class="operMenu" href="javascript:void (0);">新增房间</a></li>\n' +
-                            '               <li><a class="operMenu" href="javascript:void (0);">登记宽带</a></li>\n' +
-                            '               <li><a class="operMenu" href="javascript:void (0);">添加备注</a></li>\n' +
+                            '               <li><a class="operMenu JS_addNetwork" href="javascript:void (0);">登记宽带</a></li>\n' +
+                            '               <li><a class="operMenu JS_addNote" href="javascript:void (0);">添加备注</a></li>\n' +
                             '           </ul>\n' +
                             '       </div>';
                         return text;

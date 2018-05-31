@@ -61,3 +61,93 @@ $('.wareList').on('dblclick','tbody tr',function(){
         content: 'details/roomInfo.html'
     });
 });
+/*
+* @module: 集中整租-房东操作
+* @time:  20180531
+* @name:  liangbin
+*
+*/
+//修改房源-租赁他人物业
+$('.wareList').on('click','.JS_modifyRoom', function(){
+    layer.open({
+        type: 2,
+        title: '修改房源',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['900px','64%'],
+        resize: false,
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'homeOperation/modifyRoom.html'
+    });
+});
+//修改房源-自持物业
+$('.wareList').on('click','.JS_modifyRoom_self', function(){
+    layer.open({
+        type: 2,
+        title: '修改房源',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['900px','560px'],
+        resize: false,
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'homeOperation/modifyRoom_self.html'
+    });
+});
+//添加欠费
+$('.wareList').on('click', '.JS_addArrears',function(){
+    layer.open({
+        type: 2,
+        title: '添加欠费',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['900px','364px'],
+        resize: false,
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'homeOperation/qft_addArrears.html'
+    });
+});
+//房源退房
+$('.wareList').on('click', '.JS_CheckOut', function(){
+    layer.open({
+        type: 2,
+        title: '房源退房',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['760px','510px'],
+        resize: false,
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'homeOperation/qft_checkOut.html'
+    });
+});
+//添加宽带
+$('.wareList').on('click', '.JS_addNetwork', function(){
+    layer.open({
+        type: 2,
+        title: '添加宽带',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['760px','490px'],
+        resize: false,
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'homeOperation/qft_addNetwork.html'
+    });
+});
+//添加备忘信息
+$('.wareList').on('click', '.JS_addNote', function(){
+    layer.open({
+        type: 2,
+        title: '添加备忘信息',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['760px','360px'],
+        resize: false,
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'homeOperation/qft_addNote.html'
+    });
+});

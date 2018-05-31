@@ -201,6 +201,9 @@ $(function(){
     });
     //table列表操作二级菜单
     $('.operationList li:first-child').find('.subOperMenu').show();
+    $('.wareList').on('click','.operMenu',function(){
+        $(this).parents('.operationList').addClass('hide');
+    });
     $('.wareList').on('mouseenter',' li',function(){
         $(this).parents('.operationList').find('.js_operMenu').removeClass('operHover');
         $(this).parents('.operationList').find('.subOperMenu').hide();
