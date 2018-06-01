@@ -3,6 +3,20 @@
 * @time:  20180508
 * @name:  liangbin
 * */
+//集中整租-设置
+$('.subTopBox').on('click', '.JS_setUpBtn', function(){
+    layer.open({
+        type: 2,
+        title: '设置',
+        skin: 'popup-title-bg iframeWidth', //样式类名
+        closeBtn : 1,
+        resize: false,
+        area: ['900px','511px'],
+        //btn:['关闭'],
+        btnAlign: 'c',
+        content: 'qft_focusSetUp.html'
+    });
+});
 //切换房态图
 $('.subTopBox').on('click','.JS_switch',function(){
     var stateTxt = $(this).data('state');
@@ -20,7 +34,7 @@ $('.subTopBox').on('click','.JS_switch',function(){
 });
 //登记房源-项目基本信息录入
 $('.subTopBox').on('click','.masterInfo',function(){
-    var index = layer.open({
+    layer.open({
         type: 2,
         title: '项目基本信息录入',
         skin: 'popup-title-bg', //样式类名
@@ -32,7 +46,6 @@ $('.subTopBox').on('click','.masterInfo',function(){
         btnAlign: 'c',
         content: 'qft_addroomInfo.html'
     });
-    layer.iframeAuto(index)
 });
 //登记租客-项目基本信息录入
 $('.subTopBox').on('click','.roomInfo',function(){
@@ -59,6 +72,19 @@ $('.wareList').on('dblclick','tbody tr',function(){
         //btn:['关闭'],
         btnAlign: 'c',
         content: 'details/roomInfo.html'
+    });
+});
+//列表隐藏
+$('.subTopBox').on('click', '.hideColumn', function(){
+    layer.open({
+        type: 2,
+        title: '选择列',
+        skin: 'popup-title-bg', //样式类名
+        closeBtn : 1,
+        area: ['700px','310px'],
+        resize: false,
+        btnAlign: 'c',
+        content: 'qft_hideColumn.html'
     });
 });
 /*

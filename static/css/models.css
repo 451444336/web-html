@@ -143,7 +143,8 @@ em {
 .subMainContent,
 .subTopBox,
 .subConBox,
-.renterInfo .renterInfoList {
+.renterInfo .renterInfoList,
+.payDayCon {
   *zoom: 1;
 }
 .clearfix:before,
@@ -207,7 +208,9 @@ em {
 .subConBox:before,
 .subConBox:after,
 .renterInfo .renterInfoList:before,
-.renterInfo .renterInfoList:after {
+.renterInfo .renterInfoList:after,
+.payDayCon:before,
+.payDayCon:after {
   content: " ";
   display: table;
 }
@@ -241,7 +244,8 @@ em {
 .subMainContent:after,
 .subTopBox:after,
 .subConBox:after,
-.renterInfo .renterInfoList:after {
+.renterInfo .renterInfoList:after,
+.payDayCon:after {
   clear: both;
   visibility: hidden;
   height: 0;
@@ -401,7 +405,7 @@ textarea {
   width: auto;
   height: 30px;
   line-height: 30px;
-  font-size: 14px;
+  font-size: 12px;
   color: #666666;
   margin: 0 15px 0 5px;
 }
@@ -2313,6 +2317,10 @@ input[type="button"].searchMoreBtn:hover {
 .roomStateList li .labelType.endfix {
   background: url("../images/endfix_icon.png") 0 0 no-repeat;
 }
+.optColumn {
+  height: 140px;
+  overflow-y: auto;
+}
 /*
 *module：添加房源
 *name: liangbin
@@ -2982,8 +2990,31 @@ input[type="button"].searchMoreBtn:hover {
 .subTopRight span.resizeBtn {
   background: url("../images/resize_icon.png") 5px center no-repeat;
 }
+.subTopRight span.hideColumn {
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+  border: 1px solid #999999;
+  color: #999999;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
 .subTopRight span:hover {
   color: #1e65c5;
+}
+.subTopRight .hideColumn {
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+  line-height: 20px;
+  margin: 4px 10px 4px 0;
+  border: 1px solid #999999;
+  color: #999999;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  text-align: center;
 }
 /*表单验证提示*/
 .formError,
@@ -3208,6 +3239,147 @@ input[type="button"].searchMoreBtn:hover {
 .editMenuBox {
   margin-top: 10px;
   width: 600px;
+}
+.iframeWidth .layui-layer-content {
+  overflow-x: hidden;
+}
+.iframeWidth .layui-layer-content iframe {
+  width: 102%;
+}
+.focusSetUp {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-right: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+.setUpNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1050;
+  width: 130px;
+  height: auto;
+  background: #edf0f7;
+  overflow: hidden;
+}
+.setUpNav .setUpNavList {
+  width: 100%;
+  height: auto;
+}
+.setUpNav .setUpNavList li {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+}
+.setUpNav .setUpNavList li .setUpTxt {
+  display: block;
+  padding-left: 20px;
+  font-size: 12px;
+  color: #333333;
+}
+.setUpNav .setUpNavList li.setActive .setUpTxt {
+  background: #fff;
+}
+.focusSetUpConBox {
+  width: 100%;
+  height: auto;
+  padding: 10px 10px 48px 140px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.focusSetUpConBox .focusSetUpCon {
+  position: relative;
+  width: 100%;
+  height: auto;
+  color: #333333;
+}
+.mainSetUpCon {
+  position: relative;
+  min-height: 30px;
+  line-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 160px;
+  margin-bottom: 15px;
+}
+.setUpTit {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 140px;
+  height: 30px;
+}
+.focusSetUpBtn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  margin: 0 !important;
+  padding: 10px 0;
+  z-index: 1000;
+}
+.setNumber {
+  width: 100%;
+  height: auto;
+  max-height: 390px;
+  overflow-y: auto;
+}
+.payDayCon {
+  width: 100%;
+  height: 30px;
+}
+.payDayCon .payDayTxt,
+.payDayCon .payDaySelect {
+  float: left !important;
+}
+.payDayCon .payDaySelect {
+  width: 120px;
+  margin-right: 10px;
+}
+.setUpCheck {
+  width: 100%;
+  height: 30px;
+}
+.setUpCheck label.powerLabel,
+.setUpCheck label.propRadio {
+  color: #333333;
+  font-size: 12px;
+}
+.fixedTimeBox {
+  display: none;
+  width: 95%;
+  height: auto;
+  table-layout: fixed;
+  margin-left: 5%;
+  margin-bottom: 10px;
+}
+.fixedTimeBox tr td {
+  height: 40px;
+  font-size: 12px;
+}
+.fixedTimeBox .startTime {
+  width: 65px;
+}
+.fixedTimeBox .CheckDaySelect {
+  width: 80px;
+}
+.fixedTimeBox .delete {
+  display: block;
+  text-align: center;
+}
+.fixedTimeBox .delete:hover {
+  color: #fb6464;
+  text-decoration: underline;
+}
+.explainTxt {
+  padding-left: 20px;
+  line-height: 24px;
 }
 @media screen and (max-width: 2560px) {
   .roomStateList li {

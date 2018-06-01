@@ -67,8 +67,27 @@
     &.resizeBtn{
       background: url("../images/resize_icon.png") 5px center no-repeat;
     }
+    //列表隐藏
+    &.hideColumn{
+      display: inline-block;
+      .size(70px; 20px);
+      .border(1px; @gray-cont);
+      color: @gray-cont;
+      .border-radius(40px);
+    }
     &:hover{
       color: @subtop-btn-col-h;
     }
+  }
+  //列表隐藏
+  .hideColumn{
+    display: inline-block;
+    .size(70px; 20px);
+    line-height: 20px;
+    margin: 4px @margin-10 4px 0;
+    .border(1px; @gray-cont);
+    color: @gray-cont;
+    .border-radius(40px);
+    .align(center);
   }
 }

@@ -1,0 +1,141 @@
+@import "../base";
+@import "../variables";
+
+//集中整租 - 设置
+.iframeWidth{
+  .layui-layer-content {
+    overflow-x: hidden;
+    iframe{
+      width: 102%
+    }
+  }
+}
+.focusSetUp{
+  .relative;
+  .size(100%; auto);
+  margin-right: 16px;
+  background: @txt-base;
+  overflow: hidden;
+}
+.setUpNav{
+  .fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: @zindex-modal;
+  .size(130px; auto);
+  background: @room-info-back;
+  overflow: hidden;
+  .setUpNavList{
+    .size(100%; auto);
+    li{
+      .size(100%; 36px);
+      line-height: 36px;
+      .setUpTxt{
+        display: block;
+        padding-left: @padding-20;
+        font-size: @font-size-small;
+        color: @gray-dark;
+      }
+      &.setActive{
+        .setUpTxt{
+          background: @txt-base;
+        }
+      }
+    }
+  }
+}
+.focusSetUpConBox{
+  .size(100%; auto);
+  padding: @padding-10 @padding-10 48px 140px;
+  .box-sizing;
+  overflow-y: auto;
+  .focusSetUpCon{
+    .relative;
+    .size(100%; auto);
+    color: @gray-dark;
+  }
+}
+.mainSetUpCon{
+  .relative;
+  min-height: 30px;
+  line-height: 30px;
+  .box-sizing;
+  padding-left: 160px;
+  margin-bottom: @margin-15;
+}
+//保存按钮
+.setUpTit{
+  .absolute;
+  left: @padding-10;
+  top: 0;
+  .size(140px; 30px);
+}
+.focusSetUpBtn{
+  .fixed;
+  left: 0;
+  bottom: 0;
+  background: @txt-base;
+  margin: 0 !important;
+  padding: @padding-10 0;
+  z-index: @zindex-base;
+}
+//编号设置
+.setNumber{
+  .size(100%; auto);
+  max-height: 390px;
+  overflow-y: auto;
+}
+//默认设置
+.payDayCon{
+  &:extend(.clearfix all);
+  .size(100%; 30px);
+  .payDayTxt,
+  .payDaySelect{
+    .left !important;
+  }
+  .payDaySelect{
+    width: 120px;
+    margin-right: @margin-10;
+  }
+}
+//通用CheckBox
+.setUpCheck{
+  .size(100%; 30px);
+  label.powerLabel,
+  label.propRadio{
+    color: @gray-dark;
+    font-size: @font-size-small;
+  }
+}
+//固定缴费时间
+.fixedTimeBox{
+  .hide;
+  .size(95%; auto);
+  table-layout: fixed;
+  margin-left: 5%;
+  margin-bottom: @margin-10;
+  tr td{
+    height: 40px;
+    font-size: @font-size-small;
+  }
+  .startTime{
+    width: 65px;
+  }
+  .CheckDaySelect{
+    width: 80px;
+  }
+  .delete{
+    display: block;
+    .align(center);
+    &:hover{
+      color: @ctiy-bg;
+      text-decoration: underline;
+    }
+  }
+}
+//解释文本
+.explainTxt{
+  padding-left: @margin-20;
+  line-height: 24px;
+}

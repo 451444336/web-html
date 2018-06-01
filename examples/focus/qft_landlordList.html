@@ -25,7 +25,7 @@
                     <a class="subTopBtn" href="qft_roomList.html">房间信息</a><a class="subTopBtn subHover" href="qft_landlordList.html">房东信息</a>
                 </div>
                 <div class="subTopRight">
-                    <span class="setUpBtn">设置</span><a href="javascript:void(0);" class="addbtn masterInfo">登记房东</a>
+                    <a href="javascript:void(0);" class="hideColumn">列表隐藏</a><span class="setUpBtn JS_setUpBtn">设置</span><a href="javascript:void(0);" class="addbtn masterInfo">登记房东</a>
                 </div>
             </div>
             <!--end 子页顶部内容-->
@@ -282,23 +282,31 @@
                 /*{ "sWidth": "30px","sTitle" : "<input class= \"check-all\" name=\"\" type=\"checkbox\">", "mData": "id","mRender": function(){
                     return '<input class="ids" name="" type="checkbox">';
                 }},*/
-                {"sTitle": "区域", "mData": "id"},
-                {"sTitle": "物业地址", "mData": "id1"},
-                {"sTitle": "房号", "mData": "id2"},
-                {"sTitle": "面积", "mData": "id3"},
-                {"sTitle": "户型", "mData": "id4"},
-                {"sTitle": "租客电话", "mData": "id5"},
-                {"sTitle": "出房价格", "mData": "id6"},
-                {"sTitle": "押金", "mData": "id"},
-                {"sTitle": "开始时间", "mData": "id1"},
+                {"sTitle": "编号", "mData": "id"},
+                {"sTitle": "店面", "mData": "id1"},
+                {"sTitle": "区域", "mData": "id2"},
+                {"sTitle": "物业地址", "mData": "id3"},
+                {"sTitle": "座栋", "mData": "id4"},
+                {"sTitle": "楼层", "mData": "id5"},
+                {"sTitle": "电梯", "mData": "id6"},
+                {"sTitle": "开始时间", "mData": "id"},
+                {"sTitle": "到期时间", "mData": "id1"},
                 {"sTitle": "租赁期限", "mData": "id2"},
-                {"sTitle": "缴费方式", "mData": "id3"},
-                {"sTitle": "合同性质", "mData": "id4"},
-                {"sTitle": "业务员", "mData": "id5"},
-                {"sTitle": "定价", "mData": "id6"},
-                {"sTitle": "定金", "mData": "id5"},
-                {"sTitle": "租前审核", "mData": "id6", "mRender" : function ( data, type, full ) {
-                        return '<span class="redState">已审核</span>' //<span>未审核</span>  默认 '', 关闭 'redState'
+                {"sTitle": "本幢/层租金", "mData": "id3"},
+                {"sTitle": "缴费方式", "mData": "id4"},
+                {"sTitle": "免租起", "mData": "id5"},
+                {"sTitle": "房源类型", "mData": "id6"},
+                {"sTitle": "房间分配", "mData": "id5", "sClass":"allotRoom", "mRender" : function ( data, type, full ) {
+                        return '<span class="redState">未分配</span>' //<span class="redState">15间</span>
+                    }
+                },
+                {"sTitle": "房间余量", "mData": "id6"},
+                {"sTitle": "租前审核", "mData": "id5", "sClass":"rentAgo", "mRender" : function ( data, type, full ) {
+                        return '<span class="redState">未审核</span>' //<span>通过/驳回</span>
+                    }
+                },
+                {"sTitle": "租后审核", "mData": "id6", "sClass":"rentAfter", "mRender" : function ( data, type, full ) {
+                        return '<span class="redState">未审核</span>' //<span>未审核</span>  默认 '', 未审核 'redState'
                     }
                 },
                 {"sWidth": "90px", "sTitle" : "其他操作","mData" : "id","sClass":"tableShow", "mRender" : function ( data, type, full ) {
